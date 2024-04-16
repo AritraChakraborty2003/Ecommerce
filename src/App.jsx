@@ -10,12 +10,10 @@ function App() {
   useEffect(() => {
     //Implementing the setInterval method
     if (screen.width >= 1279 && screen.width < 1400) {
-      document.getElementById("bannerScreen").innerHTML = (
-        <img
+      document.getElementById("bannerScreen").innerHTML = `<img
           src="./images/mac4.png"
           className="max-w-full max-height-full object-contain"
-        ></img>
-      );
+        ></img>`;
     }
 
     const interval = setInterval(() => {
