@@ -9,7 +9,15 @@ function App() {
 
   useEffect(() => {
     //Implementing the setInterval method
-    document.getElementById("cntText").innerHTML = count;
+    if (screen.width >= 1279 && screen.width < 1400) {
+      document.getElementById("bannerScreen").innerHTML = (
+        <img
+          src="./images/mac4.png"
+          className="max-w-full max-height-full object-contain"
+        ></img>
+      );
+    }
+
     const interval = setInterval(() => {
       document.getElementById("cntText").innerHTML = count;
       setCount(count + 1);
@@ -18,6 +26,7 @@ function App() {
     //Clearing the interval
     return () => clearInterval(interval);
   }, [count]);
+
   const width = screen.width;
   return (
     <>
@@ -102,38 +111,10 @@ function App() {
             </div>
           </div>
         ) : null}
-        <div className="Banner  h-96  banner w-12/12   bg-no-repeat">
-          {(width >= 0 && width < 750 && (
-            <img
-              src="./images/mobile1.png"
-              className="max-w-full max-height-full object-contain"
-            ></img>
-          )) ||
-            (width >= 750 && width < 1279 && (
-              <img
-                src="./images/tab.png"
-                className="max-w-full max-height-full object-contain"
-              ></img>
-            )) ||
-            (width >= 1279 && width < 1400 && (
-              <img
-                src="./images/mac1.png"
-                className="max-w-full max-height-full object-contain"
-              ></img>
-            )) ||
-            (width >= 1400 && width <= 1700 && (
-              <img
-                src="./images/ban11.png"
-                className="max-w-full max-height-full object-contain"
-              ></img>
-            )) ||
-            (width >= 1700 && width <= 2048 && (
-              <img
-                src="./images/ol3.png"
-                className="max-w-full max-height-full object-contain"
-              ></img>
-            ))}
-        </div>
+        <div
+          className="Banner  h-96  banner w-12/12   bg-no-repeat "
+          id="bannerScreen"
+        ></div>
 
         <div className="supportLinks hidden md:block">
           <div className="flex bg-darkwhite justify-center h-15 p-5 space-x-10 lg:h-15 md:space-x-28 ">
