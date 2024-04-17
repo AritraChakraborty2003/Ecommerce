@@ -1,11 +1,71 @@
 import { useState, useEffect } from "react";
 /*import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";*/
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import React from "react";
+import Slider from "react-slick";
+
 import "./App.css";
 
 function App() {
   const [status, setStatus] = useState(false);
   const [count, setCount] = useState(0);
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "#FFC300" ,width:"30px", height:"30px",display:"flex",justifyContent:"center",alignItems:"center"}}
+        onClick={onClick}
+      />
+    );
+  }
+  
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "#FFC300",width:"30px", height:"30px",display:"flex",justifyContent:"center",alignItems:"center"}}
+        onClick={onClick}
+      />
+    );
+  }
+  if(screen.width>=1100 && screen.width<=1299){
+    var settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />
+    };
+  }
+else if(screen.width>=1300 && screen.width<1600){
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
+  };
+}
+else{
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
+  };
+}
+
 
   useEffect(() => {
     //Implementing the setInterval method
@@ -51,12 +111,12 @@ function App() {
               </div>
 
               <div className="IconHolder  h-20 w-2/3 p-2 hidden lg:block">
-                <ul className="flex justify-center space-x-10 p-4 pl-4 pr-4 text-lg font-bold font-poppins">
-                  <li>Books</li>
-                  <li>Merchendise</li>
-                  <li>Traditionals</li>
-                  <li>Clothes</li>
-                  <li>Contact</li>
+                <ul className="flex justify-center space-x-5 xl:space-x-10 p-4 pl-4 pr-4  lg:text-base lg:font-medium  xl:text-lg  xl:font-bold font-roboto">
+                  <li><a href="#" className="text-black">Books</a></li>
+                  <li><a href="#" className="text-black">Merchendise</a></li>
+                  <li><a href="#" className="text-black">Traditionals</a></li>
+                  <li><a href="#" className="text-black">Corporate Gifts</a></li>
+
                 </ul>
               </div>
 
@@ -142,8 +202,10 @@ function App() {
               ></img>
             </div>
           </div>
-        </div>
-        <div className="booksBox md:mt-10">
+         </div>
+
+
+         <div className="booksBox md:mt-10">
           <div className="classBooks lg:h-20  flex w-12/12 justify-center font-bold">
             <p className="text-4xl lg:text-6xl  font-extrabold text-orange">
               Books
@@ -155,126 +217,225 @@ function App() {
               <li className="pr-3">Non-Fiction</li>
               <li className="pr-3">Competetive</li>
             </ul>
-          </div>
+          </div>  
+      
+        <div className="holder h-96 hidden lg:block mt-8">
+          <Slider {...settings} className="h-96">
+          <div className="max-w-[230px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                                hover:scale-x-110 ml-6 overflow-hidden">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
+<div className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
+<div className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
+<div className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
 
-          <div className="flex w-12/12   p-5 justify-center items-center gap-5 flex-wrap mt-3">
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-4 w-90">
-              <div className="imageHolder h-60 w-90 flex justify-center">
-                <a href="#">
-                  <img
-                    className="rounded-t-lg max-w-full max-h-full object-contain"
-                    src="./images/rpd.jpg"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div className="p-5">
-                <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Rich Dad and Poor Dad
-                  </h5>
-                </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Author: Robert T. Kiyoshaki
-                </p>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  <span className="font-extrabold">Price</span>: Rs 800
-                </p>
-                <button className="bg-orange font-white p-3 text-white">
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-4 w-80">
-              <div className="imageHolder h-60 w-90 flex justify-center">
-                <a href="#">
-                  <img
-                    className="rounded-t-lg max-w-full max-h-full object-contain"
-                    src="./images/5am.jpg"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div className="p-5">
-                <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    The 5AM Club
-                  </h5>
-                </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Author: Robert T. Kiyoshaki
-                </p>
-
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  <span className="font-extrabold">Price:</span> Rs 900
-                </p>
-                <button className="bg-orange font-white p-3 text-white">
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-4">
-              <div className="imageHolder h-60 w-90 flex justify-center">
-                <a href="#">
-                  <img
-                    className="rounded-t-lg max-w-full max-h-full object-contain"
-                    src="./images/monk.jpg"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div className="p-5">
-                <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Monk who sold His Ferrari
-                  </h5>
-                </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Author: Robin Sharma
-                </p>
-
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  <span className="font-extrabold">Price:</span> Rs 750
-                </p>
-
-                <button className="bg-orange font-white p-3 text-white">
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-4 w-80">
-              <div className="imageHolder h-60 w-90 flex justify-center">
-                <a href="#">
-                  <img
-                    className="rounded-t-lg max-w-full max-h-full object-contain"
-                    src="./images/5am.jpg"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div className="p-5">
-                <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    The 5AM Club
-                  </h5>
-                </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Author: Robert T. Kiyoshaki
-                </p>
-
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  <span className="font-extrabold">Price:</span> Rs 900
-                </p>
-                <button className="bg-orange font-white p-3 text-white">
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-          </div>
+<div className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
+<div className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+    <div className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
+   
+</div>
+          </Slider>
         </div>
+
+        <div className='bookHolder lg:hidden flex flex-wrap gap-5 justify-center items-center mt-10'>
+<div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg ">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
+<div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg   transform transition duration-500 
+                                hover:scale-110">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
+<div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg ">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
+<div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg ">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
+        
+    <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg ">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
+         
+    <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg ">
+    <a href="#" className='w-12/12 flex justify-center'>
+        <img className="rounded-t-lg" src="./images/5am.jpg" alt="" width={75} height={60}/>
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">The 5AM Club</p>
+        </a>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Author: Robin Sharma</p>
+        <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">Price: Rs 900
+          </p>
+          <button type="button" class="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2">Add To Cart</button>
+    </div>
+   
+</div>
+</div>
+
+       </div>
+           
+
 
         <div className="booksBox mt-10">
           <div className="classBooks  flex-col w-12/12 justify-center font-bold">
