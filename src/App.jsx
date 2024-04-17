@@ -274,17 +274,17 @@ function App() {
           </div>
           <div className="flex w-12/12  justify-center mt-4">
             <ul className="flex gap-x-10 lg:gap-x-20 text-1xl font-semibold lg:text-2xl">
-              <li className="pr-3 md:border-r-4">Fiction</li>
-              <li className="pr-3 md:border-r-4">Non-Fiction</li>
+              <li className="pr-3 md:border-r-2">Fiction</li>
+              <li className="pr-3 md:border-r-2">Non-Fiction</li>
 
-              <li className="pr-3 md:border-r-4">Competetive</li>
+              <li className="pr-3 md:border-r-2">Competetive</li>
             </ul>
           </div>
 
           <div className="holder h-96 hidden lg:block mt-8">
             <Slider {...settings} className="h-96">
               <div
-                className="max-w-[230px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                className="max-w-[230px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
                                 hover:scale-x-110 ml-6 overflow-hidden"
               >
                 <a href="#" className="w-12/12 flex justify-center">
@@ -317,7 +317,7 @@ function App() {
                 </div>
               </div>
               <div
-                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
                                 hover:scale-x-105 ml-6 overflow-hidden"
               >
                 <a href="#" className="w-12/12 flex justify-center">
@@ -350,7 +350,7 @@ function App() {
                 </div>
               </div>
               <div
-                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
                                 hover:scale-x-105 ml-6 overflow-hidden"
               >
                 <a href="#" className="w-12/12 flex justify-center">
@@ -383,7 +383,7 @@ function App() {
                 </div>
               </div>
               <div
-                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
                                 hover:scale-x-105 ml-6 overflow-hidden"
               >
                 <a href="#" className="w-12/12 flex justify-center">
@@ -417,7 +417,7 @@ function App() {
               </div>
 
               <div
-                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
                                 hover:scale-x-105 ml-6 overflow-hidden"
               >
                 <a href="#" className="w-12/12 flex justify-center">
@@ -450,7 +450,7 @@ function App() {
                 </div>
               </div>
               <div
-                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
                                 hover:scale-x-105 ml-6 overflow-hidden"
               >
                 <a href="#" className="w-12/12 flex justify-center">
@@ -482,7 +482,7 @@ function App() {
                   </button>
                 </div>
                 <div
-                  className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-lg  transform transition duration-300 
+                  className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
                                 hover:scale-x-105 ml-6 overflow-hidden"
                 >
                   <a href="#" className="w-12/12 flex justify-center">
@@ -519,7 +519,7 @@ function App() {
           </div>
 
           <div className="bookHolder lg:hidden flex flex-wrap gap-5 justify-center items-center mt-10">
-            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg ">
+            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl ">
               <a href="#" className="w-12/12 flex justify-center">
                 <img
                   className="rounded-t-lg"
@@ -550,7 +550,7 @@ function App() {
               </div>
             </div>
             <div
-              className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg   transform transition duration-500 
+              className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl   transform transition duration-500 
                                 hover:scale-110"
             >
               <a href="#" className="w-12/12 flex justify-center">
@@ -582,7 +582,7 @@ function App() {
                 </button>
               </div>
             </div>
-            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg ">
+            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl ">
               <a href="#" className="w-12/12 flex justify-center">
                 <img
                   className="rounded-t-lg"
@@ -612,38 +612,7 @@ function App() {
                 </button>
               </div>
             </div>
-            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg ">
-              <a href="#" className="w-12/12 flex justify-center">
-                <img
-                  className="rounded-t-lg"
-                  src="./images/5am.jpg"
-                  alt=""
-                  width={75}
-                  height={60}
-                />
-              </a>
-              <div className="p-5">
-                <a href="#">
-                  <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
-                    The 5AM Club
-                  </p>
-                </a>
-                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
-                  Author: Robin Sharma
-                </p>
-                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
-                  Price: Rs 900
-                </p>
-                <button
-                  type="button"
-                  className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-
-            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg ">
+            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl ">
               <a href="#" className="w-12/12 flex justify-center">
                 <img
                   className="rounded-t-lg"
@@ -674,7 +643,38 @@ function App() {
               </div>
             </div>
 
-            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-lg ">
+            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl ">
+              <a href="#" className="w-12/12 flex justify-center">
+                <img
+                  className="rounded-t-lg"
+                  src="./images/5am.jpg"
+                  alt=""
+                  width={75}
+                  height={60}
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                    The 5AM Club
+                  </p>
+                </a>
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Author: Robin Sharma
+                </p>
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Price: Rs 900
+                </p>
+                <button
+                  type="button"
+                  className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+
+            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl ">
               <a href="#" className="w-12/12 flex justify-center">
                 <img
                   className="rounded-t-lg"
