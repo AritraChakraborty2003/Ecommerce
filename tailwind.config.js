@@ -10,6 +10,8 @@ export default {
       black: "#000000",
       white: "#FFFFFF",
       blue: "#1fb6ff",
+      red: "#FF0000",
+      brown: "#c4793c",
       purple: "#7e5bef",
       pink: "#ff49db",
       orange: "#ff7849",
