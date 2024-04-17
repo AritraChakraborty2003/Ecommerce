@@ -11,7 +11,7 @@ import "./App.css";
 function App() {
   const [status, setStatus] = useState(false);
   const [count, setCount] = useState(0);
-<<<<<<< HEAD
+
   const xl = [
     "./images/1.png",
     "./images/2.png",
@@ -25,23 +25,40 @@ function App() {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "#FFC300" ,width:"30px", height:"30px",display:"flex",justifyContent:"center",alignItems:"center"}}
+        style={{
+          ...style,
+          display: "flex",
+          background: "#FFC300",
+          width: "30px",
+          height: "30px",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         onClick={onClick}
       />
     );
   }
-  
+
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "#FFC300",width:"30px", height:"30px",display:"flex",justifyContent:"center",alignItems:"center"}}
+        style={{
+          ...style,
+
+          background: "#FFC300",
+          width: "30px",
+          height: "30px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         onClick={onClick}
       />
     );
   }
-  if(screen.width>=1100 && screen.width<=1299){
+  if (screen.width >= 1100 && screen.width <= 1299) {
     var settings = {
       dots: false,
       infinite: true,
@@ -49,34 +66,30 @@ function App() {
       slidesToShow: 4,
       slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />
+      prevArrow: <SamplePrevArrow />,
+    };
+  } else if (screen.width >= 1300 && screen.width < 1600) {
+    settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
+    };
+  } else {
+    settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
     };
   }
-else if(screen.width>=1300 && screen.width<1600){
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
-  };
-}
-else{
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
-  };
-}
 
-
->>>>>>> e8a89de54ecc5ad390d23dcf513356dc462118fd
   useEffect(() => {
     //Implementing the setInterval method
     const interval = setInterval(() => {
