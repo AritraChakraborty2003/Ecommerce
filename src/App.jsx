@@ -11,7 +11,7 @@ import "./App.css";
 function App() {
   const [status, setStatus] = useState(false);
   const [count, setCount] = useState(0);
-<<<<<<< HEAD
+
   const xl = [
     "./images/1.png",
     "./images/2.png",
@@ -19,7 +19,7 @@ function App() {
     "./images/4.png",
   ];
   var n = xl.length;
-=======
+
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -75,8 +75,6 @@ else{
   };
 }
 
-
->>>>>>> e8a89de54ecc5ad390d23dcf513356dc462118fd
   useEffect(() => {
     //Implementing the setInterval method
     const interval = setInterval(() => {
