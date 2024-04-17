@@ -6,20 +6,19 @@ import "./App.css";
 function App() {
   const [status, setStatus] = useState(false);
   const [count, setCount] = useState(0);
-
+  const xl = [
+    "./images/1.png",
+    "./images/2.png",
+    "./images/3.png",
+    "./images/4.png",
+  ];
+  var n = xl.length;
   useEffect(() => {
     //Implementing the setInterval method
-    if (screen.width >= 1279 && screen.width < 1400) {
-      document.getElementById("bannerScreen").innerHTML = `<img
-          src="./images/mac4.png"
-          className="max-w-full max-height-full object-contain"
-        ></img>`;
-    }
-
     const interval = setInterval(() => {
-      document.getElementById("cntText").innerHTML = count;
-      setCount(count + 1);
-    }, 2000);
+      const cnt = (count + 1) % n;
+      setCount(cnt);
+    }, 2700);
 
     //Clearing the interval
     return () => clearInterval(interval);
@@ -112,7 +111,38 @@ function App() {
         <div
           className="Banner  h-96  banner w-12/12   bg-no-repeat "
           id="bannerScreen"
-        ></div>
+        >
+          {(width >= 0 && width < 750 && (
+            <img
+              src="./images/mobile1.png"
+              className="max-w-full max-height-full object-contain"
+            ></img>
+          )) ||
+            (width >= 750 && width < 1279 && (
+              <img
+                src="./images/tab.png"
+                className="max-w-full max-height-full object-contain"
+              ></img>
+            )) ||
+            (width >= 1279 && width < 1400 && (
+              <img
+                src="./images/mac1.png"
+                className="max-w-full max-height-full object-contain"
+              ></img>
+            )) ||
+            (width >= 1400 && width <= 1700 && (
+              <img
+                src={xl[count]}
+                className="max-w-full max-height-full object-contain"
+              ></img>
+            )) ||
+            (width >= 1700 && width <= 2048 && (
+              <img
+                src="./images/ol3.png"
+                className="max-w-full max-height-full object-contain"
+              ></img>
+            ))}
+        </div>
 
         <div className="supportLinks hidden md:block">
           <div className="flex bg-darkwhite justify-center h-15 p-5 space-x-10 lg:h-15 md:space-x-28 ">
@@ -151,9 +181,10 @@ function App() {
           </div>
           <div className="flex w-12/12  justify-center mt-4">
             <ul className="flex gap-x-10 lg:gap-x-20 text-1xl font-semibold lg:text-2xl">
-              <li className="  pr-3">Fiction</li>
-              <li className="pr-3">Non-Fiction</li>
-              <li className="pr-3">Competetive</li>
+              <li className="pr-3 md:border-r-4">Fiction</li>
+              <li className="pr-3 md:border-r-4">Non-Fiction</li>
+
+              <li className="pr-3 md:border-r-4">Competetive</li>
             </ul>
           </div>
 
