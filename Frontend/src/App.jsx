@@ -3,6 +3,7 @@ import viteLogo from "/vite.svg";*/
 import Foot from "./components/Foot";
 import First from "./components/First";
 import Banner from "./components/Banner";
+import Cmsbooks from "./components/Cmsbooks";
 import Item from "./components/Item";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/footer" element={<Foot />}></Route>
           <Route path="/banner" element={<Banner />}></Route>
           <Route path="/books" element={<Item />}></Route>
+          <Route path="/cms" element={<Cmsbooks />}></Route>
         </Routes>
       </BrowserRouter>
     </>
