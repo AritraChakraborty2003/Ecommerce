@@ -726,94 +726,449 @@ function First() {
             </button>
           </div>
         </div>
-
-        <div className="booksBox mt-10">
-          <div className="classNameBooks  flex-col w-12/12 justify-center font-bold">
-            <p className="text-4xl lg:text-6xl h-20 flex justify-center ml-5">
-              Merchendise
+        <div className="merchBox md:mt-10 pb-10 ">
+          <div className="classNameBooks lg:h-35 flex w-12/12 justify-center font-bold ">
+            <p className="text-4xl lg:text-6xl  font-extrabold text-orange mt-10 overflow-hidden">
+              Merch
             </p>
-            <span className="slogan text-center flex justify-center items-start">
-              ( Not only books we have merchendise too!!! )
-            </span>
           </div>
 
-          <div className="flex w-12/12   p-5 justify-center items-center gap-5 flex-wrap mt-3">
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-4 w-90">
-              <div className="imageHolder h-60 w-90 flex justify-center">
-                <a href="#">
+          <div className="holder h-96 hidden lg:block mt-10">
+            <Slider {...settings} className="h-96">
+              <div
+                className="max-w-[230px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
+                                hover:scale-x-110 ml-6 overflow-hidden"
+              >
+                <a href="#" className="w-12/12 flex justify-center">
                   <img
-                    className="rounded-t-lg max-w-full max-h-full object-contain"
-                    src="./images/pens.jpeg"
+                    className="rounded-t-lg border-solid border-grey-2 shadow-xl"
+                    src="./images/5am.jpg"
                     alt=""
+                    width={75}
+                    height={60}
                   />
                 </a>
+                <div className="p-5">
+                  <a href="#">
+                    <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                      The 5AM Club
+                    </p>
+                  </a>
+                  <p className="mb-3 font-semibold text-sm text-brown dark:text-gray-400">
+                    by Robin Sharma
+                  </p>
+                  <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                    Price: Rs 900
+                  </p>
+                  <button
+                    type="button"
+                    className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
               </div>
+              <div
+                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden"
+              >
+                <a href="#" className="w-12/12 flex justify-center">
+                  <img
+                    className="rounded-t-lg"
+                    src="./images/rpd.jpg"
+                    alt=""
+                    width={75}
+                    height={60}
+                  />
+                </a>
+                <div className="p-5">
+                  <a href="#">
+                    <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                      Rich Dad Poor Dad
+                    </p>
+                  </a>
+                  <p className="mb-3 font-semibold text-sm text-brown  dark:text-gray-400">
+                    by Robert T Kiyosaki
+                  </p>
+                  <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                    Price: Rs 900
+                  </p>
+                  <button
+                    type="button"
+                    className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+              <div
+                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden"
+              >
+                <a href="#" className="w-12/12 flex justify-center">
+                  <img
+                    className="rounded-t-lg"
+                    src="./images/monk.jpg"
+                    alt=""
+                    width={75}
+                    height={60}
+                  />
+                </a>
+                <div className="p-5">
+                  <a href="#">
+                    <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                      Monk who sold his ferrari
+                    </p>
+                  </a>
+                  <p className="mb-3 font-semibold text-sm text-brown  dark:text-gray-400">
+                    by Robin Sharma
+                  </p>
+                  <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                    Price: Rs 900
+                  </p>
+                  <button
+                    type="button"
+                    className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+              <div
+                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden"
+              >
+                <a href="#" className="w-12/12 flex justify-center">
+                  <img
+                    className="rounded-t-lg"
+                    src="./images/doglapan.jpg"
+                    alt=""
+                    width={75}
+                    height={60}
+                  />
+                </a>
+                <div className="p-5">
+                  <a href="#">
+                    <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                      Doglapan
+                    </p>
+                  </a>
+                  <p className="mb-3 font-semibold text-sm text-brown  dark:text-gray-400">
+                    by Ashneer Grover
+                  </p>
+                  <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                    Price: Rs 900
+                  </p>
+                  <button
+                    type="button"
+                    className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+
+              <div
+                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden"
+              >
+                <a href="#" className="w-12/12 flex justify-center">
+                  <img
+                    className="rounded-t-lg"
+                    src="./images/psychology.jpeg"
+                    alt=""
+                    width={75}
+                    height={55}
+                  />
+                </a>
+                <div className="p-5">
+                  <a href="#">
+                    <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                      Psychology Of Money
+                    </p>
+                  </a>
+                  <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                    Author: Morgan Housel
+                  </p>
+                  <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                    Price: Rs 900
+                  </p>
+                  <button
+                    type="button"
+                    className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+              <div
+                className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden"
+              >
+                <a href="#" className="w-12/12 flex justify-center">
+                  <img
+                    className="rounded-t-lg"
+                    src="./images/5am.jpg"
+                    alt=""
+                    width={75}
+                    height={60}
+                  />
+                </a>
+                <div className="p-5">
+                  <a href="#">
+                    <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                      The 5AM Club
+                    </p>
+                  </a>
+                  <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                    Author: Robin Sharma
+                  </p>
+                  <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                    Price: Rs 900
+                  </p>
+                  <button
+                    type="button"
+                    className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+                <div
+                  className="max-w-[250px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
+                                hover:scale-x-105 ml-6 overflow-hidden"
+                >
+                  <a href="#" className="w-12/12 flex justify-center">
+                    <img
+                      className="rounded-t-lg"
+                      src="./images/5am.jpg"
+                      alt=""
+                      width={75}
+                      height={60}
+                    />
+                  </a>
+                  <div className="p-5">
+                    <a href="#">
+                      <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                        The 5AM Club
+                      </p>
+                    </a>
+                    <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                      Author: Robin Sharma
+                    </p>
+                    <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                      Price: Rs 900
+                    </p>
+                    <button
+                      type="button"
+                      className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                    >
+                      Add To Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </Slider>
+          </div>
+          <div className="btnContainer hidden lg:block">
+            <div className="flex justify-center items-center">
+              <button type="button" className=" bg-orange text-white p-3">
+                More Books
+              </button>
+            </div>
+          </div>
+
+          <div className="bookHolder lg:hidden flex flex-wrap gap-5 justify-center items-center mt-10 ">
+            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl ">
+              <a href="#" className="w-12/12 flex justify-center">
+                <img
+                  className="rounded-t-lg"
+                  src="./images/5am.jpg"
+                  alt=""
+                  width={75}
+                  height={60}
+                />
+              </a>
               <div className="p-5">
                 <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Pens
-                  </h5>
+                  <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                    The 5AM Club
+                  </p>
                 </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Check out our pens merchandise !!!
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Author: Robin Sharma
                 </p>
-
-                <button className="bg-orange font-white p-3 text-white">
-                  Checkout
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Price: Rs 900
+                </p>
+                <button
+                  type="button"
+                  className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+            <div
+              className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl   transform transition duration-500 
+                                hover:scale-110"
+            >
+              <a href="#" className="w-12/12 flex justify-center">
+                <img
+                  className="rounded-t-lg"
+                  src="./images/5am.jpg"
+                  alt=""
+                  width={75}
+                  height={60}
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                    The 5AM Club
+                  </p>
+                </a>
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Author: Robin Sharma
+                </p>
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Price: Rs 900
+                </p>
+                <button
+                  type="button"
+                  className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl ">
+              <a href="#" className="w-12/12 flex justify-center">
+                <img
+                  className="rounded-t-lg"
+                  src="./images/5am.jpg"
+                  alt=""
+                  width={75}
+                  height={60}
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                    The 5AM Club
+                  </p>
+                </a>
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Author: Robin Sharma
+                </p>
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Price: Rs 900
+                </p>
+                <button
+                  type="button"
+                  className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl ">
+              <a href="#" className="w-12/12 flex justify-center">
+                <img
+                  className="rounded-t-lg"
+                  src="./images/5am.jpg"
+                  alt=""
+                  width={75}
+                  height={60}
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                    The 5AM Club
+                  </p>
+                </a>
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Author: Robin Sharma
+                </p>
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Price: Rs 900
+                </p>
+                <button
+                  type="button"
+                  className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                >
+                  Add To Cart
                 </button>
               </div>
             </div>
 
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-4 w-80">
-              <div className="imageHolder h-60 w-90 flex justify-center">
-                <a href="#">
-                  <img
-                    className="rounded-t-lg max-w-full max-h-full object-contain"
-                    src="./images/cups.webp"
-                    alt=""
-                  />
-                </a>
-              </div>
+            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl ">
+              <a href="#" className="w-12/12 flex justify-center">
+                <img
+                  className="rounded-t-lg"
+                  src="./images/5am.jpg"
+                  alt=""
+                  width={75}
+                  height={60}
+                />
+              </a>
               <div className="p-5">
                 <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Cups
-                  </h5>
+                  <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                    The 5AM Club
+                  </p>
                 </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  The designer cups for gifts!!!
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Author: Robin Sharma
                 </p>
-
-                <button className="bg-orange font-white p-3 text-white">
-                  Checkout
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Price: Rs 900
+                </p>
+                <button
+                  type="button"
+                  className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                >
+                  Add To Cart
                 </button>
               </div>
             </div>
 
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-4">
-              <div className="imageHolder h-60 w-90 flex justify-center">
-                <a href="#">
-                  <img
-                    className="rounded-t-lg max-w-full max-h-full object-contain"
-                    src="./images/diary.jpeg"
-                    alt=""
-                  />
-                </a>
-              </div>
+            <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl ">
+              <a href="#" className="w-12/12 flex justify-center">
+                <img
+                  className="rounded-t-lg"
+                  src="./images/5am.jpg"
+                  alt=""
+                  width={75}
+                  height={60}
+                />
+              </a>
               <div className="p-5">
                 <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Diary
-                  </h5>
+                  <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                    The 5AM Club
+                  </p>
                 </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  The best writing diaries for gifting
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Author: Robin Sharma
                 </p>
-
-                <button className="bg-orange font-white p-3 text-white">
-                  Checkout
+                <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Price: Rs 900
+                </p>
+                <button
+                  type="button"
+                  className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                >
+                  Add To Cart
                 </button>
               </div>
+            </div>
+          </div>
+          <div className="btnContainer block lg:hidden mt-7">
+            <div className="flex justify-center items-center">
+              <button type="button" className=" bg-orange text-white p-3">
+                More Books
+              </button>
             </div>
           </div>
         </div>
