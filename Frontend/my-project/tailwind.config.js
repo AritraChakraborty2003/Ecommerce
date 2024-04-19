@@ -43,8 +43,6 @@ export default {
       oxygen: ["Oxygen"],
       roboto: ["Roboto"],
     },
-
-    extend: {},
   },
   plugins: [],
 };
