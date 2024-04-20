@@ -12,7 +12,12 @@ import Header from "./Header";
 function First() {
   //
   const [count, setCount] = useState(0);
-
+  const ml = [
+    "./images/mobile1.png",
+    "./images/mobile2.png",
+    "./images/mobile3.png",
+    "./images/mobile4.png",
+  ];
   const xl = [
     "./images/1.png",
     "./images/2.png",
@@ -113,7 +118,7 @@ function First() {
         >
           {(width >= 0 && width < 750 && (
             <img
-              src="./images/mobile1.png"
+              src={ml[count]}
               className="max-w-full max-height-full object-contain"
             ></img>
           )) ||
@@ -639,7 +644,7 @@ function First() {
         <div className="merchBox md:mt-10 pb-10 ">
           <div className="classNameBooks lg:h-35 flex w-12/12 justify-center font-bold ">
             <p className="text-4xl lg:text-6xl  font-extrabold text-orange mt-10 overflow-hidden">
-              Merch
+              Merchs
             </p>
           </div>
 

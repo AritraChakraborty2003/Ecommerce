@@ -18,10 +18,12 @@ const Header = () => {
           </div>
           <div className="navBar bg-darkwhite  h-20 flex  justify-between">
             <div className="logoHolder  h-20 w-1/3 p-2 flex justify-center items-center">
-              <img
-                src="./images/logo-black.png"
-                className="max-w-full max-h-full object-contain"
-              ></img>
+              <a href="/">
+                <img
+                  src="./images/logo-black.png"
+                  className="max-w-full max-h-full object-contain"
+                ></img>
+              </a>
             </div>
 
             <div className="IconHolder  h-20 w-2/3 p-2 hidden lg:block">

@@ -154,7 +154,7 @@ const Item = () => {
             </div>
           </div>
         )}
-        <div className="display mt-3 flex flex-wrap gap-5  w-[100vw] lg:w-[71vw]">
+        <div className="display mt-3 flex flex-wrap gap-5  w-[100vw] lg:w-[71vw] justify-center items-center">
           <div
             className="w-[230px] h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
                                 hover:scale-x-110 ml-6 overflow-hidden"
@@ -192,7 +192,7 @@ const Item = () => {
             className="w-[230px] h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
                                 hover:scale-x-110 ml-6 overflow-hidden"
           >
-            <a href="#" className="w-12/12 flex justify-center">
+            <a href="/details" className="w-12/12 flex justify-center">
               <img
                 className="rounded-t-lg border-solid border-grey-2 shadow-xl"
                 src="./images/rpd.jpg"

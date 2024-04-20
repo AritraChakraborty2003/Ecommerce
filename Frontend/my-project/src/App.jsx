@@ -2,6 +2,7 @@
 import viteLogo from "/vite.svg";*/
 import Foot1 from "./components/Foot1";
 import First from "./components/First";
+import Detailspage from "./components/Detailspage";
 import Banner from "./components/Banner";
 import Cmsbooks from "./components/Cmsbooks";
 import Item from "./components/Item";
@@ -19,6 +20,7 @@ function App() {
           <Route path="/banner" element={<Banner />}></Route>
           <Route path="/books" element={<Item />}></Route>
           <Route path="/cms" element={<Cmsbooks />}></Route>
+          <Route path="/details" element={<Detailspage />}></Route>
         </Routes>
       </BrowserRouter>
     </>
