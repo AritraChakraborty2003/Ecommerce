@@ -16,7 +16,7 @@ const Header = () => {
               </ul>
             </div>
           </div>
-          <div className="navBar bg-darkwhite  h-20 flex  justify-between">
+          <div className=".fixed relative .top-0 navBar bg-darkwhite  h-20 flex  justify-between">
             <div className="logoHolder  h-20 w-1/3 p-2 flex justify-center items-center">
               <a href="/">
                 <img

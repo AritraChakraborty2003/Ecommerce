@@ -87,11 +87,11 @@ const Detailspage = (props) => {
 
                 <li>
                   <p>Delivery Within 6 to 8 business days</p>
-                  <div className="flex space-x-10 mt-5">
+                  <div className="flex space-x-11 mt-5">
                     <img src="./images/new.png" height={30} width={70}></img>
                     <img
                       src="./images/bestseller.png"
-                      height={30}
+                      height={20}
                       width={70}
                     ></img>
                     <img
