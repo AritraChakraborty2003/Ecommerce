@@ -95,10 +95,11 @@ const Cms = () => {
       <p className="mt-3 text-center font-roboto font-bold text-4xl overflow-hidden">
         Fill the details
       </p>
-      <div className="formHolder mt-3">
+      <div className="formHolder mt-3" id="formHolder">
         <form
+          id="form1"
           encType="multipart/form"
-          className="w-[90vmin] lg:w-[70vmin] p-5 mb-4"
+          className="w-[90vmin] lg:w-[80vmin] p-5 mb-4"
         >
           <input
             className="text-lg"

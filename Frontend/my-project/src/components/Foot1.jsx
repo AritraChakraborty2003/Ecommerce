@@ -525,8 +525,37 @@ const Foot1 = () => {
               </div>
             </div>
 
-            <div className="leftPart border-solid border-2 w-[90vmin]">
-              This is a text
+            <div className="leftPart  w-[90vmin] flex justify-center">
+              <div className="pl-10 flex space-x-10 items-start mt-10 footerBox w-[70vmin]  h-5/6">
+                <div className="box">
+                  <h5 className="text-xl font-roboto font-bold">Brand Story</h5>
+                  <ul className="text-lg font-poppins mt-3">
+                    <li className="mt-1">About us</li>
+                    <li className="mt-1">Contact Us</li>
+                    <li className="mt-1">Blogs</li>
+                  </ul>
+                </div>
+                <div className="box">
+                  <h5 className="text-xl font-roboto font-bold">Shop Now</h5>
+                  <ul className="text-lg font-poppins mt-2">
+                    <li className="mt-1">Books</li>
+                    <li className="mt-1">Merchendises</li>
+                    <li className="mt-1">Worship Materials</li>
+                    <li className="mt-1">Corporate Gifts</li>
+                  </ul>
+                </div>
+                <div className="box">
+                  <h5 className="text-2xl font-roboto font-bold">Policies</h5>
+
+                  <ul className="text-lg font-poppins mt-2">
+                    <li className="mt-1">Privacy</li>
+                    <li className="mt-1">Shipping & Returns</li>
+                    <li className="mt-1">Payment & Refunds</li>
+                    <li className="mt-1">T&C</li>
+                    <li className="mt-1">Track your Order</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         ))}

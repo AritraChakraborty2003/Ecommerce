@@ -1,8 +1,17 @@
+/* eslint-disable react/prop-types */
 import Header from "./Header";
 import Foot1 from "./Foot1";
-const Detailspage = () => {
+import { useLocation } from "react-router-dom";
+const Detailspage = (props) => {
+  const location = useLocation();
+  console.log(location.state.val);
+  let p = location.state.val.price;
+  let d = location.state.val.discount;
+  const x = Math.trunc((p * 100) / (100 - d));
+  console.log(x);
   return (
     <>
+      {console.log(props.dataObj)}
       <body className="bg-darkwhite">
         <Header />
         <div className="mainArea bg-darkwhite flex justify-center  flex-wrap">
@@ -11,7 +20,7 @@ const Detailspage = () => {
               <a href="/details">
                 {" "}
                 <img
-                  src="./images/rpd.jpg"
+                  src={location.state.val.image}
                   className="max-w-full max-h-full object-contain"
                 ></img>
               </a>
@@ -19,20 +28,20 @@ const Detailspage = () => {
           </div>
           <div className="bookHolder w-[650px]  p-5">
             <p className="text-4xl font-extrabold overflow-hidden">
-              Rich Dad and Poor Dad
+              {location.state.val.name}
             </p>
             <br />
-            <p className="font-grey">(by Robert T. Kiyosaki)</p>
+            <p className="font-grey">({location.state.val.author})</p>
             <br />
             <div className="priceContainer flex space-x-5">
               <p className="line-through text-black text-xl font-roboto font-medium overflow-hidden">
-                Rs. 800
+                Rs. {x}
               </p>
               <p className=" text-brown text-2xl font-roboto font-bold overflow-hidden">
-                Rs. 720
+                Rs. {location.state.val.price}
               </p>
               <p className=" text-black text-lg font-medium font-oxygen">
-                Save 10%
+                Save {location.state.val.discount}%
               </p>
             </div>
 
@@ -45,32 +54,31 @@ const Detailspage = () => {
                   Binding: Hardcover
                 </li>
                 <li className="mt-3 font-medium font-roboto text-md">
-                  Category: Self Help
+                  Category:{location.state.val.category}
                 </li>
 
                 <li>
                   <div className="box1   lg:w-5/6 mt-5">
-                    <div className="box1 h-10 border-solid border-2 flex justify-center items-center">
+                    <div className="box1 h-10 border-solid border-2 flex justify-center items-center rounded-xl">
                       <p className="text-md overflow-hidden font-bold font-oxygen">
                         Add to Cart
                       </p>
                     </div>
                     <div className="flex lg:w-12/12 mt-3 space-x-3">
-                      <div className="box1 h-10 border-gray-2  bg-mustardyellow flex justify-center items-center w-1/2 text-black">
+                      <div className="box1 h-10 border-gray-2  bg-mustardyellow flex justify-center items-center w-1/2 text-black rounded-xl">
                         <p className="text-md overflow-hidden font-bold">
                           Buy Now
                         </p>
                       </div>
-                      <div className="box1 h-10 border-solid border-2 flex justify-center items-center w-1/2">
-                        <div className="holder flex space-x-5">
+                      <div className="box1 h-10 border-solid border-2 flex justify-center items-center w-1/2 rounded-xl">
+                        <div className="holder flex space-x-5 ">
                           <img
                             src="./images/heart.png"
                             height={10}
                             width={20}
                           ></img>
-                          <p className="text-md overflow-hidden">
-                            Shortlist Product
-                          </p>
+
+                          <p className="text-md">Shortlist Product</p>
                         </div>
                       </div>
                     </div>
@@ -138,8 +146,8 @@ const Detailspage = () => {
             </div>
           </div>
           <div
-            className="w-[230px] h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
-                                hover:scale-x-110 ml-6 overflow-hidden"
+            className="w-[230px] h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+                                hover:scale-x-110 ml-6 "
           >
             <a href="#" className="w-12/12 flex justify-center">
               <img
@@ -171,8 +179,8 @@ const Detailspage = () => {
             </div>
           </div>
           <div
-            className="w-[230px] h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
-                                hover:scale-x-110 ml-6 overflow-hidden"
+            className="w-[230px] h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+                                hover:scale-x-110 ml-6 "
           >
             <a href="#" className="w-12/12 flex justify-center">
               <img
@@ -204,8 +212,8 @@ const Detailspage = () => {
             </div>
           </div>
           <div
-            className="w-[230px] h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
-                                hover:scale-x-110 ml-6 overflow-hidden"
+            className="w-[230px] h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+                                hover:scale-x-110 ml-6"
           >
             <a href="#" className="w-12/12 flex justify-center">
               <img
