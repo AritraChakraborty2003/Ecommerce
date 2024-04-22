@@ -84,7 +84,7 @@ const Booksfirstpage = () => {
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 6,
+      slidesToShow: 7,
       slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,

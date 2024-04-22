@@ -7,6 +7,7 @@ import Detailspage from "./components/Detailspage";
 import Banner from "./components/Banner";
 import Item from "./components/Item";
 import Cms from "./components/Cms";
+import Cart from "./components/Cart";
 import Booksfirstpage from "./components/Booksfirstpage";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -24,6 +25,7 @@ function App() {
           <Route path="/cms" element={<Cms />}></Route>
           <Route path="/details" element={<Detailspage />}></Route>
           <Route path="/booksFirst" element={<Booksfirstpage />}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
         </Routes>
       </BrowserRouter>
     </>
