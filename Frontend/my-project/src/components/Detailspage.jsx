@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import Header from "./Header";
 import Foot1 from "./Foot1";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 const Detailspage = (props) => {
+  const [statusDescription, setStatusDescription] = useState(false);
+  const [statusDetails, setStatusDetails] = useState(false);
   const location = useLocation();
   console.log(location.state.val);
   let p = location.state.val.price;
@@ -14,7 +17,7 @@ const Detailspage = (props) => {
       {console.log(props.dataObj)}
       <body className="bg-darkwhite">
         <Header />
-        <div className="mainArea bg-darkwhite flex justify-center  flex-wrap">
+        <div className="mainArea bg-darkwhite flex justify-center  flex-wrap mb-5">
           <div className="bookHolder w-[600px] flex justify-center mt-3 lg:mt-10 p-5">
             <div className="imgHolder h-52 lg:h-96 w-[400px] flex justify-center ">
               <a href="/details">
@@ -27,7 +30,7 @@ const Detailspage = (props) => {
             </div>
           </div>
           <div className="bookHolder w-[650px]  p-5">
-            <p className="text-4xl font-extrabold overflow-hidden">
+            <p className="text-4xl font-extrabold overflow-hidden h-11">
               {location.state.val.name}
             </p>
             <br />
@@ -102,7 +105,67 @@ const Detailspage = (props) => {
                   </div>
                 </li>
 
-                <li className="mt-3"></li>
+                <li className="mt-5 p-2 border-solid border-b-2 flex w-[75vmin]">
+                  <div className="details text-xl text-black font-extrabold font-poppins w-11/12">
+                    Description
+                  </div>
+                  <div className="imageBox h-10 w-1/12overflow-hidden">
+                    <img
+                      id="imgIcon1"
+                      src="./images/ricon.png"
+                      className="max-w-full max-h-full object-contain"
+                      onClick={() => {
+                        if (statusDescription) {
+                          document.getElementById("imgIcon1").src =
+                            "./images/ricon.png";
+                          setStatusDescription(false);
+                        } else {
+                          document.getElementById("imgIcon1").src =
+                            "./images/downicon.png";
+                          setStatusDescription(true);
+                        }
+                      }}
+                    ></img>
+                  </div>
+                </li>
+                {statusDescription ? (
+                  <li className="mt-1 p-2  flex w-[75vmin]">
+                    <div className="details text-xl text-black  font-poppins w-11/12 font-normal">
+                      {location.state.val.descr}
+                    </div>
+                  </li>
+                ) : null}
+                <li className="mt-1 p-2 border-solid border-b-2 flex w-[75vmin]">
+                  <div className="details text-xl text-black font-extrabold font-poppins w-11/12">
+                    Other Details
+                  </div>
+                  <div className="imageBox h-10 w-1/12overflow-hidden">
+                    <img
+                      src="./images/ricon.png"
+                      id="imgIcon3"
+                      className="max-w-full max-h-full object-contain"
+                      onClick={() => {
+                        if (statusDetails) {
+                          document.getElementById("imgIcon3").src =
+                            "./images/ricon.png";
+                          setStatusDetails(false);
+                        } else {
+                          document.getElementById("imgIcon3").src =
+                            "./images/downicon.png";
+                          setStatusDetails(true);
+                        }
+                      }}
+                    ></img>
+                  </div>
+                </li>
+
+                {statusDetails ? (
+                  <li className="mt-1 p-2  flex w-[75vmin]">
+                    <div className="details text-xl text-black  font-poppins w-11/12 font-normal">
+                      {location.state.val.descr}
+                    </div>
+                  </li>
+                ) : null}
               </ul>
             </div>
           </div>

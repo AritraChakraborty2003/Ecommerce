@@ -103,7 +103,7 @@ function First() {
             <Slider {...settings} className="h-96">
               <div
                 className="max-w-[230px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
-                                hover:scale-x-110 ml-6 overflow-hidden"
+                                hover:scale-x-110 ml-6"
               >
                 <a href="#" className="w-12/12 flex justify-center">
                   <img

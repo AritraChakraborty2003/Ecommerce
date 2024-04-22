@@ -100,9 +100,15 @@ const Booksfirstpage = () => {
         </div>
         <div className="flex w-12/12  justify-center mt-4">
           <ul className="flex gap-x-10 lg:gap-x-20 text-1xl font-semibold lg:text-xl">
-            <li className="pr-4 md:border-r-4">Fiction</li>
-            <li className="pr-4 md:border-r-4">Non-Fiction</li>
-            <li className="pr-4 md:border-r-4">Competetive</li>
+            <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-2 hover:decoration-8 hover:decoration-mustardyellow">
+              Fiction
+            </li>
+            <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-2 hover:decoration-8 hover:decoration-mustardyellow">
+              Non-Fiction
+            </li>
+            <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-4 hover:decoration-8 hover:decoration-mustardyellow">
+              Competetive
+            </li>
           </ul>
         </div>
 

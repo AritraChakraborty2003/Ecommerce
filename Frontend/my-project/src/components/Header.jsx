@@ -59,11 +59,14 @@ const Header = () => {
                     className="max-h-full max-w-full object-contain"
                   ></img>
                 </div>
-                <div className="imgHolder   h-15  w-15 flex items-center">
-                  <img
-                    src="./images/cart.png"
-                    className="max-h-full max-w-full object-contain"
-                  ></img>
+
+                <div className="imgHolder w-15 flex items-center overflow-hidden">
+                  <a href="/cart">
+                    <img
+                      src="./images/cart.png"
+                      className="w-[50px] h-[50px]"
+                    ></img>
+                  </a>
                 </div>
               </div>
             </div>
@@ -96,7 +99,20 @@ const Header = () => {
               <li className="text-15 mt-5">Traditionals</li>
               <li className="text-15 mt-5">Clothes</li>
               <li className="text-15 mt-5">Contact</li>
-              <li className="text-15 mt-5">Icons</li>
+              <li className="text-15 mt-5 flex space-x-4">
+                <div className="w-10 h-15">
+                  <img
+                    src="./images/user1.png"
+                    className="max-w-full max-h-full object-contain"
+                  ></img>
+                </div>
+                <div className="w-10 h-15">
+                  <img
+                    src="./images/cart.png"
+                    className="max-w-full max-h-full object-contain"
+                  ></img>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
