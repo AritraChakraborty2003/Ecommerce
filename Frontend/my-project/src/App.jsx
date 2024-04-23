@@ -5,6 +5,7 @@ import First from "./components/First";
 //import Fetchdata from "./components/Fetchdata";
 import Detailspage from "./components/Detailspage";
 import Banner from "./components/Banner";
+import FilterLogic from "./components/FilterLogic";
 import Item from "./components/Item";
 import Cms from "./components/Cms";
 import Cart from "./components/Cart";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/details" element={<Detailspage />}></Route>
           <Route path="/booksFirst" element={<Booksfirstpage />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/Filter" element={<FilterLogic />}></Route>
         </Routes>
       </BrowserRouter>
     </>

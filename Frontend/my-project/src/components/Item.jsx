@@ -28,145 +28,163 @@ const Item = () => {
       </div>
       <div className="mainArea bg-darkwhite w-screen flex space-x-3 pb-5">
         {screen.width >= 1280 && screen.width < 1700 && (
-          <div className="filter flex-column hidden lg:block lg: w-[400px]">
-            <div className="boxFilter  w-[400px]  ">
-              <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
-                Genre
-              </p>
-              <ul className="ml-10 mt-4">
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" />
-                  Fictional
-                </li>
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" /> Non
-                  Fictional
-                </li>
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" />
-                  Competetive
-                </li>
-              </ul>
-            </div>
-            <div className="boxFilter w-[400px]">
-              <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
-                Price Range
-              </p>
-              <ul className="ml-10 mt-4">
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" />{" "}
-                  upto 500
-                </li>
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" /> Non
-                  Rs 500-750
-                </li>
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" /> Rs
-                  1000 -above
-                </li>
-              </ul>
-            </div>
-            <div className="boxFilter  w-[400px] ">
-              <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
-                Language
-              </p>
-              <ul className="ml-10 mt-4">
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" />{" "}
-                  English
-                </li>
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" /> Non
-                  Bengali
-                </li>
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" />{" "}
-                  Hindi
-                </li>
+          <>
+            <div className="filter flex-column hidden lg:block lg: w-[400px]">
+              <div className="boxFilter  w-[400px]  ">
+                <h1 className="mt-1 ml-3 text-4xl  font-poppins font-bold overflow-hidden">
+                  Filter{" "}
+                  <span className="text-2xl font-medium">( your needs )</span>
+                </h1>
+                <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
+                  Genre
+                </p>
+                <ul className="ml-10 mt-4">
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />
+                    Fictional
+                  </li>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    Non Fictional
+                  </li>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />
+                    Competetive
+                  </li>
+                </ul>
+              </div>
+              <div className="boxFilter w-[400px]">
+                <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
+                  Price Range
+                </p>
+                <ul className="ml-10 mt-4">
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    upto 500
+                  </li>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    Non Rs 500-750
+                  </li>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    Rs 1000 -above
+                  </li>
+                </ul>
+              </div>
+              <div className="boxFilter  w-[400px] mt-4">
+                <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
+                  Author
+                </p>
+                <ul className="ml-10 mt-4">
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    Chetan Bhagat
+                  </li>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    RK Saini
+                  </li>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    Robin Sharma
+                  </li>
 
-                <li className="mt-5 w-full flex justify-start">
-                  <button
-                    type="button"
-                    className="focus:outline-none text-white bg-red hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-md px-2 py-2 mb-2"
-                  >
-                    Search
-                  </button>
-                </li>
-              </ul>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    RS Aggarwal
+                  </li>
+
+                  <li className="mt-5 w-full flex justify-start">
+                    <button
+                      type="button"
+                      className="focus:outline-none text-white bg-red hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-md px-2 py-2 mb-2"
+                    >
+                      Clear
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
+          </>
         )}
         {screen.width >= 1700 && (
-          <div className="filter flex-column hidden lg:block  w-[600px]">
-            <div className="boxFilter  w-[400px]  ">
-              <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
-                Genre
-              </p>
-              <ul className="ml-10 mt-4">
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" />
-                  Fictional
-                </li>
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" /> Non
-                  Fictional
-                </li>
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" />
-                  Competetive
-                </li>
-              </ul>
-            </div>
-            <div className="boxFilter w-[400px]">
-              <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
-                Price Range
-              </p>
-              <ul className="ml-10 mt-4">
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" />
-                  upto 500
-                </li>
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" /> Non
-                  Rs 500-750
-                </li>
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" /> Rs
-                  1000 -above
-                </li>
-              </ul>
-            </div>
-            <div className="boxFilter  w-[400px] ">
-              <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
-                Language
-              </p>
-              <ul className="ml-10 mt-4">
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" />{" "}
-                  English
-                </li>
-                <li>
-                  {" "}
-                  <input type="radio" value="Fictional" name="bookChoice" /> Non
-                  Bengali
-                </li>
-                <li>
-                  <input type="radio" value="Fictional" name="bookChoice" />{" "}
-                  Hindi
-                </li>
+          <>
+            <h1 className="mt-1 ml-2 text-3xl font-bold">Filter</h1>
+            <div className="filter flex-column hidden lg:block  w-[600px]">
+              <div className="boxFilter  w-[400px]  ">
+                <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
+                  Genre
+                </p>
+                <ul className="ml-10 mt-4">
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />
+                    Fictional
+                  </li>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    Non Fictional
+                  </li>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />
+                    Competetive
+                  </li>
+                </ul>
+              </div>
+              <div className="boxFilter w-[400px]">
+                <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
+                  Price Range
+                </p>
+                <ul className="ml-10 mt-4">
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />
+                    upto 500
+                  </li>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    Non Rs 500-750
+                  </li>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    Rs 1000 -above
+                  </li>
+                </ul>
+              </div>
+              <div className="boxFilter  w-[400px] ">
+                <p className="text-center mt-3 text-2xl overflow-hidden font-bold">
+                  Language
+                </p>
+                <ul className="ml-10 mt-4">
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    English
+                  </li>
+                  <li>
+                    {" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="bookChoice"
+                    />{" "}
+                    Non Bengali
+                  </li>
+                  <li>
+                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    Hindi
+                  </li>
 
-                <li className="mt-5 w-full flex justify-start">
-                  <button
-                    type="button"
-                    className="focus:outline-none text-white bg-red hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-md px-2 py-2 mb-2"
-                  >
-                    Search
-                  </button>
-                </li>
-              </ul>
+                  <li className="mt-5 w-full flex justify-start">
+                    <button
+                      type="button"
+                      className="focus:outline-none text-white bg-red hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-md px-2 py-2 mb-2"
+                    >
+                      Search
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
+          </>
         )}
         <div className="display mt-3 flex flex-wrap gap-5  w-[100vw] lg:w-[71vw] justify-center items-center">
           {data.map((val) => (

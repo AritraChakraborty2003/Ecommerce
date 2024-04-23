@@ -4,8 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 const Booksfirstpage = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
@@ -119,15 +121,18 @@ const Booksfirstpage = () => {
                 className="max-w-[230px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
                                 hover:scale-x-110 ml-6 overflow-hidden"
               >
-                <a href="/details" className="w-12/12 flex justify-center">
+                <div className="w-12/12 flex justify-center">
                   <img
                     className="rounded-t-lg border-solid border-grey-2 shadow-xl"
                     src={val.image}
                     alt=""
                     width={75}
                     height={60}
+                    onClick={() => {
+                      navigate("/details", { state: { val: val } });
+                    }}
                   />
-                </a>
+                </div>
                 <div className="p-5">
                   <a href="#">
                     <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
