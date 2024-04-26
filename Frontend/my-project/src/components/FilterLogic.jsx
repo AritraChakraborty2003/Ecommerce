@@ -11,9 +11,17 @@ import { useNavigate } from "react-router-dom";
 const FilterLogic = () => {
   const [data, setData] = useState([]);
   const [filteredProduct, setFilterProduct] = useState([]);
+  const [author, setAuthor] = useState("");
+  const [book, setBook] = useState("");
   const [active, setActive] = useState(" ");
+  const [active1, setActive1] = useState(" ");
+  const [active2, setActive2] = useState(" ");
   const [category, setCategory] = useState("All Products");
   const [genreDiv, setgenreDiv] = useState(false);
+  const [authorDiv, setauthorDiv] = useState(false);
+  const [priceDiv, setpriceDiv] = useState(false);
+  const [isFind, setisFind] = useState(false);
+  const [price, setPrice] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
     axios
@@ -29,34 +37,124 @@ const FilterLogic = () => {
     {
       id: "Fictional",
       text: "Fictional",
+      type: "book",
     },
     {
       id: "Non fictional",
       text: "Non fictional",
+      type: "book",
     },
     {
       id: "Competetive",
       text: "Competetive",
+      type: "book",
     },
     {
       id: "Self Help",
       text: "Self Help",
+      type: "book",
     },
   ]);
 
-  console.log(data);
-  const filterFunction = (text) => {
+  const [spansAuthor] = useState([
+    {
+      id: "Robin Sharma",
+      text: "Robin Sharma",
+      type: "author",
+    },
+    {
+      id: "ML Khanna",
+      text: "ML Khanna",
+      type: "author",
+    },
+    {
+      id: "RS Aggarwal",
+      text: "RS Aggarwal",
+      type: "author",
+    },
+    {
+      id: "Ashneer Grover",
+      text: "Ashneer Grover",
+      type: "author",
+    },
+  ]);
+
+  const [spansPrice] = useState([
+    {
+      id: 500,
+      text: "under 500",
+      type: "price",
+    },
+    {
+      id: 1000,
+      text: "under 1000",
+      type: "price",
+    },
+    {
+      id: 1001,
+      text: "More than 1000",
+      type: "price",
+    },
+  ]);
+
+  const filterFunction = (Obj) => {
+    if (author === "" && book === "") {
+      if (Obj.type === "book") {
+        const filter = data.filter((product) => product.category === Obj.text);
+        console.log(filter);
+        setFilterProduct(filter);
+        setBook(Obj.text);
+      } else if (Obj.type === "author") {
+        const filter = data.filter((product) => product.author === Obj.text);
+        console.log(filter);
+        setFilterProduct(filter);
+        setAuthor(Obj.text);
+      }
+    } else {
+      if (Obj.type === "book" && book != "" && author == "") {
+        console.log("Click");
+        const filter = data.filter((product) => product.category === Obj.text);
+        console.log(filter);
+        setFilterProduct(filter);
+        setBook(Obj.text);
+      }
+      if (Obj.type === "author" && author != "" && book == "") {
+        console.log("Click");
+        const filter = data.filter((product) => product.author === Obj.text);
+        console.log(filter);
+        setFilterProduct(filter);
+        setAuthor(Obj.text);
+      } else if (Obj.type === "author" && book != "") {
+        console.log("Click");
+        const filter = data.filter(
+          (product) => product.author === Obj.text && product.category == book
+        );
+        console.log(filter);
+        setFilterProduct(filter);
+        setAuthor(Obj.text);
+      } else if (Obj.type === "book" && author != "") {
+        const filter = data.filter(
+          (product) => product.category === Obj.text && product.author == author
+        );
+        console.log(filter);
+        setFilterProduct(filter);
+        setBook(Obj.text);
+      }
+    }
+    /*console.log(author);
+
     const filter = data.filter((product) => product.category == text);
     console.log(filter);
-    setFilterProduct(filter);
+    setFilterProduct(filter);*/
   };
   const handleChange = (individual) => {
-    setActive(individual.id);
+    if (individual.type === "book") setActive(individual.id);
+    if (individual.type === "author") setActive1(individual.id);
     setCategory(individual.text);
-    filterFunction(individual.text);
-    //console.log(individual.text);
+    filterFunction(individual);
+    setisFind(true);
   };
-  console.log(category);
+
   return (
     <>
       <Header />
@@ -72,9 +170,11 @@ const FilterLogic = () => {
                   Filter{" "}
                   <span className="text-2xl font-medium">( your needs )</span>
                 </h1>
-                <div className="flex ml-2 mt-5  border-solid border-b-2 w-[45vmin]">
+                <div className="flex ml-2 mt-10 border-solid border-b-2 w-[45vmin] ">
                   <div className="textHolder w-[40vmin] ">
-                    <p className="text-2xl overflow-hidden font-bold">Genre</p>
+                    <p className="text-xl overflow-hidden font-medium  font-poppins">
+                      Genre
+                    </p>
                   </div>
 
                   <img
@@ -118,14 +218,108 @@ const FilterLogic = () => {
                 </ul>
               ) : null}
 
+              <div className="flex ml-2 mt-5  border-solid border-b-2 w-[45vmin]">
+                <div className="textHolder w-[40vmin] ">
+                  <p className="text-xl overflow-hidden font-medium font-poppins">
+                    Author
+                  </p>
+                </div>
+                <img
+                  id="imgIcon3"
+                  src="./images/ricon.png"
+                  height={20}
+                  width={20}
+                  onClick={() => {
+                    if (authorDiv) {
+                      document.getElementById("imgIcon3").src =
+                        "./images/ricon.png";
+                      setauthorDiv(false);
+                    } else {
+                      document.getElementById("imgIcon3").src =
+                        "./images/downicon.png";
+                      setauthorDiv(true);
+                    }
+                  }}
+                />
+              </div>
+
+              {authorDiv ? (
+                <ul className="ml-10 mt-4 choice">
+                  {spansAuthor.map((individual1) => (
+                    <li>
+                      <span
+                        id={individual1.id}
+                        onClick={() => {
+                          handleChange(individual1);
+                        }}
+                        className={
+                          individual1.id === active1 ? "active" : "deactive"
+                        }
+                      >
+                        {individual1.text}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+
+              <div className="flex ml-2 mt-5  border-solid border-b-2 w-[45vmin]">
+                <div className="textHolder w-[40vmin] ">
+                  <p className="text-xl overflow-hidden font-medium font-poppins">
+                    Price Range
+                  </p>
+                </div>
+                <img
+                  id="imgIcon5"
+                  src="./images/ricon.png"
+                  height={20}
+                  width={20}
+                  onClick={() => {
+                    if (priceDiv) {
+                      document.getElementById("imgIcon5").src =
+                        "./images/ricon.png";
+                      setpriceDiv(false);
+                    } else {
+                      document.getElementById("imgIcon5").src =
+                        "./images/downicon.png";
+                      setpriceDiv(true);
+                    }
+                  }}
+                />
+              </div>
+
+              {priceDiv ? (
+                <ul className="ml-10 mt-4 choice">
+                  {spansPrice.map((individual3) => (
+                    <li>
+                      <span
+                        id={individual3.id}
+                        onClick={() => {
+                          handleChange(individual3);
+                        }}
+                        className={
+                          individual3.id === active2 ? "active2" : "deactive1"
+                        }
+                      >
+                        {individual3.text}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+
               <li className="mt-5 w-full flex justify-start ml-4">
                 <button
                   type="button"
                   className="focus:outline-none text-white bg-red hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-md px-2 py-2 mb-2"
                   onClick={() => {
-                    setActive("");
+                    setActive(" ");
+                    setActive1(" ");
                     setCategory("All Products");
                     setFilterProduct([]);
+                    setAuthor("");
+                    setBook("");
+                    setisFind(false);
                   }}
                 >
                   Clear Filter
@@ -214,8 +408,11 @@ const FilterLogic = () => {
         )}
 
         <div>
-          <p className="text-center text-4xl overflow-hidden font-bold mt-4">
-            {category}
+          <p className="text-center text-5xl overflow-hidden font-bold mt-4 h-16">
+            {(book != "" && author != "" && book + " " + author + " Results") ||
+              (book == "" && author == "" && "All Products") ||
+              (book == "" && author != "" && author) ||
+              (author == "" && book != "" && book)}
           </p>
           <div className="display mt-7 flex flex-wrap gap-5  w-[100vw] lg:w-[71vw] justify-center items-center">
             {filteredProduct.length > 0 && (
@@ -224,8 +421,12 @@ const FilterLogic = () => {
                 filterP={filteredProduct}
               />
             )}
+            {filteredProduct.length < 1 && isFind === true && (
+              <p className="text-center mt-5">0 results found</p>
+            )}
 
             {filteredProduct.length < 1 &&
+              isFind === false &&
               data.map((val) => (
                 // eslint-disable-next-line react/jsx-key
 

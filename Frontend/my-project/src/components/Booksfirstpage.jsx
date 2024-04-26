@@ -108,7 +108,7 @@ const Booksfirstpage = () => {
             <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-2 hover:decoration-8 hover:decoration-mustardyellow">
               Non-Fiction
             </li>
-            <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-4 hover:decoration-8 hover:decoration-mustardyellow">
+            <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-2 hover:decoration-8 hover:decoration-mustardyellow">
               Competetive
             </li>
           </ul>
@@ -119,7 +119,7 @@ const Booksfirstpage = () => {
             {data.map((val) => (
               <div
                 className="max-w-[230px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
-                                hover:scale-x-110 ml-6 overflow-hidden"
+                                hover:scale-x-110 ml-6"
               >
                 <div className="w-12/12 flex justify-center">
                   <img
