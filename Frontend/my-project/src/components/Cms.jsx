@@ -39,7 +39,7 @@ const Cms = () => {
 
   const fileUploadHandler = (event) => {
     event.preventDefault();
-    if (choice == "bookAPI") {
+    if (choice == "booksAPI") {
       let name1 = document.getElementById("name").value;
       let price1 = document.getElementById("price").value;
       let author1 = document.getElementById("author").value;

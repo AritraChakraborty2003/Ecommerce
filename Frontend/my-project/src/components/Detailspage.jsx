@@ -34,8 +34,13 @@ const Detailspage = (props) => {
               {location.state.val.name}
             </p>
             <br />
-            <p className="font-grey">({location.state.val.author})</p>
-            <br />
+
+            {location.state.api === "booksAPI" && (
+              <>
+                <p className="font-grey">(By{location.state.val.author})</p>
+                <br />
+              </>
+            )}
             <div className="priceContainer flex space-x-5">
               <p className="line-through text-black text-xl font-roboto font-medium overflow-hidden">
                 Rs. {x}
@@ -51,7 +56,18 @@ const Detailspage = (props) => {
             <div className="bookInfo">
               <ul className="mt-5">
                 <li className="mt-3 font-medium font-roboto text-md">
-                  In Stock
+                  {(location.state.val.stock === 0 && (
+                    <p className="text-red font-bold text-3xl">
+                      Currently Unavailable!!!
+                    </p>
+                  )) ||
+                    (location.state.val.stock <= 5 && (
+                      <p className="text-red font-bold text-xl">
+                        Hurry!!! Very Few Stocks Left
+                      </p>
+                    )) || (
+                      <p className="text-black font-bold text-xl">In Stock</p>
+                    )}
                 </li>
                 <li className="mt-3 font-medium font-roboto text-md">
                   Binding: Hardcover
@@ -61,31 +77,41 @@ const Detailspage = (props) => {
                 </li>
 
                 <li>
-                  <div className="box1   lg:w-5/6 mt-5">
-                    <div className="box1 h-10 border-solid border-2 flex justify-center items-center rounded-xl">
-                      <p className="text-md overflow-hidden font-bold font-oxygen">
-                        Add to Cart
-                      </p>
-                    </div>
-                    <div className="flex lg:w-12/12 mt-3 space-x-3">
-                      <div className="box1 h-10 border-gray-2  bg-mustardyellow flex justify-center items-center w-1/2 text-black rounded-xl">
-                        <p className="text-md overflow-hidden font-bold">
-                          Buy Now
+                  {(location.state.val.stock > 0 && (
+                    <div className="box1   lg:w-5/6 mt-5">
+                      <div className="box1 h-10 border-solid border-2 flex justify-center items-center rounded-xl">
+                        <p className="text-md overflow-hidden font-bold font-oxygen">
+                          Add to Cart
                         </p>
                       </div>
-                      <div className="box1 h-10 border-solid border-2 flex justify-center items-center w-1/2 rounded-xl">
-                        <div className="holder flex space-x-5 ">
-                          <img
-                            src="./images/heart.png"
-                            height={10}
-                            width={20}
-                          ></img>
+                      <div className="flex lg:w-12/12 mt-3 space-x-3">
+                        <div className="box1 h-10 border-gray-2  bg-mustardyellow flex justify-center items-center w-1/2 text-black rounded-xl">
+                          <p className="text-md overflow-hidden font-bold">
+                            Buy Now
+                          </p>
+                        </div>
+                        <div className="box1 h-10 border-solid border-2 flex justify-center items-center w-1/2 rounded-xl">
+                          <div className="holder flex space-x-5 ">
+                            <img
+                              src="./images/heart.png"
+                              height={10}
+                              width={20}
+                            ></img>
 
-                          <p className="text-md">Shortlist Product</p>
+                            <p className="text-md">Shortlist Product</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  )) || (
+                    <div className="box1   lg:w-5/6 mt-5">
+                      <div className="box1 h-10  flex justify-center items-center rounded-xl bg-mustardyellow ">
+                        <p className="text-md overflow-hidden font-bold font-oxygen text-xl">
+                          Request To Order !!!
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </li>
 
                 <li>

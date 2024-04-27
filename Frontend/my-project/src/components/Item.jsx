@@ -4,13 +4,15 @@ import Foot1 from "./Foot1";
 //import Detailspage from "./Detailspage";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+
 const Item = () => {
+  const location = useLocation();
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/booksAPI")
+      .get("http://127.0.0.1:8000/" + location.state.val)
       .then((res) => {
         setData(res.data.reverse());
       })
@@ -24,7 +26,7 @@ const Item = () => {
     <>
       <Header />
       <div className="flex justify-center h-28 w-screen text-5xl items-center bg-mustardyellow text-black font-extrabold">
-        Books
+        {location.state.title}
       </div>
       <div className="mainArea bg-darkwhite w-screen flex space-x-3 pb-5">
         {screen.width >= 1280 && screen.width < 1700 && (
@@ -202,7 +204,9 @@ const Item = () => {
                   width={75}
                   height={60}
                   onClick={() => {
-                    navigate("/details", { state: { val: val } });
+                    navigate("/details", {
+                      state: { val: val, api: location.state.val },
+                    });
                   }}
                 />
               </div>
@@ -213,9 +217,11 @@ const Item = () => {
                     {val.name}
                   </p>
                 </a>
-                <p className="mb-3 font-semibold text-sm text-brown dark:text-gray-400">
-                  by {val.author}
-                </p>
+                {location.state.val === "booksAPI" && (
+                  <p className="mb-3 font-semibold text-sm text-brown dark:text-gray-400">
+                    by {val.author}
+                  </p>
+                )}
                 <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
                   Price: Rs {val.price}
                 </p>

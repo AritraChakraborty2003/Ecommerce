@@ -54,6 +54,11 @@ const FilterLogic = () => {
       text: "Self Help",
       type: "book",
     },
+    {
+      id: "Business",
+      text: "Business",
+      type: "book",
+    },
   ]);
 
   const [spansAuthor] = useState([
@@ -68,8 +73,8 @@ const FilterLogic = () => {
       type: "author",
     },
     {
-      id: "RS Aggarwal",
-      text: "RS Aggarwal",
+      id: "Paulo Coelho",
+      text: "Paulo Coelho",
       type: "author",
     },
     {
