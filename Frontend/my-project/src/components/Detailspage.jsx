@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import Header from "./Header";
 import Foot1 from "./Foot1";
+import axios from "axios";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 const Detailspage = (props) => {
@@ -12,11 +13,39 @@ const Detailspage = (props) => {
   let d = location.state.val.discount;
   const x = Math.trunc((p * 100) / (100 - d));
   console.log(x);
+
+  const sendRequest = () => {
+    //console.log(formData.get("name"));
+    console.log(location.state.val.discount);
+    const dataObj = {
+      name: location.state.val.name,
+      price: location.state.val.price,
+      stock: location.state.val.stock,
+      discount: location.state.val.discount,
+      category: location.state.val.category,
+      descr: location.state.val.descr,
+      url: location.state.val.image,
+    };
+
+    let control = true;
+    axios.post("http://127.0.0.1:8000/ordersAPI", dataObj).then((res) => {
+      if (res.status != 200) {
+        control = false;
+      }
+    });
+    if (control) {
+      document.getElementById("success").innerHTML =
+        "Request Placed Successfully";
+    }
+  };
   return (
     <>
       {console.log(props.dataObj)}
       <body className="bg-darkwhite">
         <Header />
+        {location.state.val.stock === 0 && (
+          <h1 id="success" className="mt-2 ml-3 font-bold text-2xl"></h1>
+        )}
         <div className="mainArea bg-darkwhite flex justify-center  flex-wrap mb-5">
           <div className="bookHolder w-[600px] flex justify-center mt-3 lg:mt-10 p-5">
             <div className="imgHolder h-52 lg:h-96 w-[400px] flex justify-center ">
@@ -37,7 +66,7 @@ const Detailspage = (props) => {
 
             {location.state.api === "booksAPI" && (
               <>
-                <p className="font-grey">(By{location.state.val.author})</p>
+                <p className="font-grey">(By {location.state.val.author})</p>
                 <br />
               </>
             )}
@@ -105,7 +134,11 @@ const Detailspage = (props) => {
                     </div>
                   )) || (
                     <div className="box1   lg:w-5/6 mt-5">
-                      <div className="box1 h-10  flex justify-center items-center rounded-xl bg-mustardyellow ">
+                      <div
+                        className="box1 h-10  flex justify-center items-center rounded-xl bg-mustardyellow 
+                      "
+                        onClick={sendRequest}
+                      >
                         <p className="text-md overflow-hidden font-bold font-oxygen text-xl">
                           Request To Order !!!
                         </p>
@@ -200,7 +233,7 @@ const Detailspage = (props) => {
         <div className="recommended text-4xl font-extrabold ml-2 mb-5 font-Oxygen overflow-hidden">
           Recommendations:
         </div>
-        <div className="display mt-3 flex flex-wrap gap-5  w-[100vw] lg:w-[100vw] justify-center items-center mb-5">
+        <div className="display mt-3 flex flex-wrap gap-5  w-[100vw] lg:w-[100vw] justify-center items-center mb-5 pb-5">
           <div
             className="w-[230px] h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl  transform transition duration-300 
                                 hover:scale-x-110 ml-6 overflow-hidden"

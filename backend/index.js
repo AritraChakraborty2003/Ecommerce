@@ -148,6 +148,40 @@ const ecomGiftsSchema = new mongoose.Schema(
   },
   { collection: "Gifts" }
 );
+const ecomOrderSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+
+    price: {
+      type: Number,
+      required: true,
+    },
+    stock: {
+      type: Number,
+      required: true,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
+    discount: {
+      type: Number,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    descr: {
+      type: String,
+      required: true,
+    },
+  },
+  { collection: "ecomorder" }
+);
 const ecomReligiousSchema = new mongoose.Schema(
   {
     name: {
@@ -184,6 +218,7 @@ const ecomReligiousSchema = new mongoose.Schema(
 );
 mongoose.connect("mongodb://localhost:27017/ecom");
 const books = mongoose.model("Books", ecomBookSchema);
+const generalOrder = mongoose.model("OrderGeneral", ecomOrderSchema);
 const merchs = mongoose.model("Merch", ecomMerchSchema);
 const religious = mongoose.model("Religious", ecomReligiousSchema);
 const gifts = mongoose.model("Gifts", ecomGiftsSchema);
@@ -239,6 +274,17 @@ app.get("/reviewsAPI", (req, res) => {
       res.json(book);
     })
     .catch((err) => console.log(err));
+});
+
+app.get("/ordersAPI", (req, res) => {
+  generalOrder
+    .find()
+    .then((order) => {
+      res.json(order);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 /*---- GET Request end ----*/
 
@@ -386,6 +432,27 @@ app.post("/reviewsAPI", upload.single("file"), (req, res) => {
   });
 
   NewReview.save();
+});
+app.post("/ordersAPI", (req, res) => {
+  let name = req.body.name;
+  let price = req.body.price;
+  let stock = req.body.stock;
+  let discount = req.body.discount;
+  let category = req.body.category;
+  let descr = req.body.descr;
+  let url = req.body.url;
+
+  const newOrder = new generalOrder({
+    name: name,
+    price: price,
+    stock: stock,
+    discount: discount,
+    category: category,
+    image: url,
+    descr: descr,
+  });
+
+  newOrder.save();
 });
 app.listen(8000, () => {
   console.log("Backend Connected");

@@ -17,13 +17,62 @@ const Header = () => {
             </div>
           </div>
           <div className=".fixed relative .top-0 navBar bg-darkwhite  h-20 flex  justify-between">
-            <div className="logoHolder  h-20 w-1/3 p-2 flex justify-center items-center">
-              <a href="/">
-                <img
-                  src="./images/logo-black.png"
-                  className="max-w-full max-h-full object-contain"
-                ></img>
-              </a>
+            <div className="hamHolder block lg:hidden h-20">
+              <div className="flex gap-2">
+                <div className="h-20 flex justify-center items-center ml-3 ">
+                  <div className="imgHolde flex justify-center items-center">
+                    <img
+                      className="max-h-full max-w-full object-contain"
+                      src="./images/hamburger (1).png"
+                      onClick={() => {
+                        if (status) {
+                          setStatus(false);
+                        } else setStatus(true);
+                      }}
+                      height={20}
+                      width={20}
+                    ></img>
+                  </div>
+                </div>
+                <div className="logoHolder mt-6 ml-2 w-56 ">
+                  <a href="/">
+                    <img
+                      src="./images/logo-black.png"
+                      className="max-w-full max-h-full object-contain"
+                      height={170}
+                      width={140}
+                    ></img>
+                  </a>
+                </div>
+                <div className="imgHolder flex justify-center items-center mt-2">
+                  <img
+                    className="max-h-full max-w-full object-contain"
+                    src="./images/cart.png"
+                    height={40}
+                    width={40}
+                  ></img>
+                </div>
+
+                <div className="imgHolder flex justify-center items-center mt-2 ml-2">
+                  <img
+                    className="max-h-full max-w-full object-contain"
+                    src="./images/user1.png"
+                    height={40}
+                    width={40}
+                  ></img>
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden lg:block  h-20 w-1/3 p-2  justify-center items-center">
+              <div className="logoHolder ">
+                <a href="/">
+                  <img
+                    src="./images/logo-black.png"
+                    className="max-w-full max-h-full object-contain"
+                  ></img>
+                </a>
+              </div>
             </div>
 
             <div className="IconHolder  h-20 w-2/3 p-2 hidden lg:block">
@@ -70,22 +119,6 @@ const Header = () => {
                 </div>
               </div>
             </div>
-
-            <div className="hamHolder block lg:hidden h-20">
-              <div className="h-20 w-20 flex justify-center items-center ">
-                <div className="imgHolder h-15  w-20 flex justify-center items-center">
-                  <img
-                    className="max-h-full max-w-full object-contain"
-                    src="./images/hamburger (1).png"
-                    onClick={() => {
-                      if (status) {
-                        setStatus(false);
-                      } else setStatus(true);
-                    }}
-                  ></img>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -99,20 +132,6 @@ const Header = () => {
               <li className="text-15 mt-5">Traditionals</li>
               <li className="text-15 mt-5">Clothes</li>
               <li className="text-15 mt-5">Contact</li>
-              <li className="text-15 mt-5 flex space-x-4">
-                <div className="w-10 h-15">
-                  <img
-                    src="./images/user1.png"
-                    className="max-w-full max-h-full object-contain"
-                  ></img>
-                </div>
-                <div className="w-10 h-15">
-                  <img
-                    src="./images/cart.png"
-                    className="max-w-full max-h-full object-contain"
-                  ></img>
-                </div>
-              </li>
             </ul>
           </div>
         </div>

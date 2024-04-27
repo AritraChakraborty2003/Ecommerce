@@ -2,6 +2,7 @@
 import viteLogo from "/vite.svg";*/
 import Foot1 from "./components/Foot1";
 import First from "./components/First";
+import RequestPage from "./components/RequestPage";
 //import Fetchdata from "./components/Fetchdata";
 import Detailspage from "./components/Detailspage";
 import Banner from "./components/Banner";
@@ -28,6 +29,7 @@ function App() {
           <Route path="/booksFirst" element={<Booksfirstpage />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/Filter" element={<FilterLogic />}></Route>
+          <Route path="/RequestPage" element={<RequestPage />}></Route>
         </Routes>
       </BrowserRouter>
     </>

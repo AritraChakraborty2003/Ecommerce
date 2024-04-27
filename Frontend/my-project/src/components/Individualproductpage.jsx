@@ -5,7 +5,7 @@ export const Individualproductpage = (props) => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="display mt-3 flex flex-wrap gap-5  w-[100vw] lg:w-[71vw] justify-center items-center">
+      <div className="display mt-3 flex flex-wrap gap-5  w-[100vw] lg:w-[71vw] justify-center items-center pb-5">
         {props.filterP.map((val) => (
           // eslint-disable-next-line react/jsx-key
 

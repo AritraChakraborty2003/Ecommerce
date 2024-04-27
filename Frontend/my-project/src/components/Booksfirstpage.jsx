@@ -96,7 +96,7 @@ const Booksfirstpage = () => {
     <>
       <div className="booksBox md:mt-10">
         <div className="classNameBooks lg:h-20  flex w-12/12 justify-center font-bold">
-          <p className="text-4xl lg:text-6xl  font-extrabold text-orange overflow-hidden">
+          <p className="text-4xl lg:text-6xl  font-bold text-orange overflow-hidden">
             Books
           </p>
         </div>

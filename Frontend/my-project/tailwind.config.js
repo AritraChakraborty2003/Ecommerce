@@ -4,6 +4,7 @@ export default {
   theme: {
     boxShadow: {
       "3xl": "3px 5px 5px 3px",
+      xl: "3px 3px 4px 2px",
     },
     colors: {
       darkwhite: "#f4f1ee",

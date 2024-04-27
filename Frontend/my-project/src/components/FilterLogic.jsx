@@ -413,13 +413,13 @@ const FilterLogic = () => {
         )}
 
         <div>
-          <p className="text-center text-5xl overflow-hidden font-bold mt-4 h-16">
+          <p className="text-center text-5xl overflow-hidden font-bold mt-4 h-16 ">
             {(book != "" && author != "" && book + " " + author + " Results") ||
               (book == "" && author == "" && "All Products") ||
               (book == "" && author != "" && author) ||
               (author == "" && book != "" && book)}
           </p>
-          <div className="display mt-7 flex flex-wrap gap-5  w-[100vw] lg:w-[71vw] justify-center items-center">
+          <div className="display mt-7 flex flex-wrap gap-5  w-[100vw] lg:w-[71vw] justify-center items-center pb-5">
             {filteredProduct.length > 0 && (
               <Individualproductpage
                 category={category}
