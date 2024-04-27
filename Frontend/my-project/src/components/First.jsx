@@ -5,9 +5,11 @@ import viteLogo from "/vite.svg";*/
 import Foot1 from "./Foot1";
 import Booksfirstpage from "./Booksfirstpage";
 import "slick-carousel/slick/slick.css";
+import MysteryBox from "./MysteryBox";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "../App.css";
+import Reviews from "./Reviews";
 import Banner from "./Banner";
 import SupportLinkBanner from "./SupportLinkBanner";
 import Header from "./Header";
@@ -94,7 +96,7 @@ function First() {
         <Booksfirstpage />
         <div className="merchBox md:mt-10 pb-10 ">
           <div className="classNameBooks lg:h-35 flex w-12/12 justify-center font-bold ">
-            <p className="text-4xl lg:text-6xl  font-extrabold text-orange mt-10 overflow-hidden">
+            <p className="text-4xl lg:text-6xl  font-bold text-orange mt-10 overflow-hidden">
               Merchs
             </p>
           </div>
@@ -343,7 +345,8 @@ function First() {
             </div>
           </div>
         </div>
-
+        <MysteryBox />
+        <Reviews />
         <div className="counter" id="counter">
           <h1 id="cntText"></h1>
         </div>

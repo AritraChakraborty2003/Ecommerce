@@ -3,7 +3,7 @@ const SupportLinkBanner = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="supportLinks ">
+      <div className="supportLinks mt-[-7vmin] lg:mt-[0vmin] ">
         <div className="flex bg-darkwhite justify-center h-15 p-5 space-x-10 lg:h-15 md:space-x-28 ">
           <div className="h-10 w-15 md:h-20 md:w-20 lg:pl:15">
             <img

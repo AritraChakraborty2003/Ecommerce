@@ -3,12 +3,15 @@ import viteLogo from "/vite.svg";*/
 import Foot1 from "./components/Foot1";
 import First from "./components/First";
 import RequestPage from "./components/RequestPage";
+
 //import Fetchdata from "./components/Fetchdata";
+import MysteryBox from "./components/MysteryBox";
 import Detailspage from "./components/Detailspage";
 import Banner from "./components/Banner";
 import FilterLogic from "./components/FilterLogic";
 import Item from "./components/Item";
 import Cms from "./components/Cms";
+import Reviews from "./components/Reviews";
 import Cart from "./components/Cart";
 import Booksfirstpage from "./components/Booksfirstpage";
 import "slick-carousel/slick/slick.css";
@@ -29,6 +32,8 @@ function App() {
           <Route path="/booksFirst" element={<Booksfirstpage />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/Filter" element={<FilterLogic />}></Route>
+          <Route path="/mysteryBox" element={<MysteryBox />}></Route>
+          <Route path="/reviews" element={<Reviews />}></Route>
           <Route path="/RequestPage" element={<RequestPage />}></Route>
         </Routes>
       </BrowserRouter>

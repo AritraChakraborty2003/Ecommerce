@@ -118,7 +118,7 @@ const Booksfirstpage = () => {
           <Slider {...settings} className="h-96">
             {data.map((val) => (
               <div
-                className="max-w-[230px] max-h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+                className="max-w-[230px] max-h-[290px] pt-3 bg-white  border-solid border-gray-500 rounded-lg shadow-2xl overflow-hidden transform transition duration-300 
                                 hover:scale-x-110 ml-6"
               >
                 <div className="w-12/12 flex justify-center">
@@ -167,23 +167,29 @@ const Booksfirstpage = () => {
 
       <div className="bookHolder lg:hidden flex flex-wrap gap-5 justify-center items-center mt-10 ">
         {data.map((val) => (
-          <div className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-100 rounded-lg shadow-xl overflow-hidden">
-            <a href="#" className="w-12/12 flex justify-center">
+          <div
+            className="w-[250px] h-[290px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+                                hover:scale-x-110 ml-6"
+          >
+            <div className="w-12/12 flex justify-center">
               <img
-                className="rounded-t-lg"
+                className="rounded-t-lg border-solid border-grey-2 shadow-xl"
                 src={val.image}
                 alt=""
                 width={75}
                 height={60}
+                onClick={() => {
+                  navigate("/details", { state: { val: val } });
+                }}
               />
-            </a>
+            </div>
             <div className="p-5">
               <a href="#">
                 <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
                   {val.name}
                 </p>
               </a>
-              <p className="mb-3 font-normal text-sm text-brown">
+              <p className="mb-3 font-semibold text-sm text-brown dark:text-gray-400">
                 by {val.author}
               </p>
               <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
