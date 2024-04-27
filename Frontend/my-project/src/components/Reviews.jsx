@@ -17,18 +17,30 @@ const Reviews = () => {
   console.log(data);
   return (
     <>
-      <div className="Holder w-screen  p-5 flex flex-wrap gap-7 mb-40">
-        {data.map((val) => (
-          <video
-            autoPlay
-            loop
-            muted
-            src={val.file}
-            type="video/mp4"
-            width={150}
-            height={100}
-          />
-        ))}
+      <div className="Holder w-screen  p-5 flex flex-wrap gap-7 mb-40 justify-center items-center">
+        {(screen.width > 1000 &&
+          data.map((val) => (
+            <video
+              autoPlay
+              loop
+              muted
+              src={val.file}
+              type="video/mp4"
+              width={250}
+              height={250}
+            />
+          ))) ||
+          data.map((val) => (
+            <video
+              autoPlay
+              loop
+              muted
+              src={val.file}
+              type="video/mp4"
+              width={150}
+              height={150}
+            />
+          ))}
       </div>
     </>
   );

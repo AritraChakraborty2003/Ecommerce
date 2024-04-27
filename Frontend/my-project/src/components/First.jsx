@@ -13,6 +13,7 @@ import Reviews from "./Reviews";
 import Banner from "./Banner";
 import SupportLinkBanner from "./SupportLinkBanner";
 import Header from "./Header";
+import Dealsofday from "./Dealsofday";
 
 function First() {
   function SampleNextArrow(props) {
@@ -94,6 +95,8 @@ function First() {
         <Banner />
         <SupportLinkBanner />
         <Booksfirstpage />
+
+        <Dealsofday />
         <div className="merchBox md:mt-10 pb-10 ">
           <div className="classNameBooks lg:h-35 flex w-12/12 justify-center font-bold ">
             <p className="text-4xl lg:text-6xl  font-bold text-orange mt-10 overflow-hidden">

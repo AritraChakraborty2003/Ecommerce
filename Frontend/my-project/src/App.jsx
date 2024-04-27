@@ -2,8 +2,9 @@
 import viteLogo from "/vite.svg";*/
 import Foot1 from "./components/Foot1";
 import First from "./components/First";
+import Dealbooks from "./components/Dealbooks";
 import RequestPage from "./components/RequestPage";
-
+import Timer from "./components/Timer";
 //import Fetchdata from "./components/Fetchdata";
 import MysteryBox from "./components/MysteryBox";
 import Detailspage from "./components/Detailspage";
@@ -11,6 +12,7 @@ import Banner from "./components/Banner";
 import FilterLogic from "./components/FilterLogic";
 import Item from "./components/Item";
 import Cms from "./components/Cms";
+import Dealsofday from "./components/Dealsofday";
 import Reviews from "./components/Reviews";
 import Cart from "./components/Cart";
 import Booksfirstpage from "./components/Booksfirstpage";
@@ -34,7 +36,10 @@ function App() {
           <Route path="/Filter" element={<FilterLogic />}></Route>
           <Route path="/mysteryBox" element={<MysteryBox />}></Route>
           <Route path="/reviews" element={<Reviews />}></Route>
+          <Route path="/dealsofday" element={<Dealsofday />}></Route>
           <Route path="/RequestPage" element={<RequestPage />}></Route>
+          <Route path="/dealsPage" element={<Dealbooks />}></Route>
+          <Route path="/TimerPage" element={<Timer />}></Route>
         </Routes>
       </BrowserRouter>
     </>
