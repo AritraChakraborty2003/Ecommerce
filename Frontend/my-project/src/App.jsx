@@ -1,6 +1,7 @@
 /*import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";*/
 import Foot1 from "./components/Foot1";
+import Header from "./components/Header";
 import First from "./components/First";
 import Dealbooks from "./components/Dealbooks";
 import RequestPage from "./components/RequestPage";
@@ -9,6 +10,7 @@ import Timer from "./components/Timer";
 import MysteryBox from "./components/MysteryBox";
 import Detailspage from "./components/Detailspage";
 import Banner from "./components/Banner";
+import ComboBox from "./components/ComboBox";
 import FilterLogic from "./components/FilterLogic";
 import Item from "./components/Item";
 import Cms from "./components/Cms";
@@ -40,6 +42,8 @@ function App() {
           <Route path="/RequestPage" element={<RequestPage />}></Route>
           <Route path="/dealsPage" element={<Dealbooks />}></Route>
           <Route path="/TimerPage" element={<Timer />}></Route>
+          <Route path="/Header" element={<Header />}></Route>
+          <Route path="/ComboBox" element={<ComboBox />}></Route>
         </Routes>
       </BrowserRouter>
     </>

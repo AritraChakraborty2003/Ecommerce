@@ -14,6 +14,7 @@ import Banner from "./Banner";
 import SupportLinkBanner from "./SupportLinkBanner";
 import Header from "./Header";
 import Dealsofday from "./Dealsofday";
+import ComboBox from "./ComboBox";
 
 function First() {
   function SampleNextArrow(props) {
@@ -94,16 +95,19 @@ function First() {
       <body className=" bg-darkwhite">
         <Banner />
         <SupportLinkBanner />
+        <div className="mt-10">
+          <ComboBox />
+        </div>
         <Booksfirstpage />
 
         <Dealsofday />
-        <div className="merchBox md:mt-10 pb-10 ">
+
+        <div className="merchBox hidden lg:block md:mt-10 pb-10 ">
           <div className="classNameBooks lg:h-35 flex w-12/12 justify-center font-bold ">
             <p className="text-4xl lg:text-6xl  font-bold text-orange mt-10 overflow-hidden">
               Merchs
             </p>
           </div>
-
           <div className="holder h-96 hidden lg:block mt-10">
             <Slider {...settings} className="h-96">
               <div

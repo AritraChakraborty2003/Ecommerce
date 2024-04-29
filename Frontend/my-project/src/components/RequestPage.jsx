@@ -33,7 +33,7 @@ const RequestPage = () => {
         <div className="RequestBody w-12/12 flex gap-10 justify-center items-center flex-wrap pb-5">
           {data.map((val) => (
             // eslint-disable-next-line react/jsx-key
-            <div className="card3 flex w-[95vw]  lg:w-[90vmin] rounded-lg shadow-xl  pb-3 gap-5">
+            <div className="card3 flex w-[95vw]  lg:w-[90vmin] rounded-lg shadow-2xl  pb-3 gap-5">
               <div className="imgHolder mt-5 width={120} ml-3">
                 {(screen.width < 900 && (
                   <img src={val.image} height={120} width={120}></img>
@@ -43,7 +43,7 @@ const RequestPage = () => {
               <div className="detailsDiv mt-5">
                 <p className="prodName h-17 lg:h-10 text-lg font-medium lg:text-xl ">
                   Name:
-                  <span className="text-xl lg:text-3xl  font-bold">
+                  <span className="text-xl lg:text-2xl  font-bold">
                     {" "}
                     {val.name}{" "}
                   </span>

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Marquee from "react-fast-marquee";
+import "./banner.css";
 const Header = () => {
   const [status, setStatus] = useState(false);
   return (
@@ -8,117 +10,160 @@ const Header = () => {
           <div className="hidden lg:block slidebar bg-mustardyellow  w-12/12 p-2">
             <div className="showText w-12/12">
               <ul className="flex justify-evenly font-medium font-serif">
-                <li>
-                  Great <span className="text-black">Books!!!!</span>
-                </li>
-                <li>Excellent customer Service</li>
-                <li>Contact No: 9856XXXX</li>
+                <Marquee speed={80} gradient={false} pauseOnHover>
+                  <li className="ml-10">
+                    Great <span className="font-bold">Books!!!!</span>
+                  </li>
+
+                  <li className="ml-20">
+                    Excellent customer
+                    <span className=" font-bold"> Service</span>
+                  </li>
+                  <li className="ml-20">
+                    Contact No: <span className=" font-bold"> 9856XXXX</span>
+                  </li>
+                  <li className="ml-20">
+                    Best <span className=" font-bold">Merchandises</span>
+                  </li>
+                  <li className="ml-20">
+                    Top notch
+                    <span className=" font-bold">
+                      &nbsp;&nbsp;Corporate Gifts
+                    </span>
+                  </li>
+                </Marquee>
               </ul>
             </div>
           </div>
           <div className=".fixed relative .top-0 navBar bg-darkwhite  h-20 flex  justify-between">
-            <div className="hamHolder block lg:hidden h-20">
-              <div className="flex gap-2">
-                <div className="h-20 flex justify-center items-center ml-3 ">
-                  <div className="imgHolde flex justify-center items-center">
-                    <img
-                      className="max-h-full max-w-full object-contain"
-                      src="./images/hamburger (1).png"
-                      onClick={() => {
-                        if (status) {
-                          setStatus(false);
-                        } else setStatus(true);
-                      }}
-                      height={20}
-                      width={20}
-                    ></img>
+            {(screen.width > 1199 && (
+              <div className="flex space-x-2">
+                <div className="hidden lg:block  h-20 w-[45vmin] p-2  justify-center items-center">
+                  <div className="logoHolder ">
+                    <a href="/">
+                      <img
+                        src="./images/logo-black.png"
+                        className="max-w-full max-h-full object-contain"
+                      ></img>
+                    </a>
                   </div>
                 </div>
-                <div className="logoHolder mt-6 ml-2 w-56 ">
-                  <a href="/">
-                    <img
-                      src="./images/logo-black.png"
-                      className="max-w-full max-h-full object-contain"
-                      height={170}
-                      width={140}
-                    ></img>
-                  </a>
-                </div>
-                <div className="imgHolder flex justify-center items-center mt-2">
-                  <img
-                    className="max-h-full max-w-full object-contain"
-                    src="./images/cart.png"
-                    height={40}
-                    width={40}
-                  ></img>
-                </div>
 
-                <div className="imgHolder flex justify-center items-center mt-2 ml-2">
-                  <img
-                    className="max-h-full max-w-full object-contain"
-                    src="./images/user1.png"
-                    height={40}
-                    width={40}
-                  ></img>
-                </div>
-              </div>
-            </div>
-
-            <div className="hidden lg:block  h-20 w-1/3 p-2  justify-center items-center">
-              <div className="logoHolder ">
-                <a href="/">
-                  <img
-                    src="./images/logo-black.png"
-                    className="max-w-full max-h-full object-contain"
-                  ></img>
-                </a>
-              </div>
-            </div>
-
-            <div className="IconHolder  h-20 w-2/3 p-2 hidden lg:block">
-              <ul className="flex justify-center space-x-5 xl:space-x-10 p-4 pl-4 pr-4  lg:text-base lg:font-medium  xl:text-lg  xl:font-bold font-roboto">
-                <li>
-                  <a href="#" className="text-black">
-                    Books
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-black">
-                    Merchendise
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-black">
-                    Traditionals
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-black">
-                    Corporate Gifts
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="ExtHolder hidden lg:block  h-15 w-1/3 p-2 ">
-              <div className="ExtHolder flex justify-end  mr-10  h-full w-full p-2 space-x-10 ">
-                <div className="imgHolder h-15 w-15 flex items-center">
-                  <img
-                    src="./images/user1.png"
-                    className="max-h-full max-w-full object-contain"
-                  ></img>
+                <div className="IconHolder  h-20 w-[77vmin] p-2 hidden lg:block">
+                  <ul className="flex ml-1 space-x-1 xl:space-x-5 p-4 pl-2 pr-4   lg:font-normal  xl:text-md  xl:font-medium text-lg">
+                    <li>
+                      <a href="#" className="text-black">
+                        Books
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="text-black">
+                        Merchendise
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="text-black">
+                        Traditionals
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="text-black">
+                        Corporate Gifts
+                      </a>
+                    </li>
+                  </ul>
                 </div>
 
-                <div className="imgHolder w-15 flex items-center overflow-hidden">
-                  <a href="/cart">
-                    <img
-                      src="./images/cart.png"
-                      className="w-[50px] h-[50px]"
-                    ></img>
-                  </a>
+                <div className="IconHolder  h-20 w-[80vmin] p-2 hidden lg:block ">
+                  <div className="searchHolder  flex  justify-end items-center mt-2">
+                    <input
+                      type="text"
+                      placeholder="Search your item...."
+                      className="rounded-lg p-2 border-white w-[65vmin]"
+                    ></input>
+                    <div className="rounded-xl w-15 h-[6vmin] p-2  bg-mustardyellow flex justify-center items-center ml-[-5.9vmin] ">
+                      <img
+                        src="./images/searchicon.png"
+                        className="rounded-xl"
+                        height={25}
+                        width={25}
+                      ></img>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="ExtHolder hidden lg:block  h-15 w-[25vmin] p-2">
+                  <div className="ExtHolder flex justify-end  mr-10  h-full w-full p-2 space-x-10 ">
+                    <div className="imgHolder w-15 flex items-center">
+                      <img
+                        src="./images/user1.png"
+                        className="w-[40px] h-[40px] max-h-full max-w-full object-contain"
+                      ></img>
+                    </div>
+
+                    <div className="imgHolder w-15 flex items-center overflow-hidden">
+                      <a href="/cart">
+                        <img
+                          src="./images/cart.png"
+                          className="w-[30px] h-[30px]"
+                        ></img>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            )) || (
+              <div className="hamHolder block lg:hidden h-20">
+                <div className="flex gap-2 w-[100vw] md:w-[100vw]">
+                  <div className="flex w-1/2">
+                    <div className="h-20 flex justify-center items-center ml-3">
+                      <div className="imgHolder flex justify-center items-center">
+                        <img
+                          className="max-h-full max-w-full object-contain"
+                          src="./images/hamburger (1).png"
+                          onClick={() => {
+                            if (status) {
+                              setStatus(false);
+                            } else setStatus(true);
+                          }}
+                          height={27}
+                          width={27}
+                        ></img>
+                      </div>
+                    </div>
+                    <div className="logoHolder mt-6 ml-6 w-56 ">
+                      <a href="/">
+                        <img
+                          src="./images/logo-black.png"
+                          className="max-w-full max-h-full object-contain"
+                          height={170}
+                          width={140}
+                        ></img>
+                      </a>
+                    </div>
+                  </div>
+                  <div className="space-x-5 w-1/2 flex justify-end pr-5">
+                    <div className="imgHolder flex justify-center items-center mt-2">
+                      <img
+                        className="max-h-full max-w-full object-contain"
+                        src="./images/cart.png"
+                        height={40}
+                        width={40}
+                      ></img>
+                    </div>
+
+                    <div className="imgHolder flex justify-center items-center mt-2 ml-2">
+                      <img
+                        className="max-h-full max-w-full object-contain"
+                        src="./images/user1.png"
+                        height={40}
+                        width={40}
+                      ></img>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -136,6 +181,24 @@ const Header = () => {
           </div>
         </div>
       ) : null}
+
+      <div className="searchDiv lg:hidden flex justify-center items-center bg-darkwhite p-3">
+        <div className="searchHolder  flex justify-center items-center mt-[-2vmin]">
+          <input
+            type="text"
+            placeholder="Search your item...."
+            className="rounded-lg p-2 border-white w-[95vw]"
+          ></input>
+          <div className="h-[10vmin] md:h-[6.25vmin] rounded-lg bg-mustardyellow flex justify-center items-center ml-[-6.5vmin] p-2">
+            <img
+              src="./images/searchicon.png"
+              className="rounded-xl"
+              height={30}
+              width={30}
+            ></img>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

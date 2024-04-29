@@ -30,17 +30,31 @@ const Reviews = () => {
               height={250}
             />
           ))) ||
-          data.map((val) => (
-            <video
-              autoPlay
-              loop
-              muted
-              src={val.file}
-              type="video/mp4"
-              width={150}
-              height={150}
-            />
-          ))}
+          (screen.width > 0 &&
+            screen.width < 400 &&
+            data.map((val) => (
+              <video
+                autoPlay
+                loop
+                muted
+                src={val.file}
+                type="video/mp4"
+                width={140}
+                height={140}
+              />
+            ))) ||
+          (screen.width > 400 &&
+            data.map((val) => (
+              <video
+                autoPlay
+                loop
+                muted
+                src={val.file}
+                type="video/mp4"
+                width={180}
+                height={180}
+              />
+            )))}
       </div>
     </>
   );

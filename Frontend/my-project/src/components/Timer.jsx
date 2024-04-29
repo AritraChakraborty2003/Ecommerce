@@ -7,7 +7,7 @@ const Timer = () => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  const deadline = "April, 29, 2024";
+  const deadline = "May, 15, 2024";
 
   const getTime = () => {
     const time = Date.parse(deadline) - Date.now();
@@ -28,7 +28,9 @@ const Timer = () => {
     <div className="timer text-brown text-2xl text-center font-medium mt-3">
       Time Remaining:{" "}
       <span className="text-black">
-        {hours + ":" + minutes + ":" + seconds}
+        {hours % 10 === hours ? "0" + hours : hours}:
+        {minutes % 10 === minutes ? "0" + minutes : minutes}:
+        {seconds % 10 === seconds ? "0" + seconds : seconds}
       </span>
     </div>
   );

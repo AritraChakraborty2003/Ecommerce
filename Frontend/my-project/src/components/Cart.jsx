@@ -1,7 +1,8 @@
 import Header from "./Header";
 import Foot1 from "./Foot1";
-
+import { useState } from "react";
 const Cart = () => {
+  const [count, setCount] = useState(1);
   return (
     <>
       <Header />
@@ -10,7 +11,7 @@ const Cart = () => {
       </div>
       <div className="container  w-12/12 mb-5">
         <div className="container  flex flex-col justify-center items-center mt-10">
-          <div className="card mt-3 BoxHolder w-[91vw] lg:w-8/12  mb-10 rounded-3xl  shadow-3xl p-2 flex">
+          <div className="card mt-3 BoxHolder w-[91vw] lg:w-8/12  mb-10 rounded-xl  shadow-2xl p-2 flex">
             <div className="imgSection w-1/3  h-60 flex justify-center items-center">
               <div className="imgHolder h-56 w-11/12 flex justify-center">
                 <img
@@ -57,12 +58,17 @@ const Cart = () => {
                           <img
                             src="./images/minus1.png"
                             className="max-w-full max-h-full object-contain"
+                            onClick={() => {
+                              if (count != 1) {
+                                setCount(count - 1);
+                              }
+                            }}
                           />
                         </div>
                         <div className="qtyNum">
                           <p id="qtyNum" className="font-bold">
                             {" "}
-                            1{" "}
+                            {count}{" "}
                           </p>
                         </div>
 
@@ -70,6 +76,9 @@ const Cart = () => {
                           <img
                             src="./images/plus1.png"
                             className="max-w-full max-h-full object-contain"
+                            onClick={() => {
+                              setCount(count + 1);
+                            }}
                           />
                         </div>
                       </div>
