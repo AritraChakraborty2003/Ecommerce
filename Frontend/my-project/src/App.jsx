@@ -15,6 +15,7 @@ import FilterLogic from "./components/FilterLogic";
 import Item from "./components/Item";
 import Signup from "./components/Signup";
 import Cms from "./components/Cms";
+import GoogleAuth from "./components/GoogleAuth";
 import Dealsofday from "./components/Dealsofday";
 import Reviews from "./components/Reviews";
 import Cart from "./components/Cart";
@@ -48,6 +49,7 @@ function App() {
           <Route path="/ComboBox" element={<ComboBox />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/googleAuth" element={<GoogleAuth />}></Route>
         </Routes>
       </BrowserRouter>
     </>

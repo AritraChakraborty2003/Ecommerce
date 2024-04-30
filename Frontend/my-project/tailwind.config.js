@@ -4,6 +4,7 @@ export default {
   theme: {
     colors: {
       darkwhite: "#f4f1ee",
+      darkblue: "#1F75FE",
       lightpeach: "#fbc4ab",
       peach: "#f08080",
       mustardyellow: "#FFC300",

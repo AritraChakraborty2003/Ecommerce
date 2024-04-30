@@ -74,7 +74,7 @@ const Header = () => {
                   </ul>
                 </div>
 
-                <div className="IconHolder  h-20 w-[80vmin] p-2 hidden lg:block ">
+                <div className="IconHolder  h-20 w-[70vmin] p-2 hidden lg:block ">
                   <div className="searchHolder  flex  justify-end items-center mt-2">
                     <input
                       type="text"

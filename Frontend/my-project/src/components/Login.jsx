@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import "./handler.css";
+import GoogleAuth from "./GoogleAuth";
 import Foot1 from "./Foot1";
 import Header from "./Header";
 import { useState } from "react";
@@ -48,12 +49,21 @@ const Login = () => {
             />
             <br></br>
             <br></br>
-            <a href="/Signup">Don't Have an account?</a>
+
+            <a>Or signup directly with google...</a>
             <br></br>
-            <div className="btnHolder flex justify-center items-center">
+
+            <div className="mt-3">
+              <GoogleAuth text="Login with Google" />
+            </div>
+
+            <br></br>
+            <a href="/Signup">Don't Have an account?</a>
+
+            <div className="btnHolder flex justify-center items-center mt-3">
               <button
                 type="submit"
-                className="mt-3 p-2 bg-mustardyellow text-black hover:bg-blue-700 "
+                className="mt-3 p-2 w-24 bg-mustardyellow text-black hover:bg-blue-700 "
                 onClick={handleLogin}
               >
                 Login

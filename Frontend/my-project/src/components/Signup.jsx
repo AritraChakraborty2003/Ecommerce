@@ -2,6 +2,7 @@ import "./handler.css";
 import Header from "./Header";
 import Foot1 from "./Foot1";
 import { useState } from "react";
+import GoogleAuth from "./GoogleAuth";
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -100,10 +101,16 @@ const Signup = () => {
                 setMobile(e.target.value);
               }}
             ></input>
-
             <br></br>
             <br></br>
-            <a href="/login">Already have an account?</a>
+            <a>Or signup directly with google...</a>
+            <br></br>
+            <div className="mt-3">
+              <GoogleAuth text="Signup with Google" />
+            </div>
+            <div className="mt-3">
+              <a href="/login">Already have an account?</a>
+            </div>
             <br></br>
             <div className="btnHolder flex justify-center items-center">
               <button
