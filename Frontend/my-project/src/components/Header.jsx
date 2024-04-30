@@ -50,7 +50,7 @@ const Header = () => {
                 </div>
 
                 <div className="IconHolder  h-20 w-[77vmin] p-2 hidden lg:block">
-                  <ul className="flex ml-1 space-x-1 xl:space-x-5 p-4 pl-2 pr-4   lg:font-normal  xl:text-md  xl:font-medium text-lg">
+                  <ul className="flex ml-1 space-x-3 xl:space-x-5 p-4 pl-2 pr-4   lg:font-normal  xl:text-md  xl:font-normal lg:text-md text-lg">
                     <li>
                       <a href="#" className="text-black">
                         Books
@@ -95,10 +95,12 @@ const Header = () => {
                 <div className="ExtHolder hidden lg:block  h-15 w-[25vmin] p-2">
                   <div className="ExtHolder flex justify-end  mr-10  h-full w-full p-2 space-x-10 ">
                     <div className="imgHolder w-15 flex items-center">
-                      <img
-                        src="./images/user1.png"
-                        className="w-[40px] h-[40px] max-h-full max-w-full object-contain"
-                      ></img>
+                      <a href="/signup">
+                        <img
+                          src="./images/user1.png"
+                          className="w-[40px] h-[40px] max-h-full max-w-full object-contain"
+                        ></img>
+                      </a>
                     </div>
 
                     <div className="imgHolder w-15 flex items-center overflow-hidden">

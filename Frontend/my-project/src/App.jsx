@@ -13,6 +13,7 @@ import Banner from "./components/Banner";
 import ComboBox from "./components/ComboBox";
 import FilterLogic from "./components/FilterLogic";
 import Item from "./components/Item";
+import Signup from "./components/Signup";
 import Cms from "./components/Cms";
 import Dealsofday from "./components/Dealsofday";
 import Reviews from "./components/Reviews";
@@ -21,6 +22,7 @@ import Booksfirstpage from "./components/Booksfirstpage";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
           <Route path="/TimerPage" element={<Timer />}></Route>
           <Route path="/Header" element={<Header />}></Route>
           <Route path="/ComboBox" element={<ComboBox />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>
     </>
