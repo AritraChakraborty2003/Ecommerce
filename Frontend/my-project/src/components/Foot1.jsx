@@ -247,7 +247,7 @@ const Foot1 = () => {
         )) ||
         (screen.width >= 1536 && screen.width < 1728 && (
           <div className="flex-wrap footer-body-w-12/12 lg:h-96 bg-mustardyellow flex">
-            <div className="leftPart w-[100vmin]">
+            <div className="leftPart w-[95vmin]">
               <div
                 className="imgHolder h-15
                    w-56 mt-8 ml-3"
