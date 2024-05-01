@@ -166,204 +166,560 @@ const FilterLogic = () => {
         }
       }
     } else {
-      if (Obj.type === "book" && book != "" && author == "" && price == "") {
-        console.log("Click");
-        const filter = data.filter((product) => product.category === Obj.text);
-        console.log(filter);
-        setFilterProduct(filter);
-        setBook(Obj.text);
-      } else if (
-        Obj.type === "book" &&
-        book != "" &&
-        author == "" &&
-        price != ""
-      ) {
-        if (priceVal === "discrete") {
+      if (Obj.type === "book") {
+        if (book != "" && price === "" && author === "") {
           const filter = data.filter(
-            (product) => product.price < 500 && product.category === Obj.text
-          );
-          console.log(filter);
-          setFilterProduct(filter);
-          setBook(Obj.text);
-        } else if (Obj.val === "range") {
-          const filter = data.filter(
-            (product) =>
-              product.price > 500 &&
-              product.price <= 1000 &&
-              product.category === Obj.text
-          );
-          console.log(filter);
-          setFilterProduct(filter);
-          setBook(Obj.text);
-        } else if (Obj.val === "discreteMore") {
-          const filter = data.filter(
-            (product) => product.price > Obj.id && product.category === Obj.text
+            (product) => product.category === Obj.text
           );
           console.log(filter);
           setFilterProduct(filter);
           setBook(Obj.text);
         }
-      } else if (
-        Obj.type === "author" &&
-        author != "" &&
-        book == "" &&
-        price == ""
-      ) {
-        console.log("Click");
-        const filter = data.filter((product) => product.author === Obj.text);
-        console.log(filter);
-        setFilterProduct(filter);
-        setAuthor(Obj.text);
-      } else if (
-        Obj.type === "price" &&
-        price != "" &&
-        book == "" &&
-        author == ""
-      ) {
-        if (Obj.val === "discrete") {
-          const filter = data.filter((product) => product.price < Obj.id);
-          console.log(filter);
-          setFilterProduct(filter);
-          setPrice(Obj.text);
-          setPriceValue(Obj.id);
-          setPriceVal(Obj.val);
-        } else if (Obj.val === "range") {
+        if (book === "" && price === "" && author != "") {
           const filter = data.filter(
-            (product) => product.price > 500 && product.price < 1000
+            (product) =>
+              product.category === Obj.text && product.author === author
           );
           console.log(filter);
           setFilterProduct(filter);
-          setPrice(Obj.text);
-          setPriceValue(Obj.id);
-          setPriceVal(Obj.val);
-        } else if (Obj.val === "discreteMore") {
-          const filter = data.filter((product) => product.price > Obj.id);
-          console.log(filter);
-          setFilterProduct(filter);
-          setPrice(Obj.text);
-          setPriceValue(Obj.id);
-          setPriceVal(Obj.val);
+          setBook(Obj.text);
         }
-      } else if (Obj.type === "author" && book != "" && price === "") {
-        console.log("Click");
-        const filter = data.filter(
-          (product) => product.author === Obj.text && product.category == book
-        );
-        console.log(filter);
-        setFilterProduct(filter);
-        setAuthor(Obj.text);
-      } else if (Obj.type === "price" && book != "" && author === "") {
-        if (Obj.val === "discrete") {
-          const filter = data.filter(
-            (product) => product.price < Obj.id && product.category === book
-          );
-          console.log(filter);
-          setFilterProduct(filter);
-          setPriceValue(Obj.id);
-          setPrice(Obj.text);
-          setPriceVal(Obj.val);
-        } else if (Obj.val === "range") {
+        if (book != "" && price === "" && author != "") {
           const filter = data.filter(
             (product) =>
-              product.price > 500 &&
-              product.price <= 1000 &&
-              product.category === book
+              product.category === Obj.text && product.author === author
           );
           console.log(filter);
           setFilterProduct(filter);
-          setPrice(Obj.text);
-          setPriceValue(Obj.id);
-          setPriceVal(Obj.val);
-        } else if (Obj.val === "discreteMore") {
-          const filter = data.filter(
-            (product) => product.price > Obj.id && product.category === book
-          );
-          console.log(filter);
-          setFilterProduct(filter);
-          setPrice(Obj.text);
-          setPriceValue(Obj.id);
-          setPriceVal(Obj.val);
+          setBook(Obj.text);
         }
-      } else if (Obj.type === "author" && book != "" && price != "") {
-        if (priceVal === "discrete") {
+
+        if (book === "" && price != "" && author === "") {
+          if (priceVal === "discrete") {
+            const filter = data.filter(
+              (product) => product.category === Obj.text && product.price < 500
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          } else if (priceVal === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.category === Obj.text &&
+                product.price > 500 &&
+                product.price <= 1000
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          } else if (priceVal === "discreteMore") {
+            const filter = data.filter(
+              (product) => product.category === Obj.text && product.price > 1000
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          }
+        }
+        if (book != "" && price != "" && author === "") {
+          if (priceVal === "discrete") {
+            const filter = data.filter(
+              (product) => product.category === Obj.text && product.price < 500
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          } else if (priceVal === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.category === Obj.text &&
+                product.price > 500 &&
+                product.price <= 1000
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          } else if (priceVal === "discreteMore") {
+            const filter = data.filter(
+              (product) => product.category === Obj.text && product.price > 1000
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          }
+        }
+        if (book === "" && price != "" && author != "") {
+          if (priceVal === "discrete") {
+            const filter = data.filter(
+              (product) =>
+                product.category === Obj.text &&
+                product.price < 500 &&
+                product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          } else if (priceVal === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.category === Obj.text &&
+                product.price > 500 &&
+                product.price <= 1000 &&
+                product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          } else if (priceVal === "discreteMore") {
+            const filter = data.filter(
+              (product) =>
+                product.category === Obj.text &&
+                product.price > 1000 &&
+                product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          }
+        }
+
+        if (book != "" && price != "" && author != "") {
+          if (priceVal === "discrete") {
+            const filter = data.filter(
+              (product) =>
+                product.category === Obj.text &&
+                product.price < 500 &&
+                product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          } else if (priceVal === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.category === Obj.text &&
+                product.price > 500 &&
+                product.price <= 1000 &&
+                product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          } else if (priceVal === "discreteMore") {
+            const filter = data.filter(
+              (product) =>
+                product.category === Obj.text &&
+                product.price > 1000 &&
+                product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setBook(Obj.text);
+          }
+        }
+      }
+
+      if (Obj.type === "author") {
+        /* */
+        if (author != "" && price === "" && book === "") {
+          const filter = data.filter((product) => product.author === Obj.text);
+          console.log(filter);
+          setFilterProduct(filter);
+          setAuthor(Obj.text);
+        } else if (author === "" && price != "" && book === "") {
+          if (priceVal === "discrete") {
+            const filter = data.filter(
+              (product) => product.author === Obj.text && product.price < 500
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          } else if (priceVal === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.author === Obj.text &&
+                product.price > 500 &&
+                product.price <= 1000
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          } else if (priceVal === "discreteMore") {
+            const filter = data.filter(
+              (product) =>
+                product.author === Obj.text &&
+                product.price > 1000 &&
+                product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          }
+        } else if (author != "" && price != "" && book === "") {
+          if (priceVal === "discrete") {
+            const filter = data.filter(
+              (product) => product.author === Obj.text && product.price < 500
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          } else if (priceVal === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.author === Obj.text &&
+                product.price > 500 &&
+                product.price <= 1000
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          } else if (priceVal === "discreteMore") {
+            const filter = data.filter(
+              (product) =>
+                product.author === Obj.text &&
+                product.price > 1000 &&
+                product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          }
+        } else if (author === "" && price === "" && book != "") {
           const filter = data.filter(
             (product) =>
-              product.author === Obj.text &&
-              product.category == book &&
-              product.price < priceValue
+              product.author === Obj.text && product.category === book
           );
           console.log(filter);
           setFilterProduct(filter);
           setAuthor(Obj.text);
-        } else if (priceVal === "range") {
+        } else if (author != "" && price === "" && book != "") {
           const filter = data.filter(
             (product) =>
-              product.author === Obj.text &&
-              product.category == book &&
-              product.price > 500 &&
-              product.price < priceValue
-          );
-          console.log(filter);
-          setFilterProduct(filter);
-          setAuthor(Obj.text);
-        } else {
-          const filter = data.filter(
-            (product) =>
-              product.author === Obj.text &&
-              product.category == book &&
-              product.price > priceValue
+              product.author === Obj.text && product.category === book
           );
           console.log(filter);
           setFilterProduct(filter);
           setAuthor(Obj.text);
         }
-      } else if (Obj.type === "book" && author != "" && price === "") {
-        const filter = data.filter(
-          (product) => product.category === Obj.text && product.author == author
-        );
-        console.log(filter);
-        setFilterProduct(filter);
-        setBook(Obj.text);
-      } else if (Obj.type === "book" && author != "" && price != "") {
-        if (priceVal === "discrete") {
+        if (author === "" && price != "" && book != "") {
+          if (priceVal === "discrete") {
+            const filter = data.filter(
+              (product) =>
+                product.author === Obj.text &&
+                product.price < 500 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          } else if (priceVal === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.author === Obj.text &&
+                product.price > 500 &&
+                product.price <= 1000 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          } else if (priceVal === "discreteMore") {
+            const filter = data.filter(
+              (product) =>
+                product.author === Obj.text &&
+                product.price > 1000 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          }
+        } else if (author === "" && price === "" && book != "") {
           const filter = data.filter(
             (product) =>
-              product.author === Obj.text &&
-              product.category == book &&
-              product.price < priceValue
+              product.author === Obj.text && product.category === book
           );
           console.log(filter);
           setFilterProduct(filter);
           setAuthor(Obj.text);
-        } else if (priceVal === "range") {
+        } else if (author != "" && price === "" && book != "") {
           const filter = data.filter(
             (product) =>
-              product.author === Obj.text &&
-              product.category == book &&
-              product.price > 500 &&
-              product.price < priceValue
+              product.author === Obj.text && product.category === book
           );
           console.log(filter);
           setFilterProduct(filter);
           setAuthor(Obj.text);
-        } else {
-          const filter = data.filter(
-            (product) =>
-              product.author === Obj.text &&
-              product.category == book &&
-              product.price > priceValue
-          );
-          console.log(filter);
-          setFilterProduct(filter);
-          setAuthor(Obj.text);
+        } else if (author != "" && price != "" && book != "") {
+          if (priceVal === "discrete") {
+            const filter = data.filter(
+              (product) =>
+                product.author === Obj.text &&
+                product.price < 500 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          } else if (priceVal === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.author === Obj.text &&
+                product.price > 500 &&
+                product.price <= 1000 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          } else if (priceVal === "discreteMore") {
+            const filter = data.filter(
+              (product) =>
+                product.author === Obj.text &&
+                product.price > 1000 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setAuthor(Obj.text);
+          }
+        }
+        /* */
+      } else if (Obj.type === "price") {
+        if (price != "" && author === "" && book === "") {
+          if (Obj.val === "discrete") {
+            const filter = data.filter((product) => product.price < Obj.id);
+            console.log(filter);
+            setFilterProduct(filter);
+            setPriceValue(Obj.id);
+            setPrice(Obj.text);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "range") {
+            const filter = data.filter(
+              (product) => product.price > 500 && product.price <= 1000
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "discreteMore") {
+            const filter = data.filter((product) => product.price > Obj.id);
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          }
+        } else if (book === "" && price === "" && author != "") {
+          if (Obj.val === "discrete") {
+            const filter = data.filter(
+              (product) => product.price < Obj.id && product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPriceValue(Obj.id);
+            setPrice(Obj.text);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.price > 500 &&
+                product.price <= 1000 &&
+                product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "discreteMore") {
+            const filter = data.filter(
+              (product) => product.price > Obj.id && product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          }
+        } else if (author != "" && price === "" && book != "") {
+          if (Obj.val === "discrete") {
+            const filter = data.filter(
+              (product) =>
+                product.author === author &&
+                product.price < 500 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.author === author &&
+                product.price > 500 &&
+                product.price <= 1000 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "discreteMore") {
+            const filter = data.filter(
+              (product) =>
+                product.author === author &&
+                product.price > 1000 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          }
+        } else if (author != "" && price != "" && book != "") {
+          if (Obj.val === "discrete") {
+            const filter = data.filter(
+              (product) =>
+                product.author === author &&
+                product.price < 500 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.author === author &&
+                product.price > 500 &&
+                product.price <= 1000 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "discreteMore") {
+            const filter = data.filter(
+              (product) =>
+                product.author === author &&
+                product.price > 1000 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          }
+        } else if (book === "" && price != "" && author != "") {
+          if (Obj.val === "discrete") {
+            const filter = data.filter(
+              (product) => product.price < Obj.id && product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPriceValue(Obj.id);
+            setPrice(Obj.text);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.price > 500 &&
+                product.price <= 1000 &&
+                product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "discreteMore") {
+            const filter = data.filter(
+              (product) => product.price > Obj.id && product.author === author
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          }
+        } else if (book != "" && price === "" && author === "") {
+          if (Obj.val === "discrete") {
+            const filter = data.filter(
+              (product) => product.price < Obj.id && product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPriceValue(Obj.id);
+            setPrice(Obj.text);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.price > 500 &&
+                product.price <= 1000 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "discreteMore") {
+            const filter = data.filter(
+              (product) => product.price > Obj.id && product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          }
+        } else if (book != "" && price != "" && author === "") {
+          if (Obj.val === "discrete") {
+            const filter = data.filter(
+              (product) => product.price < Obj.id && product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPriceValue(Obj.id);
+            setPrice(Obj.text);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "range") {
+            const filter = data.filter(
+              (product) =>
+                product.price > 500 &&
+                product.price <= 1000 &&
+                product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          } else if (Obj.val === "discreteMore") {
+            const filter = data.filter(
+              (product) => product.price > Obj.id && product.category === book
+            );
+            console.log(filter);
+            setFilterProduct(filter);
+            setPrice(Obj.text);
+            setPriceValue(Obj.id);
+            setPriceVal(Obj.val);
+          }
         }
       }
     }
-    /*console.log(author);
-
-    const filter = data.filter((product) => product.category == text);
-    console.log(filter);
-    setFilterProduct(filter);*/
   };
   const handleChange = (individual) => {
     if (individual.type === "book") setActive(individual.id);
