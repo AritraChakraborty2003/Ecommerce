@@ -1,11 +1,14 @@
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
 import "./banner.css";
+
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-const Header = () => {
+import { useNavigate, useLocation } from "react-router-dom";
+const Header1 = () => {
   const [status, setStatus] = useState(false);
   const navigate = useNavigate();
+
+  const location = useLocation();
 
   return (
     <>
@@ -138,12 +141,7 @@ const Header = () => {
                 <div className="ExtHolder hidden lg:block  h-15 w-[25vmin] p-2">
                   <div className="ExtHolder flex justify-end  mr-10  h-full w-full p-2 space-x-10 ">
                     <div className="imgHolder w-15 flex items-center">
-                      <a href="/signup">
-                        <img
-                          src="./images/user1.png"
-                          className="w-[40px] h-[40px] max-h-full max-w-full object-contain"
-                        ></img>
-                      </a>
+                      {location.state.name}
                     </div>
 
                     <div className="imgHolder w-15  items-center overflow-hidden flex h-13">
@@ -254,4 +252,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header1;

@@ -104,7 +104,7 @@ const FilterLogic = () => {
 
   const [spansPrice] = useState([
     {
-      id: 500,
+      id: 501,
       text: "under 500",
       type: "price",
       val: "discrete",
@@ -733,15 +733,12 @@ const FilterLogic = () => {
   return (
     <>
       <Header />
-      <div className="flex justify-center h-28 w-screen text-5xl items-center bg-mustardyellow text-black font-extrabold">
-        Books
-      </div>
-      <div className="mainArea bg-darkwhite w-screen flex space-x-3 pb-5">
+      <div className="mainArea bg-darkwhite w-screen flex space-x-3 ">
         {screen.width >= 1280 && screen.width < 1700 && (
           <>
             <div className="filter flex-column hidden lg:block lg: w-[400px]">
               <div className="boxFilter  w-[400px]  ">
-                <h1 className="mt-1 ml-3 text-4xl  font-poppins font-bold overflow-hidden">
+                <h1 className="mt-1 ml-3 text-4xl  font-poppins font-bold overflow-hidden mt-5">
                   Filter{" "}
                   <span className="text-2xl font-medium">( your needs )</span>
                 </h1>

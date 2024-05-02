@@ -19,7 +19,7 @@ const ComboBox = () => {
         </div>
       </div>
       <div className="hidden lg:block mt-5">
-        <div className="w-12/12 flex space-x-1">
+        <div className="w-12/12 flex 2xl:space-x-5 justify-center items-center">
           <img src="./images/pcCombo.png"></img>
           <img src="./images/cg2.png"></img>
           <img src="./images/cg3.png"></img>

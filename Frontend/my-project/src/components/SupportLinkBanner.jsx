@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+
 const SupportLinkBanner = () => {
   const navigate = useNavigate();
   return (
@@ -10,8 +11,8 @@ const SupportLinkBanner = () => {
               src="./images/books.png"
               className="max-h-full max-w-full object-contain"
               onClick={() =>
-                navigate("/Items", {
-                  state: { val: "booksAPI", title: "Books" },
+                navigate("/Filter", {
+                  state: { val: "booksAPI", title: "books" },
                 })
               }
             ></img>
@@ -23,7 +24,7 @@ const SupportLinkBanner = () => {
               className="max-h-full max-w-full object-contain"
               onClick={() =>
                 navigate("/Items", {
-                  state: { val: "merchsAPI", title: "Merchendise" },
+                  state: { val: "merchsAPI", title: "merchendise" },
                 })
               }
             ></img>
@@ -34,7 +35,7 @@ const SupportLinkBanner = () => {
               className="max-h-full max-w-full object-contain"
               onClick={() =>
                 navigate("/Items", {
-                  state: { val: "religiousAPI", title: "Religious Items" },
+                  state: { val: "religiousAPI", title: "religious Items" },
                 })
               }
             ></img>
@@ -46,7 +47,7 @@ const SupportLinkBanner = () => {
               className="max-h-full max-w-full object-contain"
               onClick={() =>
                 navigate("/Items", {
-                  state: { val: "booksAPI", title: "Books" },
+                  state: { val: "booksAPI", title: "books" },
                 })
               }
             ></img>
@@ -57,7 +58,7 @@ const SupportLinkBanner = () => {
               className="max-h-full max-w-full object-contain"
               onClick={() =>
                 navigate("/Items", {
-                  state: { val: "giftsAPI", title: "Gifts" },
+                  state: { val: "giftsAPI", title: "gifts" },
                 })
               }
             ></img>

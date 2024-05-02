@@ -4,14 +4,22 @@ import GoogleAuth from "./GoogleAuth";
 import Foot1 from "./Foot1";
 import Header from "./Header";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("The email email:", email, "password: ", password);
     //Signup Authetication code/Logic for backend extension
+
+    navigate("/Header1", {
+      state: {
+        name: "aman",
+      },
+    });
   };
 
   return (
@@ -41,7 +49,7 @@ const Login = () => {
               type="text"
               name="password"
               placeholder="Enter Password..."
-              value={email}
+              value={password}
               className="shadow-xl p-2 w-[76vmin]"
               onChange={(e) => {
                 setPassword(e.target.value);

@@ -12,7 +12,7 @@ const Foot1 = () => {
   return (
     <>
       {(screen.width < 1280 && (
-        <div className="flex-wrap footer-body-w-12/12 pb-2 bg-mustardyellow flex">
+        <div className="flex-wrap footer-body-w-12/12 pb-2 md:pb-0 bg-mustardyellow flex">
           <div className="leftPart w-[85vmin]">
             <div
               className="imgHolder h-15

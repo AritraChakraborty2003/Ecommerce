@@ -22,7 +22,19 @@ var storage = multer.diskStorage({
 });
 
 var upload = multer({ storage: storage });
-
+const adminDbSchema = new mongoose.Schema(
+  {
+    uname: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+  },
+  { collection: "admindb" }
+);
 const ecomBookSchema = new mongoose.Schema(
   {
     name: {
@@ -222,8 +234,17 @@ const generalOrder = mongoose.model("OrderGeneral", ecomOrderSchema);
 const merchs = mongoose.model("Merch", ecomMerchSchema);
 const religious = mongoose.model("Religious", ecomReligiousSchema);
 const gifts = mongoose.model("Gifts", ecomGiftsSchema);
+const user1 = mongoose.model("UserDB", adminDbSchema);
 const review = mongoose.model("reviews", ecomReviewSchema);
 /* ---- GET Req Start ---- */
+app.get("/adminData", (req, res) => {
+  user1
+    .find()
+    .then((users) => {
+      res.json(users);
+    })
+    .catch((err) => console.log(err));
+});
 app.get("/", (req, res) => {
   const data = {
     name: "Aritra",
@@ -453,6 +474,13 @@ app.post("/ordersAPI", (req, res) => {
   });
 
   newOrder.save();
+});
+
+app.post("/adminData", (req, res) => {
+  let uname = req.body.uname;
+  let password = req.body.password;
+  console.log(uname);
+  console.log(password);
 });
 app.listen(8000, () => {
   console.log("Backend Connected");

@@ -3,6 +3,7 @@ import viteLogo from "/vite.svg";*/
 import Foot1 from "./components/Foot1";
 import Header from "./components/Header";
 import First from "./components/First";
+import AddAdmin from "./components/AddAdmin";
 import Dealbooks from "./components/Dealbooks";
 import RequestPage from "./components/RequestPage";
 import Timer from "./components/Timer";
@@ -10,9 +11,12 @@ import Timer from "./components/Timer";
 import MysteryBox from "./components/MysteryBox";
 import Detailspage from "./components/Detailspage";
 import Banner from "./components/Banner";
+import Adminchoice from "./components/AdminChoice";
+import Adminauth from "./components/Adminauth";
 import ComboBox from "./components/ComboBox";
 import FilterLogic from "./components/FilterLogic";
 import Item from "./components/Item";
+import Header1 from "./components/Header1";
 import Signup from "./components/Signup";
 import Cms from "./components/Cms";
 import GoogleAuth from "./components/GoogleAuth";
@@ -50,6 +54,10 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/googleAuth" element={<GoogleAuth />}></Route>
+          <Route path="/admin" element={<Adminauth />}></Route>
+          <Route path="/Adminchoice" element={<Adminchoice />}></Route>
+          <Route path="/AddAdmin" element={<AddAdmin />}></Route>
+          <Route path="/Header1" element={<Header1 />}></Route>
         </Routes>
       </BrowserRouter>
     </>
