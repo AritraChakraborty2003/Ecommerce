@@ -3,6 +3,7 @@ import viteLogo from "/vite.svg";*/
 import Foot1 from "./components/Foot1";
 import Header from "./components/Header";
 import First from "./components/First";
+import SearchPage from "./components/SearchPage";
 import AddAdmin from "./components/AddAdmin";
 import Dealbooks from "./components/Dealbooks";
 import RequestPage from "./components/RequestPage";
@@ -58,6 +59,7 @@ function App() {
           <Route path="/Adminchoice" element={<Adminchoice />}></Route>
           <Route path="/AddAdmin" element={<AddAdmin />}></Route>
           <Route path="/Header1" element={<Header1 />}></Route>
+          <Route path="/search" element={<SearchPage />}></Route>
         </Routes>
       </BrowserRouter>
     </>

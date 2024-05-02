@@ -8,8 +8,13 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const Item = () => {
   const [data, setData] = useState([]);
+  const [cng, setcng] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+  if (cng != location.state.val) {
+    setcng(location.state.val);
+  }
+
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/" + location.state.val)
@@ -19,7 +24,7 @@ const Item = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [cng]);
 
   console.log(data);
   return (

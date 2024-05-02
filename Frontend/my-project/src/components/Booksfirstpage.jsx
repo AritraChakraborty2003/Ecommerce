@@ -166,33 +166,91 @@ const Booksfirstpage = () => {
       </div>
 
       <div className="w-12/12 bookHolder lg:hidden space-x-1 flex flex-wrap  justify-center items-center mt-10 ">
-        {data.map((val) => (
-          <div
-            className="mt-3 w-[185px] h-[200px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+        {(screen.width >= 410 &&
+          data.map((val) => (
+            <div
+              className="mt-3 w-[185px] h-[200px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
                                 hover:scale-x-110 "
-          >
-            <div className="w-12/12 flex justify-center">
-              <img
-                className="rounded-t-lg border-solid border-grey-2 shadow-xl"
-                src={val.image}
-                alt=""
-                width={75}
-                height={60}
-                onClick={() => {
-                  navigate("/details", { state: { val: val } });
-                }}
-              />
+            >
+              <div className="w-12/12 flex justify-center">
+                <img
+                  className="rounded-t-lg border-solid border-grey-2 shadow-xl"
+                  src={val.image}
+                  alt=""
+                  width={75}
+                  height={60}
+                  onClick={() => {
+                    navigate("/details", { state: { val: val } });
+                  }}
+                />
+              </div>
+              <div className="p-5 flex justify-center items-center">
+                <button
+                  type="button"
+                  className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                >
+                  Add To Cart
+                </button>
+              </div>
             </div>
-            <div className="p-5 flex justify-center items-center">
-              <button
-                type="button"
-                className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+          ))) ||
+          (screen.width <= 410 &&
+            screen.width > 320 &&
+            data.map((val) => (
+              <div
+                className="mt-3 w-[160px] h-[200px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+                                hover:scale-x-110 "
               >
-                Add To Cart
-              </button>
-            </div>
-          </div>
-        ))}
+                <div className="w-12/12 flex justify-center">
+                  <img
+                    className="rounded-t-lg border-solid border-grey-2 shadow-xl"
+                    src={val.image}
+                    alt=""
+                    width={75}
+                    height={60}
+                    onClick={() => {
+                      navigate("/details", { state: { val: val } });
+                    }}
+                  />
+                </div>
+                <div className="p-5 flex justify-center items-center">
+                  <button
+                    type="button"
+                    className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+            ))) ||
+          (screen.width <= 320 &&
+            data.map((val) => (
+              <div
+                className="mt-3 w-[150px] h-[200px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+                                hover:scale-x-110 "
+              >
+                <div className="w-12/12 flex justify-center">
+                  <img
+                    className="rounded-t-lg border-solid border-grey-2 shadow-xl"
+                    src={val.image}
+                    alt=""
+                    width={75}
+                    height={60}
+                    onClick={() => {
+                      navigate("/details", { state: { val: val } });
+                    }}
+                  />
+                </div>
+                <div className="p-5 flex justify-center items-center">
+                  <button
+                    type="button"
+                    className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+            )))}
       </div>
     </>
   );

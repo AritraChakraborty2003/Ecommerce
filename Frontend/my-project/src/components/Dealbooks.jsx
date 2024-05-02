@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -146,25 +147,34 @@ const Dealbooks = () => {
       </div>
 
       <div className="bookHolder lg:hidden flex flex-wrap space-x-1 justify-center items-center mt-4 ">
-        {data.map((val) => (
-          // eslint-disable-next-line react/jsx-key
-          <div
-            className="mt-3 w-[180px] h-[220px] pb-3 pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+        {" "}
+        {(screen.width >= 410 &&
+          data.map((val) => (
+            <div
+              className="mt-3 w-[185px] h-[200px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
                                 hover:scale-x-110 "
-          >
-            <div className="w-12/12 flex justify-center">
-              <img
-                className="rounded-t-lg border-solid border-grey-2 shadow-xl"
-                src={val.image}
-                alt=""
-                width={75}
-                height={60}
-                onClick={() => {
-                  navigate("/details", { state: { val: val } });
-                }}
-              />
-            </div>
-            <div className="p-5 flex justify-center items-center">
+            >
+              <div className="w-12/12 flex justify-center">
+                <img
+                  className="rounded-t-lg border-solid border-grey-2 shadow-xl"
+                  src={val.image}
+                  alt=""
+                  width={75}
+                  height={60}
+                  onClick={() => {
+                    navigate("/details", { state: { val: val } });
+                  }}
+                />
+              </div>
+              <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+                <span className="line-through text-brown text-md font-roboto font-medium overflow-hidden">
+                  Rs.{Math.trunc((val.price * 100) / (100 - val.discount))}
+                </span>
+                &nbsp;&nbsp;
+                <span className=" text-black text-lg font-roboto font-medium overflow-hidden">
+                  Rs. {val.price}
+                </span>
+              </p>
               <div className="p-5 flex justify-center items-center">
                 <button
                   type="button"
@@ -174,8 +184,74 @@ const Dealbooks = () => {
                 </button>
               </div>
             </div>
-          </div>
-        ))}
+          ))) ||
+          (screen.width <= 410 &&
+            screen.width > 320 &&
+            data.map((val) => (
+              <div
+                className="mt-3 w-[160px] h-[200px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+                                hover:scale-x-110 "
+              >
+                <div className="w-12/12 flex justify-center">
+                  <img
+                    className="rounded-t-lg border-solid border-grey-2 shadow-xl"
+                    src={val.image}
+                    alt=""
+                    width={75}
+                    height={60}
+                    onClick={() => {
+                      navigate("/details", { state: { val: val } });
+                    }}
+                  />
+                </div>
+                <div className="p-5 flex justify-center items-center">
+                  <button
+                    type="button"
+                    className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+            ))) ||
+          (screen.width <= 320 &&
+            data.map((val) => (
+              <div
+                className="mt-3 w-[150px] h-[240px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+                                hover:scale-x-110 "
+              >
+                <div className="w-12/12 flex justify-center">
+                  <img
+                    className="rounded-t-lg border-solid border-grey-2 shadow-xl"
+                    src={val.image}
+                    alt=""
+                    width={75}
+                    height={60}
+                    onClick={() => {
+                      navigate("/details", { state: { val: val } });
+                    }}
+                  />
+                </div>
+
+                <p className=" mt-5 text-center mb-1 font-normal text-sm text-gray-700 dark:text-gray-400">
+                  <span className="line-through text-brown text-md font-roboto font-medium overflow-hidden">
+                    Rs.{Math.trunc((val.price * 100) / (100 - val.discount))}
+                  </span>
+                  &nbsp;&nbsp;
+                  <span className=" text-black text-lg font-roboto font-medium overflow-hidden">
+                    Rs. {val.price}
+                  </span>
+                </p>
+                <div className="p-5 flex justify-center items-center">
+                  <button
+                    type="button"
+                    className="focus:outline-none text-black bg-mustardyellow hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-2 py-2 mb-2"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+            )))}
       </div>
     </>
   );

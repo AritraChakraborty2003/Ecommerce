@@ -22,6 +22,44 @@ var storage = multer.diskStorage({
 });
 
 var upload = multer({ storage: storage });
+const searchDbSchema = new mongoose.Schema(
+  {
+    bname: {
+      type: String,
+      required: true,
+    },
+
+    author: {
+      type: String,
+      required: true,
+    },
+    brand: {
+      type: String,
+      required: true,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
+    categorySupport: {
+      type: String,
+      required: true,
+    },
+    genre: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+  },
+  { collection: "search" }
+);
 const adminDbSchema = new mongoose.Schema(
   {
     uname: {
@@ -234,6 +272,7 @@ const generalOrder = mongoose.model("OrderGeneral", ecomOrderSchema);
 const merchs = mongoose.model("Merch", ecomMerchSchema);
 const religious = mongoose.model("Religious", ecomReligiousSchema);
 const gifts = mongoose.model("Gifts", ecomGiftsSchema);
+const search = mongoose.model("search", searchDbSchema);
 const user1 = mongoose.model("UserDB", adminDbSchema);
 const review = mongoose.model("reviews", ecomReviewSchema);
 /* ---- GET Req Start ---- */
@@ -251,6 +290,16 @@ app.get("/", (req, res) => {
     age: 21,
   };
   res.send(data);
+});
+app.get("/searchAPI", (req, res) => {
+  search
+    .find()
+    .then((searches) => {
+      res.json(searches);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 app.get("/booksAPI", (req, res) => {
   books
@@ -341,7 +390,19 @@ app.post("/booksAPI", upload.single("file"), (req, res) => {
     descr: descr,
   });
 
+  let searchObj = new search({
+    bname: name,
+    author: author,
+    price: price,
+    image: url,
+    brand: "NA",
+    category: "books",
+    categorySupport: "book",
+    genre: category,
+  });
+
   NewBook.save();
+  searchObj.save();
 });
 
 app.post("/merchsAPI", upload.single("file"), (req, res) => {

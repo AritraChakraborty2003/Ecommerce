@@ -1,11 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import "./banner.css";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+//import { useNavigate, useEffect } from "react-router-dom";
 const Header = () => {
   const [status, setStatus] = useState(false);
   const navigate = useNavigate();
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/searchAPI")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  console.log(data);
 
   return (
     <>
@@ -120,15 +135,58 @@ const Header = () => {
                         height={25}
                         width={25}
                         onClick={() => {
-                          navigate("/Items", {
-                            state: {
-                              val:
-                                document.getElementById("searchBox").value +
-                                "API",
-                              title: document.getElementById("searchBox").value,
-                            },
-                          });
-                          document.getElementById("searchBox").value = "";
+                          if (
+                            document.getElementById("searchBox").value === ""
+                          ) {
+                            alert("Please enter a value to search");
+                          } else if (
+                            document.getElementById("searchBox").value ===
+                              "merchs" ||
+                            document.getElementById("searchBox").value ===
+                              "books" ||
+                            document.getElementById("searchBox").value ===
+                              "gifts" ||
+                            document.getElementById("searchBox").value ===
+                              "religious"
+                          ) {
+                            navigate("/Items", {
+                              state: {
+                                val:
+                                  document.getElementById("searchBox").value +
+                                  "API",
+                                title:
+                                  document.getElementById("searchBox").value,
+                              },
+                            });
+                            document.getElementById("searchBox").value = "";
+                          } else {
+                            data.map((val) => {
+                              const value =
+                                document.getElementById("searchBox").value;
+                              if (val.brand === "NA") {
+                                console.log("Found");
+                                if (
+                                  val.bname === value ||
+                                  val.author === value ||
+                                  val.genre === value ||
+                                  val.category === value ||
+                                  val.categorySupport === value
+                                ) {
+                                  const bookObj = {
+                                    name: val.bname,
+                                    author: val.author,
+                                    genre: val.genre,
+                                    category: val.category,
+                                    image: val.image,
+                                    price: val.price,
+                                  };
+                                  navigate("/search", {
+                                    state: { val: bookObj },
+                                  });
+                                }
+                              }
+                            });
+                          }
                         }}
                       ></img>
                     </div>
