@@ -9,7 +9,7 @@ const Header = () => {
   const [status, setStatus] = useState(false);
   const navigate = useNavigate();
   const [data, setData] = useState([]);
-
+  const store = [];
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/searchAPI")
@@ -160,6 +160,7 @@ const Header = () => {
                             });
                             document.getElementById("searchBox").value = "";
                           } else {
+                            console.log("Hello");
                             data.map((val) => {
                               const value =
                                 document.getElementById("searchBox").value;
@@ -179,12 +180,17 @@ const Header = () => {
                                     category: val.category,
                                     image: val.image,
                                     price: val.price,
+                                    stock: val.stock,
+                                    discount: val.discount,
+                                    descr: val.decsr,
                                   };
-                                  navigate("/search", {
-                                    state: { val: bookObj },
-                                  });
+
+                                  store.push(bookObj);
                                 }
                               }
+                            });
+                            navigate("/search", {
+                              state: { val: store },
                             });
                           }
                         }}

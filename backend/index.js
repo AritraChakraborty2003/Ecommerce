@@ -50,14 +50,25 @@ const searchDbSchema = new mongoose.Schema(
       required: true,
     },
     price: {
-      type: String,
+      type: Number,
       required: true,
     },
+    stock: {
+      type: Number,
+      required: true,
+    },
+
     image: {
       type: String,
       required: true,
     },
+
+    discount: {
+      type: Number,
+      required: true,
+    },
   },
+
   { collection: "search" }
 );
 const adminDbSchema = new mongoose.Schema(
@@ -67,6 +78,10 @@ const adminDbSchema = new mongoose.Schema(
       required: true,
     },
     password: {
+      type: String,
+      required: true,
+    },
+    descr: {
       type: String,
       required: true,
     },
@@ -396,9 +411,12 @@ app.post("/booksAPI", upload.single("file"), (req, res) => {
     price: price,
     image: url,
     brand: "NA",
+    stock: stock,
     category: "books",
     categorySupport: "book",
     genre: category,
+    discount: discount,
+    descr: descr,
   });
 
   NewBook.save();

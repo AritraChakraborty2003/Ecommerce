@@ -8,7 +8,7 @@ const Detailspage = (props) => {
   const [statusDescription, setStatusDescription] = useState(false);
   const [statusDetails, setStatusDetails] = useState(false);
   const location = useLocation();
-  console.log(location.state.val);
+  console.log("Discount: ", location.state.val.discount);
   let p = location.state.val.price;
   let d = location.state.val.discount;
   const x = Math.trunc((p * 100) / (100 - d));
@@ -46,7 +46,7 @@ const Detailspage = (props) => {
         {location.state.val.stock === 0 && (
           <h1 id="success" className="mt-2 ml-3 font-bold text-2xl"></h1>
         )}
-        <div className="mainArea bg-darkwhite flex justify-center  flex-wrap mb-5">
+        <div className="mainArea bg-darkwhite flex justify-center  flex-wrap mb-5 mt-5">
           <div className="bookHolder w-[600px] flex justify-center mt-3 lg:mt-10 p-5">
             <div className="imgHolder h-52 lg:h-96 w-[400px] flex justify-center ">
               <a href="/details">
@@ -66,7 +66,12 @@ const Detailspage = (props) => {
 
             {location.state.api === "booksAPI" && (
               <>
-                <p className="font-grey">(By {location.state.val.author})</p>
+                <p className="font-grey">
+                  (By{" "}
+                  <span className="font-bold">
+                    {location.state.val.author})
+                  </span>
+                </p>
                 <br />
               </>
             )}
