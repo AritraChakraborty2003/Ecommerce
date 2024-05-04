@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import "./banner.css";
+import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +11,7 @@ const Header = () => {
   const [status, setStatus] = useState(false);
   const navigate = useNavigate();
   const [data, setData] = useState([]);
+  const [input, setinput] = useState("");
   const store = [];
   useEffect(() => {
     axios
@@ -20,7 +23,32 @@ const Header = () => {
         console.log(err);
       });
   }, []);
-  console.log(data);
+
+  const fetchData = (value) => {
+    const res = data.filter((val) => {
+      if (val.bname.startsWith(value)) {
+        return val.bname;
+      }
+      if (val.author.startsWith(value)) {
+        return val.author;
+      }
+      if (val.category.startsWith(value)) {
+        return val.category;
+      }
+      if (val.genre.startsWith(value)) {
+        return val.genre;
+      }
+      if (val.brand.startsWith(value)) {
+        return val.brand;
+      }
+    });
+    console.log("I am in ");
+    console.log(res);
+  };
+  const handleChange = (value) => {
+    setinput(value);
+    fetchData(value);
+  };
 
   return (
     <>
@@ -54,10 +82,10 @@ const Header = () => {
               </ul>
             </div>
           </div>
-          <div className=".fixed relative .top-0 navBar bg-darkwhite  h-20 flex  justify-between">
+          <div className=".fixed relative .top-0 navBar bg-darkwhite  flex  justify-between">
             {(screen.width > 1199 && (
               <div className="flex space-x-2">
-                <div className="hidden lg:block  h-20 w-[45vmin] p-2  justify-center items-center">
+                <div className="hidden lg:block  w-[45vmin] p-2  justify-center items-center">
                   <div className="logoHolder ">
                     <a href="/">
                       <img
@@ -68,7 +96,7 @@ const Header = () => {
                   </div>
                 </div>
 
-                <div className="IconHolder  h-20 w-[77vmin] p-2 hidden lg:block">
+                <div className="IconHolder  w-[77vmin] p-2 hidden lg:block">
                   <ul className="flex ml-1 space-x-3 xl:space-x-5 p-4 pl-2 pr-4   lg:font-normal  xl:text-md  xl:font-normal lg:text-md text-lg">
                     <li>
                       <a href="#" className="text-black">
@@ -120,20 +148,22 @@ const Header = () => {
                   </ul>
                 </div>
 
-                <div className="IconHolder  h-20 w-[70vmin] p-2 hidden lg:block ">
-                  <div className="searchHolder  flex  justify-end items-center mt-2">
-                    <input
-                      type="text"
-                      placeholder="Search your item...."
-                      id="searchBox"
-                      className="rounded-lg p-2 border-white w-[65vmin]"
-                    ></input>
-                    <div className="rounded-xl w-15 h-[6vmin] p-2  bg-mustardyellow flex justify-center items-center ml-[-5.9vmin] ">
-                      <img
-                        src="./images/searchicon.png"
-                        className="rounded-xl"
-                        height={25}
-                        width={25}
+                <div className="IconHolder w-[70vmin] p-2 hidden lg:block ">
+                  <div className="flex flex-col">
+                    <div className="searchHolder flex justify-end items-center   border-white bg-white mt-2 p-2 ">
+                      <input
+                        type="text"
+                        placeholder="Search your item...."
+                        id="searchBox"
+                        onChange={(e) => {
+                          handleChange(e.target.value);
+                        }}
+                        className="rounded-lg pl-4 border-white w-[65vmin]"
+                      ></input>
+
+                      <FaSearch
+                        className="mr-5"
+                        id="search"
                         onClick={() => {
                           if (
                             document.getElementById("searchBox").value === ""
@@ -243,13 +273,20 @@ const Header = () => {
                             navigate("/search", { state: { val: store } });
                           }
                         }}
-                      ></img>
+                      ></FaSearch>
+                    </div>
+                    <div className="h-24  w-[70vmin]   bg-white">
+                      <ul>
+                        <li>A</li>
+                        <li>B</li>
+                        <li>C</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
 
-                <div className="ExtHolder hidden lg:block  h-15 w-[25vmin] p-2">
-                  <div className="ExtHolder flex justify-end  mr-10  h-full w-full p-2 space-x-10 ">
+                <div className="ExtHolder hidden lg:block w-[25vmin] p-2">
+                  <div className="ExtHolder flex justify-end  mr-10  w-full p-2 space-x-10 ">
                     <div className="imgHolder w-15 flex items-center">
                       <a href="/signup">
                         <img
@@ -359,6 +396,99 @@ const Header = () => {
               className="rounded-xl"
               height={30}
               width={30}
+              onClick={() => {
+                if (document.getElementById("searchBox").value === "") {
+                  alert("Please enter a value to search");
+                } else if (
+                  document.getElementById("searchBox").value === "merchs" ||
+                  document.getElementById("searchBox").value === "merch" ||
+                  document.getElementById("searchBox").value === "book" ||
+                  document.getElementById("searchBox").value === "books" ||
+                  document.getElementById("searchBox").value === "gift" ||
+                  document.getElementById("searchBox").value === "gifts" ||
+                  document.getElementById("searchBox").value === "religious"
+                ) {
+                  const value = document.getElementById("searchBox").value;
+                  if (
+                    value === "merchs" ||
+                    value === "books" ||
+                    value === "gifts"
+                  ) {
+                    navigate("/Items", {
+                      state: {
+                        val: document.getElementById("searchBox").value + "API",
+                        title: document.getElementById("searchBox").value,
+                      },
+                    });
+                    document.getElementById("searchBox").value = "";
+                  } else {
+                    navigate("/Items", {
+                      state: {
+                        val:
+                          document.getElementById("searchBox").value +
+                          "s" +
+                          "API",
+                        title: document.getElementById("searchBox").value + "s",
+                      },
+                    });
+                  }
+                } else {
+                  data.map((val) => {
+                    const value = document.getElementById("searchBox").value;
+                    if (val.brand === "NA") {
+                      console.log("Found");
+                      if (
+                        val.bname === value ||
+                        val.author === value ||
+                        val.genre === value ||
+                        val.category === value ||
+                        val.categorySupport === value ||
+                        val.authorLname === value ||
+                        val.authorFname === value
+                      ) {
+                        const bookObj = {
+                          name: val.bname,
+                          author: val.author,
+                          genre: val.genre,
+                          category: val.category,
+                          image: val.image,
+                          price: val.price,
+                          stock: val.stock,
+                          discount: val.discount,
+                          descr: val.decsr,
+                        };
+
+                        store.push(bookObj);
+                      }
+                    }
+                    if (val.author === "NA") {
+                      if (
+                        val.descr === value ||
+                        val.category === value ||
+                        val.brandFname === value ||
+                        val.brandLname === value
+                      ) {
+                        const pObj = {
+                          name: val.bname,
+                          author: val.author,
+                          genre: val.genre,
+                          category: val.category,
+                          image: val.image,
+                          price: val.price,
+                          stock: val.stock,
+                          discount: val.discount,
+                          descr: val.decsr,
+                          brand: val.brand,
+                        };
+
+                        store.push(pObj);
+                      }
+                    }
+                  });
+
+                  navigate("/search", { state: { val: store } });
+                }
+              }}
             ></img>
           </div>
         </div>

@@ -143,7 +143,9 @@ const Detailspage = (props) => {
                               width={20}
                             ></img>
 
-                            <p className="text-md">Shortlist Product</p>
+                            <p className="text-sm md:text-md">
+                              Shortlist Product
+                            </p>
                           </div>
                         </div>
                       </div>
