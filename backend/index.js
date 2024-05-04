@@ -33,10 +33,12 @@ const searchDbSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+
     brand: {
       type: String,
       required: true,
     },
+
     category: {
       type: String,
       required: true,
@@ -65,6 +67,27 @@ const searchDbSchema = new mongoose.Schema(
 
     discount: {
       type: Number,
+      required: true,
+    },
+    descr: {
+      type: String,
+      required: true,
+    },
+    authorFname: {
+      type: String,
+      required: true,
+    },
+
+    authorLname: {
+      type: String,
+      required: true,
+    },
+    brandFname: {
+      type: String,
+      required: true,
+    },
+    brandLname: {
+      type: String,
       required: true,
     },
   },
@@ -385,6 +408,10 @@ app.post("/booksAPI", upload.single("file"), (req, res) => {
   let image = req.file.filename;
   let url = "http://127.0.0.1:8000/" + image;
 
+  const LstName = author.split(" ");
+  const fname = LstName[0];
+  const lname = LstName[1];
+
   /* console.log(author);
   console.log(price);
   console.log(stock);
@@ -417,6 +444,10 @@ app.post("/booksAPI", upload.single("file"), (req, res) => {
     genre: category,
     discount: discount,
     descr: descr,
+    authorFname: fname,
+    authorLname: lname,
+    brandFname: "NA",
+    brandLname: "NA",
   });
 
   NewBook.save();
@@ -441,6 +472,17 @@ app.post("/merchsAPI", upload.single("file"), (req, res) => {
   console.log(descr);
   console.log(image);
   console.log(url);*/
+  let val1;
+  let val2;
+  const descrArr = descr.split(" ");
+  if (descrArr.length == 1) {
+    val1 = descrArr[0];
+    val2 = "NA";
+  } else if (descrArr.length === 2) {
+    val1 = descrArr[0];
+    val2 = descrArr[1];
+  }
+  console.log(val1);
 
   let NewMerch = new merchs({
     name: name,
@@ -451,8 +493,25 @@ app.post("/merchsAPI", upload.single("file"), (req, res) => {
     image: url,
     descr: descr,
   });
-
+  let searchObj = new search({
+    bname: name,
+    author: "NA",
+    price: price,
+    image: url,
+    brand: descr,
+    stock: stock,
+    category: category,
+    categorySupport: category.toLowerCase(),
+    genre: category,
+    discount: discount,
+    descr: descr,
+    authorFname: "NA",
+    authorLname: "NA",
+    brandFname: val1,
+    brandLname: val2,
+  });
   NewMerch.save();
+  searchObj.save();
 });
 
 app.post("/religiousAPI", upload.single("file"), (req, res) => {
@@ -473,7 +532,16 @@ app.post("/religiousAPI", upload.single("file"), (req, res) => {
   console.log(descr);
   console.log(image);
   console.log(url);*/
-
+  let val1;
+  let val2;
+  const descrArr = descr.split(" ");
+  if (descr.length == 1) {
+    val1 = descrArr[0];
+    val2 = "NA";
+  } else if (descr.length === 2) {
+    val1 = descrArr[0];
+    val2 = descrArr[1];
+  }
   let NewReligious = new religious({
     name: name,
     price: price,
@@ -483,8 +551,26 @@ app.post("/religiousAPI", upload.single("file"), (req, res) => {
     image: url,
     descr: descr,
   });
+  let searchObj = new search({
+    bname: name,
+    author: "NA",
+    price: price,
+    image: url,
+    brand: descr,
+    stock: stock,
+    category: category,
+    categorySupport: category.toLowerCase(),
+    genre: category,
+    discount: discount,
+    descr: descr,
+    authorFname: "NA",
+    authorLname: "NA",
+    brandFname: val1,
+    brandLname: val2,
+  });
 
   NewReligious.save();
+  searchObj.save();
 });
 
 app.post("/giftsAPI", upload.single("file"), (req, res) => {
@@ -505,7 +591,16 @@ app.post("/giftsAPI", upload.single("file"), (req, res) => {
   console.log(descr);
   console.log(image);
   console.log(url);*/
-
+  let val1;
+  let val2;
+  const descrArr = descr.split(" ");
+  if (descr.length == 1) {
+    val1 = descrArr[0];
+    val2 = "NA";
+  } else if (descr.length === 2) {
+    val1 = descrArr[0];
+    val2 = descrArr[1];
+  }
   let NewGifts = new gifts({
     name: name,
     price: price,
@@ -515,8 +610,26 @@ app.post("/giftsAPI", upload.single("file"), (req, res) => {
     image: url,
     descr: descr,
   });
+  let searchObj = new search({
+    bname: name,
+    author: "NA",
+    price: price,
+    image: url,
+    brand: descr,
+    stock: stock,
+    category: category,
+    categorySupport: category.toLowerCase(),
+    genre: category,
+    discount: discount,
+    descr: descr,
+    authorFname: "NA",
+    authorLname: "NA",
+    brandFname: val1,
+    brandLname: val2,
+  });
 
   NewGifts.save();
+  searchObj.save();
 });
 
 app.post("/reviewsAPI", upload.single("file"), (req, res) => {

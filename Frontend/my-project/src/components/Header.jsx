@@ -143,24 +143,49 @@ const Header = () => {
                             document.getElementById("searchBox").value ===
                               "merchs" ||
                             document.getElementById("searchBox").value ===
+                              "merch" ||
+                            document.getElementById("searchBox").value ===
+                              "book" ||
+                            document.getElementById("searchBox").value ===
                               "books" ||
+                            document.getElementById("searchBox").value ===
+                              "gift" ||
                             document.getElementById("searchBox").value ===
                               "gifts" ||
                             document.getElementById("searchBox").value ===
                               "religious"
                           ) {
-                            navigate("/Items", {
-                              state: {
-                                val:
-                                  document.getElementById("searchBox").value +
-                                  "API",
-                                title:
-                                  document.getElementById("searchBox").value,
-                              },
-                            });
-                            document.getElementById("searchBox").value = "";
+                            const value =
+                              document.getElementById("searchBox").value;
+                            if (
+                              value === "merchs" ||
+                              value === "books" ||
+                              value === "gifts"
+                            ) {
+                              navigate("/Items", {
+                                state: {
+                                  val:
+                                    document.getElementById("searchBox").value +
+                                    "API",
+                                  title:
+                                    document.getElementById("searchBox").value,
+                                },
+                              });
+                              document.getElementById("searchBox").value = "";
+                            } else {
+                              navigate("/Items", {
+                                state: {
+                                  val:
+                                    document.getElementById("searchBox").value +
+                                    "s" +
+                                    "API",
+                                  title:
+                                    document.getElementById("searchBox").value +
+                                    "s",
+                                },
+                              });
+                            }
                           } else {
-                            console.log("Hello");
                             data.map((val) => {
                               const value =
                                 document.getElementById("searchBox").value;
@@ -171,7 +196,9 @@ const Header = () => {
                                   val.author === value ||
                                   val.genre === value ||
                                   val.category === value ||
-                                  val.categorySupport === value
+                                  val.categorySupport === value ||
+                                  val.authorLname === value ||
+                                  val.authorFname === value
                                 ) {
                                   const bookObj = {
                                     name: val.bname,
@@ -188,10 +215,32 @@ const Header = () => {
                                   store.push(bookObj);
                                 }
                               }
+                              if (val.author === "NA") {
+                                if (
+                                  val.descr === value ||
+                                  val.category === value ||
+                                  val.brandFname === value ||
+                                  val.brandLname === value
+                                ) {
+                                  const pObj = {
+                                    name: val.bname,
+                                    author: val.author,
+                                    genre: val.genre,
+                                    category: val.category,
+                                    image: val.image,
+                                    price: val.price,
+                                    stock: val.stock,
+                                    discount: val.discount,
+                                    descr: val.decsr,
+                                    brand: val.brand,
+                                  };
+
+                                  store.push(pObj);
+                                }
+                              }
                             });
-                            navigate("/search", {
-                              state: { val: store },
-                            });
+
+                            navigate("/search", { state: { val: store } });
                           }
                         }}
                       ></img>

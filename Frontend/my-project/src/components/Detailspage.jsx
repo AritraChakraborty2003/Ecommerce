@@ -64,7 +64,7 @@ const Detailspage = (props) => {
             </p>
             <br />
 
-            {location.state.api === "booksAPI" && (
+            {(location.state.api === "booksAPI" && (
               <>
                 <p className="font-grey">
                   (By{" "}
@@ -74,7 +74,18 @@ const Detailspage = (props) => {
                 </p>
                 <br />
               </>
-            )}
+            )) ||
+              (location.state.api != "booksAPI" && (
+                <>
+                  <p className="font-grey text-lg mt-[-2.15vmin]">
+                    (Brand: &nbsp;
+                    <span className="font-bold">
+                      {location.state.val.descr})
+                    </span>
+                  </p>
+                  <br />
+                </>
+              ))}
             <div className="priceContainer flex space-x-5">
               <p className="line-through text-black text-xl font-roboto font-medium overflow-hidden">
                 Rs. {x}

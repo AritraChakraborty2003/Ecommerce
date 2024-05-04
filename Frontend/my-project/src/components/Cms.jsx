@@ -326,7 +326,7 @@ const Cms = () => {
                   type="text"
                   name="description"
                   id="description"
-                  placeholder="Enter description"
+                  placeholder="Enter Brand name..."
                   //onChange={handleChange}
                 />
                 <br />
@@ -408,7 +408,7 @@ const Cms = () => {
                   type="text"
                   name="description"
                   id="description"
-                  placeholder="Enter description"
+                  placeholder="Enter Brand name..."
                   //onChange={handleChange}
                 />
                 <br />
@@ -490,7 +490,7 @@ const Cms = () => {
                   type="text"
                   name="description"
                   id="description"
-                  placeholder="Enter description"
+                  placeholder="Enter Brand name..."
                   //onChange={handleChange}
                 />
                 <br />

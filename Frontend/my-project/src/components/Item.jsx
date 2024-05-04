@@ -220,9 +220,12 @@ const Item = () => {
                     {val.name}
                   </p>
                 </a>
+
                 <p className="mb-3 font-semibold text-sm text-brown dark:text-gray-400">
                   by {val.author}
+                  {val.descr}
                 </p>
+
                 <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
                   Price: Rs {val.price}
                 </p>

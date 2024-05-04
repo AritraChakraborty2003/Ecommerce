@@ -7,12 +7,12 @@ const ComboBox = () => {
         </p>
       </div>
       <div className="block lg:hidden mt-5">
-        <div className="flex space-x-1 flex-wrap">
-          <div className="flex space-x-1">
+        <div className="flex space-x-1 flex-wrap justify-center items-center">
+          <div className="flex space-x-3">
             <img src="./images/bookCombo.png"></img>
             <img src="./images/bookCombo.png"></img>
           </div>
-          <div className="flex space-x-1 mt-3">
+          <div className="flex space-x-3 mt-3">
             <img src="./images/bookCombo.png"></img>
             <img src="./images/bookCombo.png"></img>
           </div>
