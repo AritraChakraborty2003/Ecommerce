@@ -22,6 +22,15 @@ const Header = () => {
   const UniqueBookname = [];
   const UniqueCategory = [];
   const UniqueBrand = [];
+  const UniqueProducts = [
+    "merchs",
+    "merch",
+    "books",
+    "book",
+    "gifts",
+    "gift",
+    "religious",
+  ];
 
   useEffect(() => {
     axios
@@ -82,8 +91,34 @@ const Header = () => {
         setChangeStatus1(false);
       }
     });
+    UniqueProducts.filter((val) => {
+      if (value != "") {
+        if (val.startsWith(value)) {
+          match.push(val);
+          return val;
+        }
 
+        setValMatch(match);
+        setChangeStatus1(true);
+      } else {
+        setChangeStatus1(false);
+      }
+    });
     UniqueBrand.filter((val) => {
+      if (value != "") {
+        if (val.startsWith(value)) {
+          match.push(val);
+          return val;
+        }
+
+        setValMatch(match);
+        setChangeStatus1(true);
+      } else {
+        setChangeStatus1(false);
+      }
+    });
+
+    UniqueAuthor.filter((val) => {
       if (value != "") {
         if (val.startsWith(value)) {
           match.push(val);
@@ -247,10 +282,22 @@ const Header = () => {
                           ) {
                             const value =
                               document.getElementById("searchBox").value;
-                            if (
+                            if (value === "books") {
+                              navigate("/Items", {
+                                state: {
+                                  val:
+                                    document.getElementById("searchBox").value +
+                                    "API",
+                                  title:
+                                    document.getElementById("searchBox").value,
+                                  api: "booksAPI",
+                                },
+                              });
+                              document.getElementById("searchBox").value = "";
+                            } else if (
+                              value === "gifts" ||
                               value === "merchs" ||
-                              value === "books" ||
-                              value === "gifts"
+                              value === "religious"
                             ) {
                               navigate("/Items", {
                                 state: {
@@ -261,19 +308,38 @@ const Header = () => {
                                     document.getElementById("searchBox").value,
                                 },
                               });
-                              document.getElementById("searchBox").value = "";
                             } else {
-                              navigate("/Items", {
-                                state: {
-                                  val:
-                                    document.getElementById("searchBox").value +
-                                    "s" +
-                                    "API",
-                                  title:
-                                    document.getElementById("searchBox").value +
-                                    "s",
-                                },
-                              });
+                              if (value === "book") {
+                                navigate("/Items", {
+                                  state: {
+                                    val:
+                                      document.getElementById("searchBox")
+                                        .value +
+                                      "s" +
+                                      "API",
+                                    title:
+                                      document.getElementById("searchBox")
+                                        .value + "s",
+                                    api: "booksAPI",
+                                  },
+                                });
+                              } else if (
+                                value === "merch" ||
+                                value === "gift"
+                              ) {
+                                navigate("/Items", {
+                                  state: {
+                                    val:
+                                      document.getElementById("searchBox")
+                                        .value +
+                                      "s" +
+                                      "API",
+                                    title:
+                                      document.getElementById("searchBox")
+                                        .value + "s",
+                                  },
+                                });
+                              }
                             }
                           } else {
                             data.map((val) => {
@@ -297,6 +363,7 @@ const Header = () => {
                                     category: val.category,
                                     image: val.image,
                                     price: val.price,
+                                    brand: "NA",
                                     stock: val.stock,
                                     discount: val.discount,
                                     descr: val.decsr,
@@ -304,6 +371,9 @@ const Header = () => {
 
                                   store.push(bookObj);
                                 }
+                                navigate("/search", {
+                                  state: { val: store, api: "booksAPI" },
+                                });
                               }
                               if (val.author === "NA") {
                                 if (
@@ -327,10 +397,9 @@ const Header = () => {
 
                                   store.push(pObj);
                                 }
+                                navigate("/search", { state: { val: store } });
                               }
                             });
-
-                            navigate("/search", { state: { val: store } });
                           }
                         }}
                       ></FaSearch>
@@ -470,19 +539,23 @@ const Header = () => {
       ) : null}
 
       <div className="searchDiv lg:hidden flex justify-center items-center bg-darkwhite p-3">
-        <div className="searchHolder  flex justify-center items-center mt-[-2vmin]">
-          <input
-            type="text"
-            placeholder="Search your item...."
-            className="rounded-lg p-2 border-white w-[95vw]"
-            id="searchBox"
-          ></input>
-          <div className="h-[10vmin] md:h-[6.25vmin] rounded-lg bg-mustardyellow flex justify-center items-center ml-[-6.5vmin] p-2">
-            <img
-              src="./images/searchicon.png"
-              className="rounded-xl"
-              height={30}
-              width={30}
+        <div className="flex flex-col">
+          <div className="searchHolder flex justify-end items-center   border-white bg-white p-2 ">
+            <input
+              type="text"
+              placeholder="Search your item...."
+              id="searchBox"
+              onChange={(e) => {
+                handleChange(e.target.value);
+              }}
+              className="rounded-lg pl-1 border-white w-[95vw]"
+            ></input>
+
+            <FaSearch
+              height={40}
+              width={40}
+              className="mr-5"
+              id="search"
               onClick={() => {
                 if (document.getElementById("searchBox").value === "") {
                   alert("Please enter a value to search");
@@ -576,8 +649,41 @@ const Header = () => {
                   navigate("/search", { state: { val: store } });
                 }
               }}
-            ></img>
+            ></FaSearch>
           </div>
+          {input != "" && status1 && (
+            <>
+              <div className="p-2  w-[92vw]  ml-1 bg-white text-black mt-[0.01vmin]">
+                <ul>
+                  {valMatch.map((val) => (
+                    <li
+                      onClick={() => {
+                        document.getElementById("searchBox").value = val;
+                        setChangeStatus1(false);
+                      }}
+                    >
+                      {val}
+                    </li>
+                  ))}
+                </ul>
+
+                <div
+                  className="mt-2 text-xs flex"
+                  onClick={() => {
+                    setChangeStatus1(false);
+                  }}
+                >
+                  <img
+                    src="./images/cross.png"
+                    height={10}
+                    width={10}
+                    className="mt-1"
+                  ></img>
+                  <div className="ml-1">Close</div>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </>

@@ -1030,6 +1030,11 @@ const FilterLogic = () => {
                         {val.name}
                       </p>
                     </a>
+                    <a href="#">
+                      <p className="mb-2 text-base text-brown  tracking-tight text-md dark:text-white">
+                        by {val.author}
+                      </p>
+                    </a>
 
                     <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
                       Price: Rs {val.price}
