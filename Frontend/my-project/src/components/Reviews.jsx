@@ -14,7 +14,6 @@ const Reviews = () => {
       });
   }, []);
 
-  console.log(data);
   return (
     <>
       <div className="Holder w-screen  p-5 flex flex-wrap gap-7 mb-40 justify-center items-center">

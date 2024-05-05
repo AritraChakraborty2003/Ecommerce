@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
@@ -12,7 +13,16 @@ const Header = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [input, setinput] = useState("");
+  const [status1, setChangeStatus1] = useState(false);
+  const [valMatch, setValMatch] = useState([]);
   const store = [];
+  //let unique = [];
+  const UniqueAuthor = [];
+  const UniqueGenre = [];
+  const UniqueBookname = [];
+  const UniqueCategory = [];
+  const UniqueBrand = [];
+
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/searchAPI")
@@ -24,32 +34,80 @@ const Header = () => {
       });
   }, []);
 
+  data.map((val) => {
+    if (UniqueAuthor.indexOf(val.author) === -1 && val.author != "NA") {
+      UniqueAuthor.push(val.author);
+    }
+    if (UniqueGenre.indexOf(val.genre) === -1 && val.genre != "NA") {
+      UniqueGenre.push(val.genre);
+    }
+    if (UniqueBookname.indexOf(val.bname) === -1 && val.bname != "NA") {
+      UniqueBookname.push(val.bname);
+    }
+    if (UniqueBrand.indexOf(val.brand) === -1 && val.brand != "NA") {
+      UniqueBrand.push(val.brand);
+    }
+    if (UniqueCategory.indexOf(val.category) === -1 && val.category != "NA") {
+      UniqueCategory.push(val.category);
+    }
+  });
+
+  let match = [];
   const fetchData = (value) => {
-    const res = data.filter((val) => {
-      if (val.bname.startsWith(value)) {
-        return val.bname;
-      }
-      if (val.author.startsWith(value)) {
-        return val.author;
-      }
-      if (val.category.startsWith(value)) {
-        return val.category;
-      }
-      if (val.genre.startsWith(value)) {
-        return val.genre;
-      }
-      if (val.brand.startsWith(value)) {
-        return val.brand;
+    match = [];
+    UniqueBookname.filter((val) => {
+      if (value != "") {
+        if (val.startsWith(value)) {
+          match.push(val);
+          return val;
+        }
+
+        setValMatch(match);
+        setChangeStatus1(true);
+      } else {
+        setChangeStatus1(false);
       }
     });
-    console.log("I am in ");
-    console.log(res);
+
+    UniqueGenre.filter((val) => {
+      if (value != "") {
+        if (val.startsWith(value)) {
+          match.push(val);
+          return val;
+        }
+
+        setValMatch(match);
+        setChangeStatus1(true);
+      } else {
+        setChangeStatus1(false);
+      }
+    });
+
+    UniqueBrand.filter((val) => {
+      if (value != "") {
+        if (val.startsWith(value)) {
+          match.push(val);
+          return val;
+        }
+
+        setValMatch(match);
+        setChangeStatus1(true);
+      } else {
+        setChangeStatus1(false);
+      }
+    });
   };
   const handleChange = (value) => {
-    setinput(value);
-    fetchData(value);
+    if (value != "") {
+      setinput(value);
+      fetchData(value);
+      console.log(input);
+    } else {
+      setChangeStatus1(false);
+    }
   };
-
+  console.log(data);
+  console.log("This is: ", valMatch, "the length is ", valMatch.length);
   return (
     <>
       <div className="header">
@@ -148,7 +206,7 @@ const Header = () => {
                   </ul>
                 </div>
 
-                <div className="IconHolder w-[70vmin] p-2 hidden lg:block ">
+                <div className="IconHolder w-[67vmin] p-2 hidden lg:block ">
                   <div className="flex flex-col">
                     <div className="searchHolder flex justify-end items-center   border-white bg-white mt-2 p-2 ">
                       <input
@@ -158,10 +216,12 @@ const Header = () => {
                         onChange={(e) => {
                           handleChange(e.target.value);
                         }}
-                        className="rounded-lg pl-4 border-white w-[65vmin]"
+                        className="rounded-lg pl-1 border-white w-[65vmin]"
                       ></input>
 
                       <FaSearch
+                        height={40}
+                        width={40}
                         className="mr-5"
                         id="search"
                         onClick={() => {
@@ -275,13 +335,40 @@ const Header = () => {
                         }}
                       ></FaSearch>
                     </div>
-                    <div className="h-24  w-[70vmin]   bg-white">
-                      <ul>
-                        <li>A</li>
-                        <li>B</li>
-                        <li>C</li>
-                      </ul>
-                    </div>
+                    {input != "" && status1 && (
+                      <>
+                        <div className="p-2  w-[60vmin]  ml-3 bg-white text-black mt-[0.01vmin]">
+                          <ul>
+                            {valMatch.map((val) => (
+                              <li
+                                onClick={() => {
+                                  document.getElementById("searchBox").value =
+                                    val;
+                                  setChangeStatus1(false);
+                                }}
+                              >
+                                {val}
+                              </li>
+                            ))}
+                          </ul>
+
+                          <div
+                            className="mt-2 text-xs flex"
+                            onClick={() => {
+                              setChangeStatus1(false);
+                            }}
+                          >
+                            <img
+                              src="./images/cross.png"
+                              height={10}
+                              width={10}
+                              className="mt-1"
+                            ></img>
+                            <div className="ml-1">Close</div>
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
 
