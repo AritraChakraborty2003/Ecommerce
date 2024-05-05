@@ -181,30 +181,60 @@ const Detailspage = (props) => {
                     ></img>
                   </div>
                 </li>
+                {(screen.width > 1700 && (
+                  <li className="mt-5 p-2 border-solid border-b-2 flex w-[50vmin]">
+                    <>
+                      <div className="details text-xl text-black font-extrabold font-poppins w-[49vmin]">
+                        Description
+                      </div>
+                      <div className="imageBox h-10 w-1/12 overflow-hidden">
+                        <img
+                          id="imgIcon1"
+                          src="./images/ricon.png"
+                          className="max-w-full max-h-full object-contain"
+                          onClick={() => {
+                            if (statusDescription) {
+                              document.getElementById("imgIcon1").src =
+                                "./images/ricon.png";
+                              setStatusDescription(false);
+                            } else {
+                              document.getElementById("imgIcon1").src =
+                                "./images/downicon.png";
+                              setStatusDescription(true);
+                            }
+                          }}
+                        ></img>
+                      </div>
+                    </>
+                  </li>
+                )) || (
+                  <li className="mt-5 p-2 border-solid border-b-2 flex w-[75vmin]">
+                    <>
+                      <div className="details text-xl text-black font-extrabold font-poppins w-11/12">
+                        Description
+                      </div>
+                      <div className="imageBox h-10 w-1/12 overflow-hidden">
+                        <img
+                          id="imgIcon1"
+                          src="./images/ricon.png"
+                          className="max-w-full max-h-full object-contain"
+                          onClick={() => {
+                            if (statusDescription) {
+                              document.getElementById("imgIcon1").src =
+                                "./images/ricon.png";
+                              setStatusDescription(false);
+                            } else {
+                              document.getElementById("imgIcon1").src =
+                                "./images/downicon.png";
+                              setStatusDescription(true);
+                            }
+                          }}
+                        ></img>
+                      </div>
+                    </>
+                  </li>
+                )}
 
-                <li className="mt-5 p-2 border-solid border-b-2 flex w-[75vmin]">
-                  <div className="details text-xl text-black font-extrabold font-poppins w-11/12">
-                    Description
-                  </div>
-                  <div className="imageBox h-10 w-1/12overflow-hidden">
-                    <img
-                      id="imgIcon1"
-                      src="./images/ricon.png"
-                      className="max-w-full max-h-full object-contain"
-                      onClick={() => {
-                        if (statusDescription) {
-                          document.getElementById("imgIcon1").src =
-                            "./images/ricon.png";
-                          setStatusDescription(false);
-                        } else {
-                          document.getElementById("imgIcon1").src =
-                            "./images/downicon.png";
-                          setStatusDescription(true);
-                        }
-                      }}
-                    ></img>
-                  </div>
-                </li>
                 {statusDescription ? (
                   <li className="mt-1 p-2  flex w-[75vmin]">
                     <div className="details text-xl text-black  font-poppins w-11/12 font-normal">
@@ -212,29 +242,60 @@ const Detailspage = (props) => {
                     </div>
                   </li>
                 ) : null}
-                <li className="mt-1 p-2 border-solid border-b-2 flex w-[75vmin]">
-                  <div className="details text-xl text-black font-extrabold font-poppins w-11/12">
-                    Other Details
-                  </div>
-                  <div className="imageBox h-10 w-1/12overflow-hidden">
-                    <img
-                      src="./images/ricon.png"
-                      id="imgIcon3"
-                      className="max-w-full max-h-full object-contain"
-                      onClick={() => {
-                        if (statusDetails) {
-                          document.getElementById("imgIcon3").src =
-                            "./images/ricon.png";
-                          setStatusDetails(false);
-                        } else {
-                          document.getElementById("imgIcon3").src =
-                            "./images/downicon.png";
-                          setStatusDetails(true);
-                        }
-                      }}
-                    ></img>
-                  </div>
-                </li>
+
+                {(screen.width > 1700 && (
+                  <li className="mt-1 p-2 border-solid border-b-2 flex w-[50vmin]">
+                    <>
+                      <div className="details text-xl text-black font-extrabold font-poppins w-[49vmin]">
+                        Other Details
+                      </div>
+                      <div className="imageBox h-10 w-1/12overflow-hidden">
+                        <img
+                          src="./images/ricon.png"
+                          id="imgIcon3"
+                          className="max-w-full max-h-full object-contain"
+                          onClick={() => {
+                            if (statusDetails) {
+                              document.getElementById("imgIcon3").src =
+                                "./images/ricon.png";
+                              setStatusDetails(false);
+                            } else {
+                              document.getElementById("imgIcon3").src =
+                                "./images/downicon.png";
+                              setStatusDetails(true);
+                            }
+                          }}
+                        ></img>
+                      </div>
+                    </>
+                  </li>
+                )) || (
+                  <li className="mt-1 p-2 border-solid border-b-2 flex w-[75vmin]">
+                    <>
+                      <div className="details text-xl text-black font-extrabold font-poppins w-11/12">
+                        Other Details
+                      </div>
+                      <div className="imageBox h-10 w-1/12overflow-hidden">
+                        <img
+                          src="./images/ricon.png"
+                          id="imgIcon3"
+                          className="max-w-full max-h-full object-contain"
+                          onClick={() => {
+                            if (statusDetails) {
+                              document.getElementById("imgIcon3").src =
+                                "./images/ricon.png";
+                              setStatusDetails(false);
+                            } else {
+                              document.getElementById("imgIcon3").src =
+                                "./images/downicon.png";
+                              setStatusDetails(true);
+                            }
+                          }}
+                        ></img>
+                      </div>
+                    </>
+                  </li>
+                )}
 
                 {statusDetails ? (
                   <li className="mt-1 p-2  flex w-[75vmin]">

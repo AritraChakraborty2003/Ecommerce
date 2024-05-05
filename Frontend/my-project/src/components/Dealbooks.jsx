@@ -110,7 +110,9 @@ const Dealbooks = () => {
                   width={75}
                   height={60}
                   onClick={() => {
-                    navigate("/details", { state: { val: val } });
+                    navigate("/details", {
+                      state: { val: val, api: "booksAPI" },
+                    });
                   }}
                 />
               </div>
@@ -151,7 +153,7 @@ const Dealbooks = () => {
         {(screen.width >= 410 &&
           data.map((val) => (
             <div
-              className="mt-3 w-[185px] h-[200px] md:w-[220px] md:h-[260px] p-5 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+              className="mt-3 w-[185px] h-[260px] md:w-[220px] md:h-[260px] p-5 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
                                 hover:scale-x-110 "
             >
               <div className="w-12/12 flex justify-center">
@@ -162,7 +164,9 @@ const Dealbooks = () => {
                   width={75}
                   height={60}
                   onClick={() => {
-                    navigate("/details", { state: { val: val } });
+                    navigate("/details", {
+                      state: { val: val, api: "booksAPI" },
+                    });
                   }}
                 />
               </div>
@@ -194,7 +198,7 @@ const Dealbooks = () => {
             screen.width > 320 &&
             data.map((val) => (
               <div
-                className="mt-3 w-[160px] h-[200px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
+                className="mt-3 w-[160px] h-[210px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
                                 hover:scale-x-110 "
               >
                 <div className="w-12/12 flex justify-center">
@@ -205,7 +209,9 @@ const Dealbooks = () => {
                     width={75}
                     height={60}
                     onClick={() => {
-                      navigate("/details", { state: { val: val } });
+                      navigate("/details", {
+                        state: { val: val, api: "booksAPI" },
+                      });
                     }}
                   />
                 </div>
@@ -233,7 +239,9 @@ const Dealbooks = () => {
                     width={75}
                     height={60}
                     onClick={() => {
-                      navigate("/details", { state: { val: val } });
+                      navigate("/details", {
+                        state: { val: val, api: "booksAPI" },
+                      });
                     }}
                   />
                 </div>
