@@ -624,8 +624,8 @@ app.post("/giftsAPI", upload.single("file"), (req, res) => {
     descr: descr,
     authorFname: "NA",
     authorLname: "NA",
-    brandFname: val1,
-    brandLname: val2,
+    brandFname: "NA",
+    brandLname: "NA",
   });
 
   NewGifts.save();

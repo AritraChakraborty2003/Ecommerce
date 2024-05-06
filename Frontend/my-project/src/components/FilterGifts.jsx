@@ -41,8 +41,8 @@ const FilterGifts = () => {
   }, []);
   const [spans] = useState([
     {
-      id: "Idols",
-      text: "Idols",
+      id: "Pen Stand",
+      text: "Pen Stand",
       type: "book",
     },
     {
@@ -51,41 +51,51 @@ const FilterGifts = () => {
       type: "book",
     },
     {
-      id: "Agarbatti",
-      text: "Agarbatti",
+      id: "Bags",
+      text: "Bags",
       type: "book",
     },
     {
-      id: "Pooja Accessories",
-      text: "Pooja Acessories",
+      id: "Cups",
+      text: "Cups",
+      type: "book",
+    },
+    {
+      id: "Joining Kits",
+      text: "Joining Kits",
       type: "book",
     },
   ]);
 
   const [spansAuthor] = useState([
     {
-      id: "Mangaldeep",
-      text: "Mangaldeep",
+      id: "Skybags",
+      text: "Skybags",
       type: "author",
     },
     {
-      id: "Cycle Pure",
-      text: "Cycle Pure",
+      id: "Join Top",
+      text: "Join Top",
       type: "author",
     },
     {
-      id: "Savri",
-      text: "Savri",
+      id: "Dice Pens",
+      text: "Dice Pens",
       type: "author",
     },
     {
-      id: "Bismaadh Hindu",
-      text: "Bismaadh Hindu",
+      id: "Parker",
+      text: "Parker",
       type: "author",
     },
     {
-      id: "Satvik",
-      text: "Satvik",
+      id: "Cello",
+      text: "Cello",
+      type: "author",
+    },
+    {
+      id: "Borosil",
+      text: "Borosil",
       type: "author",
     },
   ]);

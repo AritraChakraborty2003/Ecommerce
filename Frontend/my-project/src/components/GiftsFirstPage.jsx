@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import axios from "axios";
 import { useNavigate, useState, useEffect } from "react-router-dom";
-const FirstPageGifts = () => {
+
+const GiftsFirstPage = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -243,4 +244,4 @@ const FirstPageGifts = () => {
     </>
   );
 };
-export default FirstPageGifts;
+export default GiftsFirstPage;
