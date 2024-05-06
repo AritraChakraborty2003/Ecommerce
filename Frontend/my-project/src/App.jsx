@@ -4,6 +4,7 @@ import Foot1 from "./components/Foot1";
 import FilterReligious from "./components/FilterReligious";
 import FilterMerchs from "./components/FilterMerchs";
 import Header from "./components/Header";
+import MerchsFirstPage from "./components/MerchsFirstPage";
 import First from "./components/First";
 import SearchPage from "./components/SearchPage";
 import AddAdmin from "./components/AddAdmin";
@@ -26,6 +27,7 @@ import GoogleAuth from "./components/GoogleAuth";
 import Dealsofday from "./components/Dealsofday";
 import Reviews from "./components/Reviews";
 import Cart from "./components/Cart";
+import FilterGifts from "./components/FilterGifts";
 import Booksfirstpage from "./components/Booksfirstpage";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -64,6 +66,8 @@ function App() {
           <Route path="/search" element={<SearchPage />}></Route>
           <Route path="/FilterMerchs" element={<FilterMerchs />}></Route>
           <Route path="/FilterReligious" element={<FilterReligious />}></Route>
+          <Route path="/FilterGifts" element={<FilterGifts />}></Route>
+          <Route path="/MerchsFirstPage" element={<MerchsFirstPage />}></Route>
         </Routes>
       </BrowserRouter>
     </>

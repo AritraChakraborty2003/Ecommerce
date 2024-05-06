@@ -283,7 +283,7 @@ const Header = () => {
                             const value =
                               document.getElementById("searchBox").value;
                             if (value === "books") {
-                              navigate("/Items", {
+                              navigate("/Filter", {
                                 state: {
                                   val:
                                     document.getElementById("searchBox").value +
@@ -299,18 +299,45 @@ const Header = () => {
                               value === "merchs" ||
                               value === "religious"
                             ) {
-                              navigate("/Items", {
-                                state: {
-                                  val:
-                                    document.getElementById("searchBox").value +
-                                    "API",
-                                  title:
-                                    document.getElementById("searchBox").value,
-                                },
-                              });
+                              if (value === "gifts") {
+                                navigate("/FilterGifts", {
+                                  state: {
+                                    val:
+                                      document.getElementById("searchBox")
+                                        .value + "API",
+                                    title:
+                                      document.getElementById("searchBox")
+                                        .value,
+                                  },
+                                });
+                              }
+                              if (value === "merchs") {
+                                navigate("/FilterMerchs", {
+                                  state: {
+                                    val:
+                                      document.getElementById("searchBox")
+                                        .value + "API",
+                                    title:
+                                      document.getElementById("searchBox")
+                                        .value,
+                                  },
+                                });
+                              }
+                              if (value === "religious") {
+                                navigate("/FilterReligious", {
+                                  state: {
+                                    val:
+                                      document.getElementById("searchBox")
+                                        .value + "API",
+                                    title:
+                                      document.getElementById("searchBox")
+                                        .value,
+                                  },
+                                });
+                              }
                             } else {
                               if (value === "book") {
-                                navigate("/Items", {
+                                navigate("/Filter", {
                                   state: {
                                     val:
                                       document.getElementById("searchBox")
@@ -327,18 +354,33 @@ const Header = () => {
                                 value === "merch" ||
                                 value === "gift"
                               ) {
-                                navigate("/Items", {
-                                  state: {
-                                    val:
-                                      document.getElementById("searchBox")
-                                        .value +
-                                      "s" +
-                                      "API",
-                                    title:
-                                      document.getElementById("searchBox")
-                                        .value + "s",
-                                  },
-                                });
+                                if (value === "merch") {
+                                  navigate("/FilterMerchs", {
+                                    state: {
+                                      val:
+                                        document.getElementById("searchBox")
+                                          .value +
+                                        "s" +
+                                        "API",
+                                      title:
+                                        document.getElementById("searchBox")
+                                          .value + "s",
+                                    },
+                                  });
+                                } else {
+                                  navigate("/FilterGifts", {
+                                    state: {
+                                      val:
+                                        document.getElementById("searchBox")
+                                          .value +
+                                        "s" +
+                                        "API",
+                                      title:
+                                        document.getElementById("searchBox")
+                                          .value + "s",
+                                    },
+                                  });
+                                }
                               }
                             }
                           } else {
@@ -380,7 +422,8 @@ const Header = () => {
                                   val.descr === value ||
                                   val.category === value ||
                                   val.brandFname === value ||
-                                  val.brandLname === value
+                                  val.brandLname === value ||
+                                  val.bname === value
                                 ) {
                                   const pObj = {
                                     name: val.bname,

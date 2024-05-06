@@ -1,17 +1,17 @@
-/* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-key */
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-const Booksfirstpage = () => {
+const MerchsFirstPage = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/booksAPI")
+      .get("http://127.0.0.1:8000/merchsAPI")
       .then((res) => {
         setData(res.data.reverse());
       })
@@ -97,21 +97,8 @@ const Booksfirstpage = () => {
       <div className="booksBox md:mt-10 pt-10">
         <div className="classNameBooks lg:h-20  flex w-12/12 justify-center font-bold">
           <p className="text-4xl lg:text-6xl  font-bold text-orange overflow-hidden">
-            Books
+            Merchs
           </p>
-        </div>
-        <div className="flex w-12/12  justify-center mt-4">
-          <ul className="flex gap-x-10 lg:gap-x-20 text-1xl font-semibold lg:text-xl">
-            <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-2 hover:decoration-8 hover:decoration-mustardyellow">
-              Fiction
-            </li>
-            <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-2 hover:decoration-8 hover:decoration-mustardyellow">
-              Non-Fiction
-            </li>
-            <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-2 hover:decoration-8 hover:decoration-mustardyellow">
-              Competetive
-            </li>
-          </ul>
         </div>
 
         <div className="holder h-96 hidden lg:block mt-10">
@@ -130,7 +117,10 @@ const Booksfirstpage = () => {
                     height={60}
                     onClick={() => {
                       navigate("/details", {
-                        state: { val: val, api: "booksAPI" },
+                        state: {
+                          val: val,
+                          api: "merchsAPI",
+                        },
                       });
                     }}
                   />
@@ -142,7 +132,7 @@ const Booksfirstpage = () => {
                     </p>
                   </a>
                   <p className="mb-3 font-semibold text-sm text-brown dark:text-gray-400">
-                    by {val.author}
+                    Brand: {val.descr}
                   </p>
                   <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
                     Price: Rs {val.price}
@@ -250,5 +240,4 @@ const Booksfirstpage = () => {
     </>
   );
 };
-
-export default Booksfirstpage;
+export default MerchsFirstPage;

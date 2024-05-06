@@ -47,7 +47,7 @@ const SupportLinkBanner = () => {
                 src="./images/book1.jpg"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/Filter", {
                     state: { val: "booksAPI", title: "books" },
                   })
                 }
@@ -58,7 +58,7 @@ const SupportLinkBanner = () => {
                 src="./images/gifts.webp"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/FilterGifts", {
                     state: { val: "giftsAPI", title: "gifts" },
                   })
                 }
@@ -119,7 +119,7 @@ const SupportLinkBanner = () => {
                 src="./images/gifts.webp"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/FilterGifts", {
                     state: { val: "giftsAPI", title: "gifts" },
                   })
                 }
@@ -180,7 +180,7 @@ const SupportLinkBanner = () => {
                 src="./images/gifts.webp"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/FilterGifts", {
                     state: { val: "giftsAPI", title: "gifts" },
                   })
                 }
