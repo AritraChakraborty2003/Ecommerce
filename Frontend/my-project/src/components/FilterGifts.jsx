@@ -31,7 +31,7 @@ const FilterGifts = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/religiousAPI")
+      .get("http://127.0.0.1:8000/giftsAPI")
       .then((res) => {
         setData(res.data.reverse());
       })

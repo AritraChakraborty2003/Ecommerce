@@ -96,7 +96,7 @@ const ReligiousFirstPage = () => {
   return (
     <>
       <div className="booksBox md:mt-10 lg:mt-3 pt-7">
-        <div className="classNameBooks lg:h-20  flex w-12/12 justify-center font-bold">
+        <div className="classNameBooks lg:h-20  flex w-12/12 justify-center font-bold h-17">
           <p className="text-4xl lg:text-6xl  font-bold text-orange overflow-hidden">
             Religious Items
           </p>

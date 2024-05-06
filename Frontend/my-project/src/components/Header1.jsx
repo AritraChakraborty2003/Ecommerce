@@ -64,45 +64,18 @@ const Header1 = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        className="text-black"
-                        onClick={() => {
-                          navigate("/Items", {
-                            state: { val: "merchsAPI", title: "merchs" },
-                          });
-                        }}
-                      >
-                        Merchs
+                      <a href="#" className="text-black">
+                        <Link to="/FilterMerchs">Merchs</Link>
                       </a>
                     </li>
                     <li>
-                      <a
-                        className="text-black"
-                        onClick={() => {
-                          navigate("/Items", {
-                            state: {
-                              val: "traditionalsAPI",
-                              title: "Traditionals",
-                            },
-                          });
-                        }}
-                      >
-                        Traditionals
+                      <a href="#" className="text-black">
+                        <Link to="/FilterReligious">Religious</Link>
                       </a>
                     </li>
                     <li>
-                      <a
-                        className="text-black"
-                        onClick={() => {
-                          navigate("/Items", {
-                            state: {
-                              val: "giftsAPI",
-                              title: "Gifts",
-                            },
-                          });
-                        }}
-                      >
-                        Corporate Gifts
+                      <a href="#" className="text-black">
+                        <Link to="/FilterGifts">Corporate Gifts</Link>
                       </a>
                     </li>
                   </ul>
@@ -219,12 +192,27 @@ const Header1 = () => {
       {status ? (
         <div className="className pb-10 bg-darkwhite">
           <div className="iconHolder">
-            <ul className="pl-5 pt-2">
-              <li className="text-15">Books</li>
-              <li className="text-15 mt-5">Merchendise</li>
-              <li className="text-15 mt-5">Traditionals</li>
-              <li className="text-15 mt-5">Clothes</li>
-              <li className="text-15 mt-5">Contact</li>
+            <ul className="flex ml-1 space-x-3 xl:space-x-5 p-4 pl-2 pr-4   lg:font-normal  xl:text-md  xl:font-normal lg:text-md text-lg">
+              <li>
+                <a href="#" className="text-black">
+                  <Link to="/Filter">Books</Link>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-black">
+                  <Link to="/FilterMerchs">Merchs</Link>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-black">
+                  <Link to="/FilterReligious">Religious</Link>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-black">
+                  <Link to="/FilterGifts">Corporate Gifts</Link>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

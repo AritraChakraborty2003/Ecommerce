@@ -153,7 +153,7 @@ const FirstPageReligious = () => {
         </div>
       </div>
 
-      <div className="w-12/12 bookHolder lg:hidden space-x-1 flex flex-wrap  justify-center items-center mt-10 ">
+      <div className="w-12/12 bookHolder lg:hidden space-x-1 flex flex-wrap  justify-center items-center mt-3 pb-3">
         {(screen.width >= 410 &&
           data.map((val) => (
             <div
@@ -215,7 +215,7 @@ const FirstPageReligious = () => {
             data.map((val) => (
               <div
                 className="mt-3 w-[150px] h-[200px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
-                                hover:scale-x-110 "
+                                hover:scale-x-110 pb-3"
               >
                 <div className="w-12/12 flex justify-center">
                   <img

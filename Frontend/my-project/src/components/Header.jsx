@@ -197,45 +197,18 @@ const Header = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        className="text-black"
-                        onClick={() => {
-                          navigate("/Items", {
-                            state: { val: "merchsAPI", title: "merchs" },
-                          });
-                        }}
-                      >
-                        Merchs
+                      <a href="#" className="text-black">
+                        <Link to="/FilterMerchs">Merchs</Link>
                       </a>
                     </li>
                     <li>
-                      <a
-                        className="text-black"
-                        onClick={() => {
-                          navigate("/Items", {
-                            state: {
-                              val: "traditionalsAPI",
-                              title: "Traditionals",
-                            },
-                          });
-                        }}
-                      >
-                        Traditionals
+                      <a href="#" className="text-black">
+                        <Link to="/FilterReligious">Religious</Link>
                       </a>
                     </li>
                     <li>
-                      <a
-                        className="text-black"
-                        onClick={() => {
-                          navigate("/Items", {
-                            state: {
-                              val: "giftsAPI",
-                              title: "Gifts",
-                            },
-                          });
-                        }}
-                      >
-                        Corporate Gifts
+                      <a href="#" className="text-black">
+                        <Link to="/FilterGifts">Corporate Gifts</Link>
                       </a>
                     </li>
                   </ul>
@@ -570,18 +543,33 @@ const Header = () => {
       {status ? (
         <div className="className pb-10 bg-darkwhite">
           <div className="iconHolder">
-            <ul className="pl-5 pt-2">
-              <li className="text-15">Books</li>
-              <li className="text-15 mt-5">Merchendise</li>
-              <li className="text-15 mt-5">Traditionals</li>
-              <li className="text-15 mt-5">Clothes</li>
-              <li className="text-15 mt-5">Contact</li>
+            <ul className="pl-5 pt-2 flex flex-col gap-3">
+              <li>
+                <a href="#" className="text-black ">
+                  <Link to="/Filter">Books</Link>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-black">
+                  <Link to="/FilterMerchs">Merchs</Link>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-black ">
+                  <Link to="/FilterReligious">Religious</Link>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-black ">
+                  <Link to="/FilterGifts">Corporate Gifts</Link>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       ) : null}
 
-      <div className="searchDiv lg:hidden flex justify-center items-center bg-darkwhite p-3">
+      <div className="searchDiv lg:hidden flex justify-center items-center bg-darkwhite pl-3 pr-3 pb-3">
         <div className="flex flex-col">
           <div className="searchHolder flex justify-end items-center   border-white bg-white p-2 ">
             <input
