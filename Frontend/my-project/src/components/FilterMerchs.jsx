@@ -8,23 +8,8 @@ import axios from "axios";
 import "./Filter.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-/*useCode={ (book != "" &&
-                author != "" &&
-                price === " " &&
-                book + " " + author + " ") ||
-              (book === "" &&
-                author != "" &&
-                price != " " &&
-                author + " " + price + " ") ||
-              (book != "" &&
-                author === "" &&
-                price != " " &&
-                book + " " + price + " ") ||
-              (book == "" && author == "" && price == "" && "All Products") ||
-              (book == "" && price == "" && author != "" && author) ||
-              (author == "" && price == "" && book != "" && book) ||
-              (author == "" && book == "" && price != "" && price)}}*/
-const FilterLogic = () => {
+import IndividualProductPageNonBook from "./IndividualPrductPageNonBook";
+const FilterMerchs = () => {
   const [filter, setFilter] = useState(true);
   const [mobfilter, setMobFilter] = useState(false);
   const [data, setData] = useState([]);
@@ -46,7 +31,7 @@ const FilterLogic = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/booksAPI")
+      .get("http://127.0.0.1:8000/merchsAPI")
       .then((res) => {
         setData(res.data.reverse());
       })
@@ -56,51 +41,56 @@ const FilterLogic = () => {
   }, []);
   const [spans] = useState([
     {
-      id: "Fictional",
-      text: "Fictional",
+      id: "Shirts",
+      text: "Shirts",
       type: "book",
     },
     {
-      id: "Non fictional",
-      text: "Non fictional",
+      id: "TShirts",
+      text: "TShirts",
       type: "book",
     },
     {
-      id: "Competetive",
-      text: "Competetive",
+      id: "Pens",
+      text: "Pens",
       type: "book",
     },
     {
-      id: "Self Help",
-      text: "Self Help",
+      id: "Cups",
+      text: "Cups",
       type: "book",
     },
     {
-      id: "Business",
-      text: "Business",
+      id: "Hoodies",
+      text: "Hoodies",
       type: "book",
     },
   ]);
 
   const [spansAuthor] = useState([
     {
-      id: "Robin Sharma",
-      text: "Robin Sharma",
+      id: "Louis Vuitton",
+      text: "Louis Vuitton",
       type: "author",
     },
     {
-      id: "ML Khanna",
-      text: "ML Khanna",
+      id: "Peter England",
+      text: "Peter England",
       type: "author",
     },
     {
-      id: "Paulo Coelho",
-      text: "Paulo Coelho",
+      id: "Borosil",
+      text: "Borosil",
       type: "author",
     },
     {
-      id: "Ashneer Grover",
-      text: "Ashneer Grover",
+      id: "Cello",
+      text: "Cello",
+      type: "author",
+    },
+    {
+      id: "Flair",
+      text: "Flair",
       type: "author",
     },
   ]);
@@ -134,12 +124,12 @@ const FilterLogic = () => {
         setFilterProduct(filter);
         setBook(Obj.text);
       } else if (Obj.type === "author") {
-        const filter = data.filter((product) => product.author === Obj.text);
+        const filter = data.filter((product) => product.descr === Obj.text);
         console.log(filter);
         setFilterProduct(filter);
         setAuthor(Obj.text);
       } else if (Obj.type === "price") {
-        /*const filter = data.filter((product) => product.author === Obj.text);
+        /*const filter = data.filter((product) => product.descr === Obj.text);
         console.log(filter);
         setFilterProduct(filter);
         setAuthor(Obj.text);*/
@@ -181,7 +171,7 @@ const FilterLogic = () => {
         if (book === "" && price === "" && author != "") {
           const filter = data.filter(
             (product) =>
-              product.category === Obj.text && product.author === author
+              product.category === Obj.text && product.descr === author
           );
           console.log(filter);
           setFilterProduct(filter);
@@ -190,7 +180,7 @@ const FilterLogic = () => {
         if (book != "" && price === "" && author != "") {
           const filter = data.filter(
             (product) =>
-              product.category === Obj.text && product.author === author
+              product.category === Obj.text && product.descr === author
           );
           console.log(filter);
           setFilterProduct(filter);
@@ -257,7 +247,7 @@ const FilterLogic = () => {
               (product) =>
                 product.category === Obj.text &&
                 product.price < 500 &&
-                product.author === author
+                product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -268,7 +258,7 @@ const FilterLogic = () => {
                 product.category === Obj.text &&
                 product.price > 500 &&
                 product.price <= 1000 &&
-                product.author === author
+                product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -278,7 +268,7 @@ const FilterLogic = () => {
               (product) =>
                 product.category === Obj.text &&
                 product.price > 1000 &&
-                product.author === author
+                product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -292,7 +282,7 @@ const FilterLogic = () => {
               (product) =>
                 product.category === Obj.text &&
                 product.price < 500 &&
-                product.author === author
+                product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -303,7 +293,7 @@ const FilterLogic = () => {
                 product.category === Obj.text &&
                 product.price > 500 &&
                 product.price <= 1000 &&
-                product.author === author
+                product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -313,7 +303,7 @@ const FilterLogic = () => {
               (product) =>
                 product.category === Obj.text &&
                 product.price > 1000 &&
-                product.author === author
+                product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -325,14 +315,14 @@ const FilterLogic = () => {
       if (Obj.type === "author") {
         /* */
         if (author != "" && price === "" && book === "") {
-          const filter = data.filter((product) => product.author === Obj.text);
+          const filter = data.filter((product) => product.descr === Obj.text);
           console.log(filter);
           setFilterProduct(filter);
           setAuthor(Obj.text);
         } else if (author === "" && price != "" && book === "") {
           if (priceVal === "discrete") {
             const filter = data.filter(
-              (product) => product.author === Obj.text && product.price < 500
+              (product) => product.descr === Obj.text && product.price < 500
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -340,7 +330,7 @@ const FilterLogic = () => {
           } else if (priceVal === "range") {
             const filter = data.filter(
               (product) =>
-                product.author === Obj.text &&
+                product.descr === Obj.text &&
                 product.price > 500 &&
                 product.price <= 1000
             );
@@ -350,9 +340,9 @@ const FilterLogic = () => {
           } else if (priceVal === "discreteMore") {
             const filter = data.filter(
               (product) =>
-                product.author === Obj.text &&
+                product.descr === Obj.text &&
                 product.price > 1000 &&
-                product.author === author
+                product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -361,7 +351,7 @@ const FilterLogic = () => {
         } else if (author != "" && price != "" && book === "") {
           if (priceVal === "discrete") {
             const filter = data.filter(
-              (product) => product.author === Obj.text && product.price < 500
+              (product) => product.descr === Obj.text && product.price < 500
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -369,7 +359,7 @@ const FilterLogic = () => {
           } else if (priceVal === "range") {
             const filter = data.filter(
               (product) =>
-                product.author === Obj.text &&
+                product.descr === Obj.text &&
                 product.price > 500 &&
                 product.price <= 1000
             );
@@ -379,9 +369,9 @@ const FilterLogic = () => {
           } else if (priceVal === "discreteMore") {
             const filter = data.filter(
               (product) =>
-                product.author === Obj.text &&
+                product.descr === Obj.text &&
                 product.price > 1000 &&
-                product.author === author
+                product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -389,16 +379,14 @@ const FilterLogic = () => {
           }
         } else if (author === "" && price === "" && book != "") {
           const filter = data.filter(
-            (product) =>
-              product.author === Obj.text && product.category === book
+            (product) => product.descr === Obj.text && product.category === book
           );
           console.log(filter);
           setFilterProduct(filter);
           setAuthor(Obj.text);
         } else if (author != "" && price === "" && book != "") {
           const filter = data.filter(
-            (product) =>
-              product.author === Obj.text && product.category === book
+            (product) => product.descr === Obj.text && product.category === book
           );
           console.log(filter);
           setFilterProduct(filter);
@@ -408,7 +396,7 @@ const FilterLogic = () => {
           if (priceVal === "discrete") {
             const filter = data.filter(
               (product) =>
-                product.author === Obj.text &&
+                product.descr === Obj.text &&
                 product.price < 500 &&
                 product.category === book
             );
@@ -418,7 +406,7 @@ const FilterLogic = () => {
           } else if (priceVal === "range") {
             const filter = data.filter(
               (product) =>
-                product.author === Obj.text &&
+                product.descr === Obj.text &&
                 product.price > 500 &&
                 product.price <= 1000 &&
                 product.category === book
@@ -429,7 +417,7 @@ const FilterLogic = () => {
           } else if (priceVal === "discreteMore") {
             const filter = data.filter(
               (product) =>
-                product.author === Obj.text &&
+                product.descr === Obj.text &&
                 product.price > 1000 &&
                 product.category === book
             );
@@ -439,16 +427,14 @@ const FilterLogic = () => {
           }
         } else if (author === "" && price === "" && book != "") {
           const filter = data.filter(
-            (product) =>
-              product.author === Obj.text && product.category === book
+            (product) => product.descr === Obj.text && product.category === book
           );
           console.log(filter);
           setFilterProduct(filter);
           setAuthor(Obj.text);
         } else if (author != "" && price === "" && book != "") {
           const filter = data.filter(
-            (product) =>
-              product.author === Obj.text && product.category === book
+            (product) => product.descr === Obj.text && product.category === book
           );
           console.log(filter);
           setFilterProduct(filter);
@@ -457,7 +443,7 @@ const FilterLogic = () => {
           if (priceVal === "discrete") {
             const filter = data.filter(
               (product) =>
-                product.author === Obj.text &&
+                product.descr === Obj.text &&
                 product.price < 500 &&
                 product.category === book
             );
@@ -467,7 +453,7 @@ const FilterLogic = () => {
           } else if (priceVal === "range") {
             const filter = data.filter(
               (product) =>
-                product.author === Obj.text &&
+                product.descr === Obj.text &&
                 product.price > 500 &&
                 product.price <= 1000 &&
                 product.category === book
@@ -478,7 +464,7 @@ const FilterLogic = () => {
           } else if (priceVal === "discreteMore") {
             const filter = data.filter(
               (product) =>
-                product.author === Obj.text &&
+                product.descr === Obj.text &&
                 product.price > 1000 &&
                 product.category === book
             );
@@ -517,7 +503,7 @@ const FilterLogic = () => {
         } else if (book === "" && price === "" && author != "") {
           if (Obj.val === "discrete") {
             const filter = data.filter(
-              (product) => product.price < Obj.id && product.author === author
+              (product) => product.price < Obj.id && product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -529,7 +515,7 @@ const FilterLogic = () => {
               (product) =>
                 product.price > 500 &&
                 product.price <= 1000 &&
-                product.author === author
+                product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -538,7 +524,7 @@ const FilterLogic = () => {
             setPriceVal(Obj.val);
           } else if (Obj.val === "discreteMore") {
             const filter = data.filter(
-              (product) => product.price > Obj.id && product.author === author
+              (product) => product.price > Obj.id && product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -550,7 +536,7 @@ const FilterLogic = () => {
           if (Obj.val === "discrete") {
             const filter = data.filter(
               (product) =>
-                product.author === author &&
+                product.descr === author &&
                 product.price < 500 &&
                 product.category === book
             );
@@ -562,7 +548,7 @@ const FilterLogic = () => {
           } else if (Obj.val === "range") {
             const filter = data.filter(
               (product) =>
-                product.author === author &&
+                product.descr === author &&
                 product.price > 500 &&
                 product.price <= 1000 &&
                 product.category === book
@@ -575,7 +561,7 @@ const FilterLogic = () => {
           } else if (Obj.val === "discreteMore") {
             const filter = data.filter(
               (product) =>
-                product.author === author &&
+                product.descr === author &&
                 product.price > 1000 &&
                 product.category === book
             );
@@ -589,7 +575,7 @@ const FilterLogic = () => {
           if (Obj.val === "discrete") {
             const filter = data.filter(
               (product) =>
-                product.author === author &&
+                product.descr === author &&
                 product.price < 500 &&
                 product.category === book
             );
@@ -601,7 +587,7 @@ const FilterLogic = () => {
           } else if (Obj.val === "range") {
             const filter = data.filter(
               (product) =>
-                product.author === author &&
+                product.descr === author &&
                 product.price > 500 &&
                 product.price <= 1000 &&
                 product.category === book
@@ -614,7 +600,7 @@ const FilterLogic = () => {
           } else if (Obj.val === "discreteMore") {
             const filter = data.filter(
               (product) =>
-                product.author === author &&
+                product.descr === author &&
                 product.price > 1000 &&
                 product.category === book
             );
@@ -627,7 +613,7 @@ const FilterLogic = () => {
         } else if (book === "" && price != "" && author != "") {
           if (Obj.val === "discrete") {
             const filter = data.filter(
-              (product) => product.price < Obj.id && product.author === author
+              (product) => product.price < Obj.id && product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -639,7 +625,7 @@ const FilterLogic = () => {
               (product) =>
                 product.price > 500 &&
                 product.price <= 1000 &&
-                product.author === author
+                product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -648,7 +634,7 @@ const FilterLogic = () => {
             setPriceVal(Obj.val);
           } else if (Obj.val === "discreteMore") {
             const filter = data.filter(
-              (product) => product.price > Obj.id && product.author === author
+              (product) => product.price > Obj.id && product.descr === author
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -738,7 +724,7 @@ const FilterLogic = () => {
       <Header />
       {/* Code for show and remove filters Large*/}
       <div className="flex justify-center h-40 w-screen text-5xl items-center bg-mustardyellow text-black font-extrabold">
-        Books
+        Merchs
       </div>
       <div className="hidden lg:block">
         <div className="pb-2 pt-2 w-screen flex justify-center filterDisplayArea   h-27 bg-darkwhite">
@@ -829,7 +815,7 @@ const FilterLogic = () => {
                 <div className="flex ml-2 mt-3 border-solid border-b-2 w-[85vmin] ">
                   <div className="textHolder w-[75vmin] ">
                     <p className="text-lg overflow-hidden font-medium  font-poppins">
-                      Genre
+                      Category
                     </p>
                   </div>
 
@@ -877,7 +863,7 @@ const FilterLogic = () => {
               <div className="flex ml-2 mt-5  border-solid border-b-2 w-[85vw]">
                 <div className="textHolder w-[75vw] ">
                   <p className="text-lg overflow-hidden font-medium font-poppins">
-                    Author
+                    Brand
                   </p>
                 </div>
                 <img
@@ -1007,7 +993,7 @@ const FilterLogic = () => {
                 <div className="flex ml-2 mt-10 border-solid border-b-2 w-[45vmin] ">
                   <div className="textHolder w-[40vmin] ">
                     <p className="text-xl overflow-hidden font-medium  font-poppins">
-                      Genre
+                      Category
                     </p>
                   </div>
 
@@ -1055,7 +1041,7 @@ const FilterLogic = () => {
               <div className="flex ml-2 mt-5  border-solid border-b-2 w-[45vmin]">
                 <div className="textHolder w-[40vmin] ">
                   <p className="text-xl overflow-hidden font-medium font-poppins">
-                    Author
+                    Brand
                   </p>
                 </div>
                 <img
@@ -1195,7 +1181,7 @@ const FilterLogic = () => {
                 <div className="flex ml-2 mt-10 border-solid border-b-2 w-[35vmin] ">
                   <div className="textHolder w-[35vmin] ">
                     <p className="text-xl overflow-hidden font-medium  font-poppins">
-                      Genre
+                      Category
                     </p>
                   </div>
 
@@ -1243,7 +1229,7 @@ const FilterLogic = () => {
               <div className="flex ml-2 mt-5  border-solid border-b-2 w-[35vmin]">
                 <div className="textHolder w-[35vmin] ">
                   <p className="text-xl overflow-hidden font-medium font-poppins">
-                    Author
+                    Brand
                   </p>
                 </div>
                 <img
@@ -1370,7 +1356,7 @@ const FilterLogic = () => {
           </p>
           <div className="display mt-7 flex flex-wrap gap-5  w-[100vw] lg:w-[71vw] justify-center items-center pb-5">
             {filteredProduct.length > 0 && (
-              <Individualproductpage
+              <IndividualProductPageNonBook
                 category={category}
                 filterP={filteredProduct}
               />
@@ -1398,7 +1384,7 @@ const FilterLogic = () => {
                       height={60}
                       onClick={() => {
                         navigate("/details", {
-                          state: { val: val, api: "booksAPI" },
+                          state: { val: val, api: "merchsAPI" },
                         });
                       }}
                     />
@@ -1412,7 +1398,7 @@ const FilterLogic = () => {
                     </a>
                     <a href="#">
                       <p className="mb-2 text-base text-brown  tracking-tight text-md dark:text-white">
-                        by {val.author}
+                        brand: {val.descr}
                       </p>
                     </a>
 
@@ -1446,7 +1432,7 @@ const FilterLogic = () => {
                         height={60}
                         onClick={() => {
                           navigate("/details", {
-                            state: { val: val, api: "booksAPI" },
+                            state: { val: val, api: "merchsAPI" },
                           });
                         }}
                       />
@@ -1478,7 +1464,7 @@ const FilterLogic = () => {
                         height={60}
                         onClick={() => {
                           navigate("/details", {
-                            state: { val: val, api: "booksAPI" },
+                            state: { val: val, api: "merchsAPI" },
                           });
                         }}
                       />
@@ -1501,4 +1487,4 @@ const FilterLogic = () => {
     </>
   );
 };
-export default FilterLogic;
+export default FilterMerchs;

@@ -208,7 +208,7 @@ const Detailspage = (props) => {
                     </>
                   </li>
                 )) || (
-                  <li className="mt-5 p-2 border-solid border-b-2 flex w-[75vmin]">
+                  <li className="mt-5 p-2 border-solid border-b-2 flex w-[90vw] lg:w-[75vmin]">
                     <>
                       <div className="details text-xl text-black font-extrabold font-poppins w-11/12">
                         Description
@@ -270,12 +270,12 @@ const Detailspage = (props) => {
                     </>
                   </li>
                 )) || (
-                  <li className="mt-1 p-2 border-solid border-b-2 flex w-[75vmin]">
+                  <li className="mt-1 p-2 border-solid border-b-2 flex w-[90vw] lg:w-[75vmin]">
                     <>
                       <div className="details text-xl text-black font-extrabold font-poppins w-11/12">
                         Other Details
                       </div>
-                      <div className="imageBox h-10 w-1/12overflow-hidden">
+                      <div className="imageBox h-10 w-1/12 overflow-hidden">
                         <img
                           src="./images/ricon.png"
                           id="imgIcon3"

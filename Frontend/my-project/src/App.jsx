@@ -1,6 +1,8 @@
 /*import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";*/
 import Foot1 from "./components/Foot1";
+import FilterReligious from "./components/FilterReligious";
+import FilterMerchs from "./components/FilterMerchs";
 import Header from "./components/Header";
 import First from "./components/First";
 import SearchPage from "./components/SearchPage";
@@ -60,6 +62,8 @@ function App() {
           <Route path="/AddAdmin" element={<AddAdmin />}></Route>
           <Route path="/Header1" element={<Header1 />}></Route>
           <Route path="/search" element={<SearchPage />}></Route>
+          <Route path="/FilterMerchs" element={<FilterMerchs />}></Route>
+          <Route path="/FilterReligious" element={<FilterReligious />}></Route>
         </Routes>
       </BrowserRouter>
     </>

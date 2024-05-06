@@ -532,7 +532,7 @@ app.post("/religiousAPI", upload.single("file"), (req, res) => {
   console.log(descr);
   console.log(image);
   console.log(url);*/
-  let val1;
+  /*let val1;
   let val2;
   const descrArr = descr.split(" ");
   if (descr.length == 1) {
@@ -541,7 +541,7 @@ app.post("/religiousAPI", upload.single("file"), (req, res) => {
   } else if (descr.length === 2) {
     val1 = descrArr[0];
     val2 = descrArr[1];
-  }
+  }*/
   let NewReligious = new religious({
     name: name,
     price: price,
@@ -565,8 +565,8 @@ app.post("/religiousAPI", upload.single("file"), (req, res) => {
     descr: descr,
     authorFname: "NA",
     authorLname: "NA",
-    brandFname: val1,
-    brandLname: val2,
+    brandFname: "NA",
+    brandLname: "NA",
   });
 
   NewReligious.save();

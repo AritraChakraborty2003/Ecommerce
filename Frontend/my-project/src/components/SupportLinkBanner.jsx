@@ -24,7 +24,7 @@ const SupportLinkBanner = () => {
                 src="./images/merch.png"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/FilterMerchs", {
                     state: { val: "merchsAPI", title: "merchendise" },
                   })
                 }
@@ -35,7 +35,7 @@ const SupportLinkBanner = () => {
                 src="./images/traditionals.png"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/FilterReligious", {
                     state: { val: "religiousAPI", title: "religious Items" },
                   })
                 }
@@ -85,7 +85,7 @@ const SupportLinkBanner = () => {
                 src="./images/merch.png"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/FilterMerchs", {
                     state: { val: "merchsAPI", title: "merchendise" },
                   })
                 }
@@ -96,7 +96,7 @@ const SupportLinkBanner = () => {
                 src="./images/traditionals.png"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/FilterReligious", {
                     state: { val: "religiousAPI", title: "religious Items" },
                   })
                 }
@@ -108,7 +108,7 @@ const SupportLinkBanner = () => {
                 src="./images/book1.jpg"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/Filter", {
                     state: { val: "booksAPI", title: "books" },
                   })
                 }
@@ -146,7 +146,7 @@ const SupportLinkBanner = () => {
                 src="./images/merch.png"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/FilterMerchs", {
                     state: { val: "merchsAPI", title: "merchendise" },
                   })
                 }
@@ -157,7 +157,7 @@ const SupportLinkBanner = () => {
                 src="./images/traditionals.png"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/FilterReligious", {
                     state: { val: "religiousAPI", title: "religious Items" },
                   })
                 }
@@ -169,7 +169,7 @@ const SupportLinkBanner = () => {
                 src="./images/book1.jpg"
                 className="max-h-full max-w-full object-contain"
                 onClick={() =>
-                  navigate("/Items", {
+                  navigate("/Filter", {
                     state: { val: "booksAPI", title: "books" },
                   })
                 }
