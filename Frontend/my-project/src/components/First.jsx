@@ -18,7 +18,7 @@ import ComboBox from "./ComboBox";
 import MerchsFirstPage from "./MerchsFirstPage";
 //import FirstPageReligious from "./FirstPageReligious";
 import ReligiousFirstPage from "./ReligiousFirstPage";
-import GiftsFirstPage from "./GiftsFirstPage";
+import GiftsPageFirst from "./GiftsPageFirst";
 
 function First() {
   // eslint-disable-next-line react/prop-types
@@ -39,7 +39,7 @@ function First() {
         <MysteryBox />
         <Reviews />
         <ReligiousFirstPage />
-        <GiftsFirstPage />
+        <GiftsPageFirst />
         <div className="counter" id="counter">
           <h1 id="cntText"></h1>
         </div>

@@ -30,6 +30,7 @@ import Cart from "./components/Cart";
 import FilterGifts from "./components/FilterGifts";
 import Booksfirstpage from "./components/Booksfirstpage";
 import "slick-carousel/slick/slick.css";
+import GiftsPageFirst from "./components/GiftsPageFirst";
 import "slick-carousel/slick/slick-theme.css";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import Login from "./components/Login";
@@ -68,6 +69,7 @@ function App() {
           <Route path="/FilterReligious" element={<FilterReligious />}></Route>
           <Route path="/FilterGifts" element={<FilterGifts />}></Route>
           <Route path="/MerchsFirstPage" element={<MerchsFirstPage />}></Route>
+          <Route path="/giftPageFirst" element={<GiftsPageFirst />}></Route>
         </Routes>
       </BrowserRouter>
     </>

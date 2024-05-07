@@ -33,6 +33,7 @@ const Adminauth = () => {
     let flag = false;
     data.map((val) => {
       if (val.uname === user && val.password === password) {
+        localStorage.setItem("admin", "admin123");
         navigate("/Adminchoice");
         flag = true;
       }
