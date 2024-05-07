@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import "./handler.css";
 
@@ -5,46 +6,68 @@ import Foot1 from "./Foot1";
 import Header from "./Header";
 //import { useNavigate } from "react-router-dom";
 import axios from "axios";
-//import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 const AddAdmin = () => {
+  const [uname, setuname] = useState("");
+  const [password, setpassword] = useState("");
+  const [flag, setFlag] = useState("false");
+  const navigate = useNavigate();
+  const [count, setCount] = useState(0);
   /*const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [data, setData] = useState([]);*/
   //const navigate = useNavigate();
-  /*useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/adminData")
-      .then((res) => {
-        setData(res.data.reverse());
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);*/
+  useEffect(() => {
+    setFlag(false);
+    const interval = setInterval(() => {
+      const cnt = count + 1;
+      setFlag(false);
+      setCount(cnt);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [count]);
+
   const getData = () => {
     axios.get("");
   };
   //console.log(data);
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    const postData = {
+      uname: uname,
+      password: password,
+    };
+    axios
+      .post("http://127.0.0.1:8000/adminData", postData)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
-    //Signup Authetication code/Logic for backend extension
-    getData();
-    let flag = true;
-
-    if (flag) {
-      document.getElementById("success").innerHTML = "Upload Successful";
-      flag = true;
-    }
-
-    if (!flag) {
-      alert("Not Logged in Succesully");
-    }
+    setFlag(true);
   };
 
   return (
     <>
       <Header />
+      <div className="bg-darkwhite">
+        <button
+          className="p-3 bg-mustardyellow text-black m-3 mt-4"
+          onClick={() => {
+            navigate("/AdminChoice");
+          }}
+        >
+          Go Back
+        </button>
+      </div>
+      {flag && (
+        <h1 id="successMsg" className="bg-darkwhite text-3xl font-bold ml-3">
+          Updated Successfully
+        </h1>
+      )}
       <div className="bg-darkwhite">
         <h1
           id="success"
@@ -63,9 +86,9 @@ const AddAdmin = () => {
                 name="text"
                 placeholder="Enter username..."
                 className="shadow-xl p-2 w-[70vmin] lg:w-[76vmin]"
-                /* onChange={(e) => {
-                  setUser(e.target.value);
-                }}*/
+                onChange={(e) => {
+                  setuname(e.target.value);
+                }}
               ></input>
               <br />
               <br />
@@ -74,9 +97,9 @@ const AddAdmin = () => {
                 name="password"
                 placeholder="Enter Password..."
                 className="shadow-xl p-2 w-[70vmin] lg:w-[76vmin]"
-                /*onChange={(e) => {
-                  setPassword(e.target.value);
-                }}*/
+                onChange={(e) => {
+                  setpassword(e.target.value);
+                }}
               />
 
               <div className="btnHolder flex justify-center items-center mt-3">

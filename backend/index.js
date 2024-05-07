@@ -270,6 +270,19 @@ const ecomOrderSchema = new mongoose.Schema(
   },
   { collection: "ecomorder" }
 );
+const ecomAdminSchema = new mongoose.Schema(
+  {
+    uname: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+  },
+  { collection: "admindb" }
+);
 const ecomReligiousSchema = new mongoose.Schema(
   {
     name: {
@@ -311,6 +324,7 @@ const merchs = mongoose.model("Merch", ecomMerchSchema);
 const religious = mongoose.model("Religious", ecomReligiousSchema);
 const gifts = mongoose.model("Gifts", ecomGiftsSchema);
 const search = mongoose.model("search", searchDbSchema);
+const admin = mongoose.model("admin", ecomAdminSchema);
 const user1 = mongoose.model("UserDB", adminDbSchema);
 const review = mongoose.model("reviews", ecomReviewSchema);
 /* ---- GET Req Start ---- */
@@ -671,8 +685,11 @@ app.post("/ordersAPI", (req, res) => {
 app.post("/adminData", (req, res) => {
   let uname = req.body.uname;
   let password = req.body.password;
-  console.log(uname);
-  console.log(password);
+  const adminObj = new admin({
+    uname: uname,
+    password: password,
+  });
+  adminObj.save();
 });
 app.listen(8000, () => {
   console.log("Backend Connected");
