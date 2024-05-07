@@ -20,7 +20,7 @@ const Adminchoice = () => {
             >
               Logout
             </button>
-            <div className="boxHolder p-24 bg-darkwhite flex flex-wrap justify-center items-center space-x-10">
+            <div className="boxHolder p-24 bg-darkwhite flex flex-wrap justify-center items-center">
               <div
                 className="w-[300px] h-[200px] pt-3 bg-white  border-solid border-gray-500 rounded-lg shadow-2xl overflow-hidden transform transition duration-300 
                                 hover:scale-x-110 "
@@ -28,7 +28,7 @@ const Adminchoice = () => {
                 <div className="w-12/12 flex justify-center">
                   <img
                     className="mt-4  rounded-t-lg border-solid border-grey-2 shadow-xl"
-                    src="./images/cma.webp"
+                    src="./images/CMS.jpeg"
                     alt=""
                     width={120}
                     height={130}
@@ -46,15 +46,14 @@ const Adminchoice = () => {
                   </p>
                 </div>
               </div>
-
               <div
-                className="mt-5 lg:mt-0 w-[300px] h-[200px] pt-3 bg-white  border-solid border-gray-500 rounded-lg shadow-2xl overflow-hidden transform transition duration-300 
-                                hover:scale-x-110 "
+                className="w-[300px] h-[200px] pt-3 bg-white  border-solid border-gray-500 rounded-lg shadow-2xl overflow-hidden transform transition duration-300 
+                                hover:scale-x-110 mt-10 lg:ml-10 lg:mt-0"
               >
                 <div className="w-12/12 flex justify-center">
                   <img
-                    className="rounded-t-lg border-solid border-grey-2 shadow-xl"
-                    src="./images/orders.png"
+                    className="mt-4  rounded-t-lg border-solid border-grey-2 shadow-xl"
+                    src="./images/orderRequest.png"
                     alt=""
                     width={80}
                     height={80}
@@ -74,13 +73,13 @@ const Adminchoice = () => {
               </div>
 
               <div
-                className="mt-5 lg:mt-0 w-[300px] h-[200px] pt-3 bg-white  border-solid border-gray-500 rounded-lg shadow-2xl overflow-hidden transform transition duration-300 
-                                hover:scale-x-110 "
+                className="w-[300px] h-[200px] pt-3 bg-white  border-solid border-gray-500 rounded-lg shadow-2xl overflow-hidden transform transition duration-300 
+                                hover:scale-x-110 mt-10 lg:ml-10 lg:mt-0"
               >
                 <div className="w-12/12 flex justify-center">
                   <img
-                    className="rounded-t-lg border-solid border-grey-2 shadow-xl"
-                    src="./images/admin.png"
+                    className="mt-4  rounded-t-lg border-solid border-grey-2 shadow-xl"
+                    src="./images/adminIcon.png"
                     alt=""
                     width={80}
                     height={80}
@@ -94,12 +93,13 @@ const Adminchoice = () => {
                     <p className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white"></p>
                   </a>
                   <p className="mb-3 font-semibold text-xl text-brown dark:text-gray-400 text-center">
-                    Add Admin Data
+                    Add admin
                   </p>
                 </div>
               </div>
             </div>
           </div>
+
           <Foot1 />
         </>
       )) || <Navigate to="/admin" />}

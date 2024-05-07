@@ -54,7 +54,7 @@ const AddAdmin = () => {
           <div className="form-area border-mustardyellow border-2 w-[99vw] md:w-[80vmin] ">
             <div className="flex flex-col justify-center items-center imgHolder h-20 w-12/12 bg-mustardyellow">
               <p className="text-2xl font-bold ">Admin</p>
-              <span className="text-md">(Add an admin o your Database)</span>
+              <span className="text-md">(Add an admin for your Database)</span>
             </div>
 
             <form className="pt-5 pl-3 pb-5">
