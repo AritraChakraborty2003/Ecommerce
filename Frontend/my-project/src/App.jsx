@@ -4,6 +4,7 @@ import Foot1 from "./components/Foot1";
 import FilterReligious from "./components/FilterReligious";
 import FilterMerchs from "./components/FilterMerchs";
 import Header from "./components/Header";
+import HeaderLogin from "./components/HeaderLogin";
 import MerchsFirstPage from "./components/MerchsFirstPage";
 import First from "./components/First";
 import SearchPage from "./components/SearchPage";
@@ -70,6 +71,7 @@ function App() {
           <Route path="/FilterGifts" element={<FilterGifts />}></Route>
           <Route path="/MerchsFirstPage" element={<MerchsFirstPage />}></Route>
           <Route path="/giftPageFirst" element={<GiftsPageFirst />}></Route>
+          <Route path="/headerLogin" element={<HeaderLogin />}></Route>
         </Routes>
       </BrowserRouter>
     </>
