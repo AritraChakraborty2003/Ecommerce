@@ -719,6 +719,7 @@ const HeaderLogin = () => {
                   <div className="ml-1">Close</div>
                 </div>
               </div>
+              <p>The logic behind login</p>
             </>
           )}
         </div>
