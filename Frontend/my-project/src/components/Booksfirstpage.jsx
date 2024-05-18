@@ -158,6 +158,7 @@ const categorysfirstpage = () => {
             ))}
           </Slider>
         </div>
+<<<<<<< HEAD
         <div className="btnContainer hidden lg:block">
           <div className="flex justify-center items-center">
             <button type="button" className=" bg-orange text-white p-3">
@@ -165,6 +166,8 @@ const categorysfirstpage = () => {
             </button>
           </div>
         </div>
+=======
+>>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
       </div>
 
       <div className="w-12/12 categoryHolder lg:hidden space-x-1 flex flex-wrap  justify-center items-center mt-10 ">
