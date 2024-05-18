@@ -4,12 +4,9 @@ import Foot1 from "./components/Foot1";
 import FilterReligious from "./components/FilterReligious";
 import FilterMerchs from "./components/FilterMerchs";
 import Header from "./components/Header";
-<<<<<<< HEAD
-import FilterMerchs from "./components/FilterMerchs";
-=======
+
 import HeaderLogin from "./components/HeaderLogin";
 import MerchsFirstPage from "./components/MerchsFirstPage";
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
 import First from "./components/First";
 import SearchPage from "./components/SearchPage";
 import AddAdmin from "./components/AddAdmin";
@@ -31,11 +28,9 @@ import GoogleAuth from "./components/GoogleAuth";
 import Dealsofday from "./components/Dealsofday";
 import Reviews from "./components/Reviews";
 import Cart from "./components/Cart";
-<<<<<<< HEAD
-=======
+
 import FilterGifts from "./components/FilterGifts";
-import Booksfirstpage from "./components/Booksfirstpage";
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
+
 import "slick-carousel/slick/slick.css";
 import GiftsPageFirst from "./components/GiftsPageFirst";
 import "slick-carousel/slick/slick-theme.css";
@@ -77,14 +72,12 @@ function App() {
           <Route path="/Header1" element={<Header1 />}></Route>
           <Route path="/search" element={<SearchPage />}></Route>
           <Route path="/FilterMerchs" element={<FilterMerchs />}></Route>
-<<<<<<< HEAD
-=======
+
           <Route path="/FilterReligious" element={<FilterReligious />}></Route>
           <Route path="/FilterGifts" element={<FilterGifts />}></Route>
           <Route path="/MerchsFirstPage" element={<MerchsFirstPage />}></Route>
           <Route path="/giftPageFirst" element={<GiftsPageFirst />}></Route>
           <Route path="/headerLogin" element={<HeaderLogin />}></Route>
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
         </Routes>
       </BrowserRouter>
     </>
