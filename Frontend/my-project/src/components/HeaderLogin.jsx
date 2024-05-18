@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-key */
-/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import "./banner.css";
@@ -7,8 +6,7 @@ import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-//import { useNavigate, useEffect } from "react-router-dom";
-const Header = () => {
+const HeaderLogin = () => {
   const [status, setStatus] = useState(false);
   const navigate = useNavigate();
   const [data, setData] = useState([]);
@@ -19,14 +17,14 @@ const Header = () => {
   //let unique = [];
   const UniqueAuthor = [];
   const UniqueGenre = [];
-  const Uniquecategoryname = [];
+  const UniqueBookname = [];
   const UniqueCategory = [];
   const UniqueBrand = [];
   const UniqueProducts = [
     "merchs",
     "merch",
-    "categorys",
-    "category",
+    "books",
+    "book",
     "gifts",
     "gift",
     "religious",
@@ -50,8 +48,8 @@ const Header = () => {
     if (UniqueGenre.indexOf(val.genre) === -1 && val.genre != "NA") {
       UniqueGenre.push(val.genre);
     }
-    if (Uniquecategoryname.indexOf(val.bname) === -1 && val.bname != "NA") {
-      Uniquecategoryname.push(val.bname);
+    if (UniqueBookname.indexOf(val.bname) === -1 && val.bname != "NA") {
+      UniqueBookname.push(val.bname);
     }
     if (UniqueBrand.indexOf(val.brand) === -1 && val.brand != "NA") {
       UniqueBrand.push(val.brand);
@@ -64,7 +62,7 @@ const Header = () => {
   let match = [];
   const fetchData = (value) => {
     match = [];
-    Uniquecategoryname.filter((val) => {
+    UniqueBookname.filter((val) => {
       if (value != "") {
         if (val.startsWith(value)) {
           match.push(val);
@@ -152,7 +150,7 @@ const Header = () => {
               <ul className="flex justify-evenly font-medium font-serif">
                 <Marquee speed={80} gradient={false} pauseOnHover>
                   <li className="ml-10">
-                    Great <span className="font-bold">categorys!!!!</span>
+                    Great <span className="font-bold">Books!!!!</span>
                   </li>
 
                   <li className="ml-20">
@@ -193,7 +191,7 @@ const Header = () => {
                   <ul className="flex ml-1 space-x-3 xl:space-x-5 p-4 pl-2 pr-4   lg:font-normal  xl:text-md  xl:font-normal lg:text-md text-lg">
                     <li>
                       <a href="#" className="text-black">
-                        <Link to="/Filter">categorys</Link>
+                        <Link to="/Filter">Books</Link>
                       </a>
                     </li>
                     <li>
@@ -243,9 +241,9 @@ const Header = () => {
                             document.getElementById("searchBox").value ===
                               "merch" ||
                             document.getElementById("searchBox").value ===
-                              "category" ||
+                              "book" ||
                             document.getElementById("searchBox").value ===
-                              "categorys" ||
+                              "books" ||
                             document.getElementById("searchBox").value ===
                               "gift" ||
                             document.getElementById("searchBox").value ===
@@ -255,20 +253,15 @@ const Header = () => {
                           ) {
                             const value =
                               document.getElementById("searchBox").value;
-<<<<<<< HEAD
-                            if (value === "categorys") {
-                              navigate("/Items", {
-=======
                             if (value === "books") {
                               navigate("/Filter", {
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                                 state: {
                                   val:
                                     document.getElementById("searchBox").value +
                                     "API",
                                   title:
                                     document.getElementById("searchBox").value,
-                                  api: "categorysAPI",
+                                  api: "booksAPI",
                                 },
                               });
                               document.getElementById("searchBox").value = "";
@@ -314,13 +307,8 @@ const Header = () => {
                                 });
                               }
                             } else {
-<<<<<<< HEAD
-                              if (value === "category") {
-                                navigate("/Items", {
-=======
                               if (value === "book") {
                                 navigate("/Filter", {
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                                   state: {
                                     val:
                                       document.getElementById("searchBox")
@@ -330,7 +318,7 @@ const Header = () => {
                                     title:
                                       document.getElementById("searchBox")
                                         .value + "s",
-                                    api: "categorysAPI",
+                                    api: "booksAPI",
                                   },
                                 });
                               } else if (
@@ -381,7 +369,7 @@ const Header = () => {
                                   val.authorLname === value ||
                                   val.authorFname === value
                                 ) {
-                                  const categoryObj = {
+                                  const bookObj = {
                                     name: val.bname,
                                     author: val.author,
                                     genre: val.genre,
@@ -394,10 +382,10 @@ const Header = () => {
                                     descr: val.decsr,
                                   };
 
-                                  store.push(categoryObj);
+                                  store.push(bookObj);
                                 }
                                 navigate("/search", {
-                                  state: { val: store, api: "categorysAPI" },
+                                  state: { val: store, api: "booksAPI" },
                                 });
                               }
                               if (val.author === "NA") {
@@ -423,7 +411,9 @@ const Header = () => {
 
                                   store.push(pObj);
                                 }
-                                navigate("/search", { state: { val: store } });
+                                navigate("/search", {
+                                  state: { val: store },
+                                });
                               }
                             });
                           }
@@ -469,16 +459,22 @@ const Header = () => {
 
                 <div className="ExtHolder hidden lg:block w-[25vmin] p-2">
                   <div className="ExtHolder flex justify-end  mr-10  w-full p-2 space-x-10 ">
-                    <div className="imgHolder w-15 flex items-center">
-                      <a href="/signup">
+                    <div className="imgHolder w-24 flex items-center">
+                      <div className="flex w-24">
+                        <p className="w-20">Aritra</p>
                         <img
-                          src="./images/user1.png"
-                          className="w-[40px] h-[40px] max-h-full max-w-full object-contain"
+                          src="./images/downicon.png"
+                          height={27}
+                          className="ml-1"
+                          width={27}
+                          onClick={() => {
+                            console.log("data");
+                          }}
                         ></img>
-                      </a>
+                      </div>
                     </div>
 
-                    <div className="imgHolder w-15  items-center overflow-hidden flex h-13">
+                    <div className="imgHolder w-20  items-center overflow-hidden flex h-13">
                       <a href="/cart">
                         <img
                           src="./images/cart.png"
@@ -553,14 +549,6 @@ const Header = () => {
       {status ? (
         <div className="className pb-10 bg-darkwhite">
           <div className="iconHolder">
-<<<<<<< HEAD
-            <ul className="pl-5 pt-2">
-              <li className="text-15">categorys</li>
-              <li className="text-15 mt-5">Merchendise</li>
-              <li className="text-15 mt-5">Traditionals</li>
-              <li className="text-15 mt-5">Clothes</li>
-              <li className="text-15 mt-5">Contact</li>
-=======
             <ul className="pl-5 pt-2 flex flex-col gap-3">
               <li>
                 <a href="#" className="text-black ">
@@ -582,7 +570,6 @@ const Header = () => {
                   <Link to="/FilterGifts">Corporate Gifts</Link>
                 </a>
               </li>
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             </ul>
           </div>
         </div>
@@ -612,8 +599,8 @@ const Header = () => {
                 } else if (
                   document.getElementById("searchBox").value === "merchs" ||
                   document.getElementById("searchBox").value === "merch" ||
-                  document.getElementById("searchBox").value === "category" ||
-                  document.getElementById("searchBox").value === "categorys" ||
+                  document.getElementById("searchBox").value === "book" ||
+                  document.getElementById("searchBox").value === "books" ||
                   document.getElementById("searchBox").value === "gift" ||
                   document.getElementById("searchBox").value === "gifts" ||
                   document.getElementById("searchBox").value === "religious"
@@ -621,7 +608,7 @@ const Header = () => {
                   const value = document.getElementById("searchBox").value;
                   if (
                     value === "merchs" ||
-                    value === "categorys" ||
+                    value === "books" ||
                     value === "gifts"
                   ) {
                     navigate("/Items", {
@@ -656,7 +643,7 @@ const Header = () => {
                         val.authorLname === value ||
                         val.authorFname === value
                       ) {
-                        const categoryObj = {
+                        const bookObj = {
                           name: val.bname,
                           author: val.author,
                           genre: val.genre,
@@ -668,7 +655,7 @@ const Header = () => {
                           descr: val.decsr,
                         };
 
-                        store.push(categoryObj);
+                        store.push(bookObj);
                       }
                     }
                     if (val.author === "NA") {
@@ -732,6 +719,7 @@ const Header = () => {
                   <div className="ml-1">Close</div>
                 </div>
               </div>
+              <p>The logic behind login</p>
             </>
           )}
         </div>
@@ -739,5 +727,4 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;
+export default HeaderLogin;

@@ -7,7 +7,7 @@ import categorysfirstpage from "./categorysfirstpage";
 import "slick-carousel/slick/slick.css";
 import MysteryBox from "./MysteryBox";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+
 import "../App.css";
 import Reviews from "./Reviews";
 import Banner from "./Banner";
@@ -15,78 +15,13 @@ import SupportLinkBanner from "./SupportLinkBanner";
 import Header from "./Header";
 import Dealsofday from "./Dealsofday";
 import ComboBox from "./ComboBox";
+import MerchsFirstPage from "./MerchsFirstPage";
+//import FirstPageReligious from "./FirstPageReligious";
+import ReligiousFirstPage from "./ReligiousFirstPage";
+import GiftsPageFirst from "./GiftsPageFirst";
 
 function First() {
-  function SampleNextArrow(props) {
-    // eslint-disable-next-line react/prop-types
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{
-          ...style,
-          display: "flex",
-          background: "#FFC300",
-          width: "30px",
-          height: "30px",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        onClick={onClick}
-      />
-    );
-  }
-
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{
-          ...style,
-
-          background: "#FFC300",
-          width: "30px",
-          height: "30px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        onClick={onClick}
-      />
-    );
-  }
-  if (screen.width >= 1100 && screen.width <= 1299) {
-    var settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
-    };
-  } else if (screen.width >= 1300 && screen.width < 1600) {
-    settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
-    };
-  } else {
-    settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 6,
-      slidesToScroll: 1,
-      nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
-    };
-  }
+  // eslint-disable-next-line react/prop-types
 
   return (
     <>
@@ -98,6 +33,7 @@ function First() {
         <div className="mt-10">
           <ComboBox />
         </div>
+<<<<<<< HEAD
         <categorysfirstpage />
 
         <Dealsofday />
@@ -352,8 +288,15 @@ function First() {
             </div>
           </div>
         </div>
+=======
+        <Booksfirstpage />
+        <Dealsofday />
+        <MerchsFirstPage />
+>>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
         <MysteryBox />
         <Reviews />
+        <ReligiousFirstPage />
+        <GiftsPageFirst />
         <div className="counter" id="counter">
           <h1 id="cntText"></h1>
         </div>

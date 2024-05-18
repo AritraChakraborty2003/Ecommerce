@@ -1,22 +1,15 @@
-<<<<<<< HEAD
-=======
 /* eslint-disable no-unused-vars */
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
 /* eslint-disable react/jsx-key */
 import Header from "./Header";
 import Foot1 from "./Foot1";
-import { Individualproductpage } from "./Individualproductpage";
+
 //import Detailspage from "./Detailspage";
 import axios from "axios";
 import "./Filter.css";
 import { useState, useEffect } from "react";
-<<<<<<< HEAD
-import { /*useLocation*/ useNavigate } from "react-router-dom";
-=======
 import { useNavigate } from "react-router-dom";
 import IndividualProductPageNonBook from "./IndividualPrductPageNonBook";
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
-const FilterMerchs = () => {
+const FilterGifts = () => {
   const [filter, setFilter] = useState(true);
   const [mobfilter, setMobFilter] = useState(false);
   const [data, setData] = useState([]);
@@ -31,22 +24,14 @@ const FilterMerchs = () => {
   const [authorDiv, setauthorDiv] = useState(false);
   const [priceDiv, setpriceDiv] = useState(false);
   const [isFind, setisFind] = useState(false);
-<<<<<<< HEAD
-  // eslint-disable-next-line no-unused-vars
-=======
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
   const [priceValue, setPriceValue] = useState(0);
   const [price, setPrice] = useState("");
   const [priceVal, setPriceVal] = useState("");
   const navigate = useNavigate();
-<<<<<<< HEAD
-  //const location = useLocation();
-=======
 
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/merchsAPI")
+      .get("http://127.0.0.1:8000/giftsAPI")
       .then((res) => {
         setData(res.data.reverse());
       })
@@ -54,91 +39,64 @@ const FilterMerchs = () => {
         console.log(err);
       });
   }, []);
-<<<<<<< HEAD
-
   const [spans] = useState([
     {
-      id: "Cups",
-      text: "Cups",
+      id: "Pen Stand",
+      text: "Pen Stand",
       type: "book",
     },
     {
-=======
-  const [spans] = useState([
-    {
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
-      id: "Shirts",
-      text: "Shirts",
-      type: "book",
-    },
-    {
-<<<<<<< HEAD
-=======
-      id: "TShirts",
-      text: "TShirts",
-      type: "book",
-    },
-    {
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
       id: "Pens",
       text: "Pens",
       type: "book",
     },
     {
-<<<<<<< HEAD
-      id: "Tshirts",
-      text: "Tshirts",
-=======
+      id: "Bags",
+      text: "Bags",
+      type: "book",
+    },
+    {
       id: "Cups",
       text: "Cups",
       type: "book",
     },
     {
-      id: "Hoodies",
-      text: "Hoodies",
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
+      id: "Joining Kits",
+      text: "Joining Kits",
       type: "book",
     },
   ]);
 
   const [spansAuthor] = useState([
     {
-      id: "Louis Vuitton",
-      text: "Louis Vuitton",
+      id: "Skybags",
+      text: "Skybags",
       type: "author",
     },
     {
-      id: "Peter England",
-      text: "Peter England",
+      id: "Join Top",
+      text: "Join Top",
+      type: "author",
+    },
+    {
+      id: "Dice Pens",
+      text: "Dice Pens",
+      type: "author",
+    },
+    {
+      id: "Parker",
+      text: "Parker",
+      type: "author",
+    },
+    {
+      id: "Cello",
+      text: "Cello",
       type: "author",
     },
     {
       id: "Borosil",
       text: "Borosil",
       type: "author",
-    },
-    {
-<<<<<<< HEAD
-      id: "Liscon",
-      text: "Liscon",
-      type: "author",
-    },
-
-    {
-=======
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
-      id: "Cello",
-      text: "Cello",
-      type: "author",
-    },
-    {
-      id: "Flair",
-      text: "Flair",
-<<<<<<< HEAD
-      type: "Flair",
-=======
-      type: "author",
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
     },
   ]);
 
@@ -171,20 +129,12 @@ const FilterMerchs = () => {
         setFilterProduct(filter);
         setBook(Obj.text);
       } else if (Obj.type === "author") {
-<<<<<<< HEAD
-        const filter = data.filter((product) => product.author === Obj.text);
-=======
         const filter = data.filter((product) => product.descr === Obj.text);
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
         console.log(filter);
         setFilterProduct(filter);
         setAuthor(Obj.text);
       } else if (Obj.type === "price") {
-<<<<<<< HEAD
-        /*const filter = data.filter((product) => product.author === Obj.text);
-=======
         /*const filter = data.filter((product) => product.descr === Obj.text);
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
         console.log(filter);
         setFilterProduct(filter);
         setAuthor(Obj.text);*/
@@ -226,11 +176,7 @@ const FilterMerchs = () => {
         if (book === "" && price === "" && author != "") {
           const filter = data.filter(
             (product) =>
-<<<<<<< HEAD
-              product.category === Obj.text && product.author === author
-=======
               product.category === Obj.text && product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
           );
           console.log(filter);
           setFilterProduct(filter);
@@ -239,11 +185,7 @@ const FilterMerchs = () => {
         if (book != "" && price === "" && author != "") {
           const filter = data.filter(
             (product) =>
-<<<<<<< HEAD
-              product.category === Obj.text && product.author === author
-=======
               product.category === Obj.text && product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
           );
           console.log(filter);
           setFilterProduct(filter);
@@ -310,11 +252,7 @@ const FilterMerchs = () => {
               (product) =>
                 product.category === Obj.text &&
                 product.price < 500 &&
-<<<<<<< HEAD
-                product.author === author
-=======
                 product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -325,11 +263,7 @@ const FilterMerchs = () => {
                 product.category === Obj.text &&
                 product.price > 500 &&
                 product.price <= 1000 &&
-<<<<<<< HEAD
-                product.author === author
-=======
                 product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -339,11 +273,7 @@ const FilterMerchs = () => {
               (product) =>
                 product.category === Obj.text &&
                 product.price > 1000 &&
-<<<<<<< HEAD
-                product.author === author
-=======
                 product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -357,11 +287,7 @@ const FilterMerchs = () => {
               (product) =>
                 product.category === Obj.text &&
                 product.price < 500 &&
-<<<<<<< HEAD
-                product.author === author
-=======
                 product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -372,11 +298,7 @@ const FilterMerchs = () => {
                 product.category === Obj.text &&
                 product.price > 500 &&
                 product.price <= 1000 &&
-<<<<<<< HEAD
-                product.author === author
-=======
                 product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -386,11 +308,7 @@ const FilterMerchs = () => {
               (product) =>
                 product.category === Obj.text &&
                 product.price > 1000 &&
-<<<<<<< HEAD
-                product.author === author
-=======
                 product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -402,22 +320,14 @@ const FilterMerchs = () => {
       if (Obj.type === "author") {
         /* */
         if (author != "" && price === "" && book === "") {
-<<<<<<< HEAD
-          const filter = data.filter((product) => product.author === Obj.text);
-=======
           const filter = data.filter((product) => product.descr === Obj.text);
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
           console.log(filter);
           setFilterProduct(filter);
           setAuthor(Obj.text);
         } else if (author === "" && price != "" && book === "") {
           if (priceVal === "discrete") {
             const filter = data.filter(
-<<<<<<< HEAD
-              (product) => product.author === Obj.text && product.price < 500
-=======
               (product) => product.descr === Obj.text && product.price < 500
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -425,11 +335,7 @@ const FilterMerchs = () => {
           } else if (priceVal === "range") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === Obj.text &&
-=======
                 product.descr === Obj.text &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price > 500 &&
                 product.price <= 1000
             );
@@ -439,15 +345,9 @@ const FilterMerchs = () => {
           } else if (priceVal === "discreteMore") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === Obj.text &&
-                product.price > 1000 &&
-                product.author === author
-=======
                 product.descr === Obj.text &&
                 product.price > 1000 &&
                 product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -456,11 +356,7 @@ const FilterMerchs = () => {
         } else if (author != "" && price != "" && book === "") {
           if (priceVal === "discrete") {
             const filter = data.filter(
-<<<<<<< HEAD
-              (product) => product.author === Obj.text && product.price < 500
-=======
               (product) => product.descr === Obj.text && product.price < 500
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -468,11 +364,7 @@ const FilterMerchs = () => {
           } else if (priceVal === "range") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === Obj.text &&
-=======
                 product.descr === Obj.text &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price > 500 &&
                 product.price <= 1000
             );
@@ -482,15 +374,9 @@ const FilterMerchs = () => {
           } else if (priceVal === "discreteMore") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === Obj.text &&
-                product.price > 1000 &&
-                product.author === author
-=======
                 product.descr === Obj.text &&
                 product.price > 1000 &&
                 product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -498,24 +384,14 @@ const FilterMerchs = () => {
           }
         } else if (author === "" && price === "" && book != "") {
           const filter = data.filter(
-<<<<<<< HEAD
-            (product) =>
-              product.author === Obj.text && product.category === book
-=======
             (product) => product.descr === Obj.text && product.category === book
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
           );
           console.log(filter);
           setFilterProduct(filter);
           setAuthor(Obj.text);
         } else if (author != "" && price === "" && book != "") {
           const filter = data.filter(
-<<<<<<< HEAD
-            (product) =>
-              product.author === Obj.text && product.category === book
-=======
             (product) => product.descr === Obj.text && product.category === book
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
           );
           console.log(filter);
           setFilterProduct(filter);
@@ -525,11 +401,7 @@ const FilterMerchs = () => {
           if (priceVal === "discrete") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === Obj.text &&
-=======
                 product.descr === Obj.text &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price < 500 &&
                 product.category === book
             );
@@ -539,11 +411,7 @@ const FilterMerchs = () => {
           } else if (priceVal === "range") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === Obj.text &&
-=======
                 product.descr === Obj.text &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price > 500 &&
                 product.price <= 1000 &&
                 product.category === book
@@ -554,11 +422,7 @@ const FilterMerchs = () => {
           } else if (priceVal === "discreteMore") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === Obj.text &&
-=======
                 product.descr === Obj.text &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price > 1000 &&
                 product.category === book
             );
@@ -568,24 +432,14 @@ const FilterMerchs = () => {
           }
         } else if (author === "" && price === "" && book != "") {
           const filter = data.filter(
-<<<<<<< HEAD
-            (product) =>
-              product.author === Obj.text && product.category === book
-=======
             (product) => product.descr === Obj.text && product.category === book
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
           );
           console.log(filter);
           setFilterProduct(filter);
           setAuthor(Obj.text);
         } else if (author != "" && price === "" && book != "") {
           const filter = data.filter(
-<<<<<<< HEAD
-            (product) =>
-              product.author === Obj.text && product.category === book
-=======
             (product) => product.descr === Obj.text && product.category === book
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
           );
           console.log(filter);
           setFilterProduct(filter);
@@ -594,11 +448,7 @@ const FilterMerchs = () => {
           if (priceVal === "discrete") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === Obj.text &&
-=======
                 product.descr === Obj.text &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price < 500 &&
                 product.category === book
             );
@@ -608,11 +458,7 @@ const FilterMerchs = () => {
           } else if (priceVal === "range") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === Obj.text &&
-=======
                 product.descr === Obj.text &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price > 500 &&
                 product.price <= 1000 &&
                 product.category === book
@@ -623,11 +469,7 @@ const FilterMerchs = () => {
           } else if (priceVal === "discreteMore") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === Obj.text &&
-=======
                 product.descr === Obj.text &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price > 1000 &&
                 product.category === book
             );
@@ -666,11 +508,7 @@ const FilterMerchs = () => {
         } else if (book === "" && price === "" && author != "") {
           if (Obj.val === "discrete") {
             const filter = data.filter(
-<<<<<<< HEAD
-              (product) => product.price < Obj.id && product.author === author
-=======
               (product) => product.price < Obj.id && product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -682,11 +520,7 @@ const FilterMerchs = () => {
               (product) =>
                 product.price > 500 &&
                 product.price <= 1000 &&
-<<<<<<< HEAD
-                product.author === author
-=======
                 product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -695,11 +529,7 @@ const FilterMerchs = () => {
             setPriceVal(Obj.val);
           } else if (Obj.val === "discreteMore") {
             const filter = data.filter(
-<<<<<<< HEAD
-              (product) => product.price > Obj.id && product.author === author
-=======
               (product) => product.price > Obj.id && product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -711,11 +541,7 @@ const FilterMerchs = () => {
           if (Obj.val === "discrete") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === author &&
-=======
                 product.descr === author &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price < 500 &&
                 product.category === book
             );
@@ -727,11 +553,7 @@ const FilterMerchs = () => {
           } else if (Obj.val === "range") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === author &&
-=======
                 product.descr === author &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price > 500 &&
                 product.price <= 1000 &&
                 product.category === book
@@ -744,11 +566,7 @@ const FilterMerchs = () => {
           } else if (Obj.val === "discreteMore") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === author &&
-=======
                 product.descr === author &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price > 1000 &&
                 product.category === book
             );
@@ -762,11 +580,7 @@ const FilterMerchs = () => {
           if (Obj.val === "discrete") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === author &&
-=======
                 product.descr === author &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price < 500 &&
                 product.category === book
             );
@@ -778,11 +592,7 @@ const FilterMerchs = () => {
           } else if (Obj.val === "range") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === author &&
-=======
                 product.descr === author &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price > 500 &&
                 product.price <= 1000 &&
                 product.category === book
@@ -795,11 +605,7 @@ const FilterMerchs = () => {
           } else if (Obj.val === "discreteMore") {
             const filter = data.filter(
               (product) =>
-<<<<<<< HEAD
-                product.author === author &&
-=======
                 product.descr === author &&
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 product.price > 1000 &&
                 product.category === book
             );
@@ -812,11 +618,7 @@ const FilterMerchs = () => {
         } else if (book === "" && price != "" && author != "") {
           if (Obj.val === "discrete") {
             const filter = data.filter(
-<<<<<<< HEAD
-              (product) => product.price < Obj.id && product.author === author
-=======
               (product) => product.price < Obj.id && product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -828,11 +630,7 @@ const FilterMerchs = () => {
               (product) =>
                 product.price > 500 &&
                 product.price <= 1000 &&
-<<<<<<< HEAD
-                product.author === author
-=======
                 product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -841,11 +639,7 @@ const FilterMerchs = () => {
             setPriceVal(Obj.val);
           } else if (Obj.val === "discreteMore") {
             const filter = data.filter(
-<<<<<<< HEAD
-              (product) => product.price > Obj.id && product.author === author
-=======
               (product) => product.price > Obj.id && product.descr === author
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
             );
             console.log(filter);
             setFilterProduct(filter);
@@ -935,7 +729,7 @@ const FilterMerchs = () => {
       <Header />
       {/* Code for show and remove filters Large*/}
       <div className="flex justify-center h-40 w-screen text-5xl items-center bg-mustardyellow text-black font-extrabold">
-        Merchs
+        Gifts
       </div>
       <div className="hidden lg:block">
         <div className="pb-2 pt-2 w-screen flex justify-center filterDisplayArea   h-27 bg-darkwhite">
@@ -1392,11 +1186,7 @@ const FilterMerchs = () => {
                 <div className="flex ml-2 mt-10 border-solid border-b-2 w-[35vmin] ">
                   <div className="textHolder w-[35vmin] ">
                     <p className="text-xl overflow-hidden font-medium  font-poppins">
-<<<<<<< HEAD
-                      Genre
-=======
                       Category
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                     </p>
                   </div>
 
@@ -1444,11 +1234,7 @@ const FilterMerchs = () => {
               <div className="flex ml-2 mt-5  border-solid border-b-2 w-[35vmin]">
                 <div className="textHolder w-[35vmin] ">
                   <p className="text-xl overflow-hidden font-medium font-poppins">
-<<<<<<< HEAD
-                    Author
-=======
                     Brand
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                   </p>
                 </div>
                 <img
@@ -1569,17 +1355,13 @@ const FilterMerchs = () => {
           className="display:flex w-12/12  justify-center items-center"
           id="ItemBox"
         >
-          <p className="text-center text-3xl overflow-hidden font-bold mt-4 h-17 ">
+          <p className="text-center text-3xl overflow-hidden font-bold mt-4 h-10 lg:h-16 ">
             {(book == "" && author == "" && price == "" && "All Products") ||
               book + " " + author + " " + price}
           </p>
           <div className="display mt-7 flex flex-wrap gap-5  w-[100vw] lg:w-[71vw] justify-center items-center pb-5">
             {filteredProduct.length > 0 && (
-<<<<<<< HEAD
-              <Individualproductpage
-=======
               <IndividualProductPageNonBook
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                 category={category}
                 filterP={filteredProduct}
               />
@@ -1607,7 +1389,7 @@ const FilterMerchs = () => {
                       height={60}
                       onClick={() => {
                         navigate("/details", {
-                          state: { val: val, api: "merchsAPI" },
+                          state: { val: val, api: "religiousAPI" },
                         });
                       }}
                     />
@@ -1621,11 +1403,7 @@ const FilterMerchs = () => {
                     </a>
                     <a href="#">
                       <p className="mb-2 text-base text-brown  tracking-tight text-md dark:text-white">
-<<<<<<< HEAD
-                        by {val.author}
-=======
                         brand: {val.descr}
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                       </p>
                     </a>
 
@@ -1659,7 +1437,7 @@ const FilterMerchs = () => {
                         height={60}
                         onClick={() => {
                           navigate("/details", {
-                            state: { val: val, api: "merchsAPI" },
+                            state: { val: val, api: "religiousAPI" },
                           });
                         }}
                       />
@@ -1690,13 +1468,9 @@ const FilterMerchs = () => {
                         width={75}
                         height={60}
                         onClick={() => {
-<<<<<<< HEAD
-                          navigate("/details", { state: { val: val } });
-=======
                           navigate("/details", {
-                            state: { val: val, api: "merchsAPI" },
+                            state: { val: val, api: "religiousAPI" },
                           });
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
                         }}
                       />
                     </div>
@@ -1718,4 +1492,4 @@ const FilterMerchs = () => {
     </>
   );
 };
-export default FilterMerchs;
+export default FilterGifts;

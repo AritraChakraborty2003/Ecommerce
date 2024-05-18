@@ -1,17 +1,16 @@
-/* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-key */
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-const categorysfirstpage = () => {
+import { useNavigate, useState, useEffect } from "react-router-dom";
+const FirstPageReligious = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/categorysAPI")
+      .get("http://127.0.0.1:8000/religiousAPI")
       .then((res) => {
         setData(res.data.reverse());
       })
@@ -94,24 +93,11 @@ const categorysfirstpage = () => {
   }
   return (
     <>
-      <div className="categorysBox md:mt-10 pt-10">
-        <div className="classNamecategorys lg:h-20  flex w-12/12 justify-center font-bold">
+      <div className="booksBox md:mt-10 pt-10">
+        <div className="classNameBooks lg:h-20  flex w-12/12 justify-center font-bold">
           <p className="text-4xl lg:text-6xl  font-bold text-orange overflow-hidden">
-            categorys
+            Religious Items
           </p>
-        </div>
-        <div className="flex w-12/12  justify-center mt-4">
-          <ul className="flex gap-x-10 lg:gap-x-20 text-1xl font-semibold lg:text-xl">
-            <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-2 hover:decoration-8 hover:decoration-mustardyellow">
-              Fiction
-            </li>
-            <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-2 hover:decoration-8 hover:decoration-mustardyellow">
-              Non-Fiction
-            </li>
-            <li className="pr-4 md:border-r-4 hover:underline hover:underline-offset-2 hover:decoration-8 hover:decoration-mustardyellow">
-              Competetive
-            </li>
-          </ul>
         </div>
 
         <div className="holder h-96 hidden lg:block mt-10">
@@ -130,7 +116,7 @@ const categorysfirstpage = () => {
                     height={60}
                     onClick={() => {
                       navigate("/details", {
-                        state: { val: val, api: "categorysAPI" },
+                        state: { val: val, api: "religiousAPI" },
                       });
                     }}
                   />
@@ -142,7 +128,7 @@ const categorysfirstpage = () => {
                     </p>
                   </a>
                   <p className="mb-3 font-semibold text-sm text-brown dark:text-gray-400">
-                    by {val.author}
+                    brand: {val.descr}
                   </p>
                   <p className="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
                     Price: Rs {val.price}
@@ -158,19 +144,16 @@ const categorysfirstpage = () => {
             ))}
           </Slider>
         </div>
-<<<<<<< HEAD
         <div className="btnContainer hidden lg:block">
           <div className="flex justify-center items-center">
             <button type="button" className=" bg-orange text-white p-3">
-              More categorys
+              More Books
             </button>
           </div>
         </div>
-=======
->>>>>>> 895892c76bbef5ad2c617af6ac51f9f563f2c72a
       </div>
 
-      <div className="w-12/12 categoryHolder lg:hidden space-x-1 flex flex-wrap  justify-center items-center mt-10 ">
+      <div className="w-12/12 bookHolder lg:hidden space-x-1 flex flex-wrap  justify-center items-center mt-3 pb-3">
         {(screen.width >= 410 &&
           data.map((val) => (
             <div
@@ -232,7 +215,7 @@ const categorysfirstpage = () => {
             data.map((val) => (
               <div
                 className="mt-3 w-[150px] h-[200px] pt-3 bg-white border-solid border-gray-500 rounded-lg shadow-xl overflow-hidden transform transition duration-300 
-                                hover:scale-x-110 "
+                                hover:scale-x-110 pb-3"
               >
                 <div className="w-12/12 flex justify-center">
                   <img
@@ -260,5 +243,4 @@ const categorysfirstpage = () => {
     </>
   );
 };
-
-export default categorysfirstpage;
+export default FirstPageReligious;
