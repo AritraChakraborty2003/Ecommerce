@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
   faTwitter,
-  faFacebook,
+  faFacecategory,
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 const Foot1 = () => {
@@ -23,18 +23,18 @@ const Foot1 = () => {
               </div>
 
               <p className="ml-5 font-oxygen font-medium">
-                Embark on a literary journey with Kitabay, the online book
+                Embark on a literary journey with Kitabay, the online category
                 wonderland nestled in Noida since 2023. We take glory in being
                 sustainable and eco friendly - from new releases to treasured
-                pre-loved books and merchs. And wait, there is more! Dive into
-                the sea of bookish merchandise that will make any heart flutter.
-                Join Kitabay and let sustainable reading ignite your
+                pre-loved categorys and merchs. And wait, there is more! Dive
+                into the sea of categoryish merchandise that will make any heart
+                flutter. Join Kitabay and let sustainable reading ignite your
                 imagination!
               </p>
               <div className="socialIcons mt-5 ml-3 flex space-x-5">
                 <FontAwesomeIcon icon={faInstagram} />
                 <FontAwesomeIcon icon={faTwitter} />
-                <FontAwesomeIcon icon={faFacebook} />
+                <FontAwesomeIcon icon={faFacecategory} />
               </div>
               <div className="subsPanel flex">
                 <input
@@ -121,7 +121,7 @@ const Foot1 = () => {
                 <div className="brandHolder ml-5" id="brandHolder1">
                   <ul>
                     <li>Merchendise</li>
-                    <li>Books</li>
+                    <li>categorys</li>
                     <li>Worship items</li>
                     <li>Corporate Gifts</li>
                   </ul>
@@ -181,18 +181,18 @@ const Foot1 = () => {
                 </div>
 
                 <p className="ml-5 font-oxygen font-medium">
-                  Embark on a literary journey with Kitabay, the online book
+                  Embark on a literary journey with Kitabay, the online category
                   wonderland nestled in Noida since 2023. We take glory in being
                   sustainable and eco friendly - from new releases to treasured
-                  pre-loved books and merchs. And wait, there is more! Dive into
-                  the sea of bookish merchandise that will make any heart
-                  flutter. Join Kitabay and let sustainable reading ignite your
-                  imagination!
+                  pre-loved categorys and merchs. And wait, there is more! Dive
+                  into the sea of categoryish merchandise that will make any
+                  heart flutter. Join Kitabay and let sustainable reading ignite
+                  your imagination!
                 </p>
                 <div className="socialIcons mt-5 ml-3 flex space-x-5">
                   <FontAwesomeIcon icon={faInstagram} />
                   <FontAwesomeIcon icon={faTwitter} />
-                  <FontAwesomeIcon icon={faFacebook} />
+                  <FontAwesomeIcon icon={faFacecategory} />
                 </div>
                 <div className="subsPanel flex">
                   <input
@@ -232,7 +232,7 @@ const Foot1 = () => {
                   <div className="box">
                     <h5 className="text-xl font-roboto font-bold">Shop Now</h5>
                     <ul className="text-lg font-poppins mt-2">
-                      <li className="mt-1">Books</li>
+                      <li className="mt-1">categorys</li>
                       <li className="mt-1">Merchendises</li>
                       <li className="mt-1">Worship Materials</li>
                       <li className="mt-1">Corporate Gifts</li>
@@ -266,18 +266,18 @@ const Foot1 = () => {
                 </div>
 
                 <p className="ml-5 font-oxygen font-medium">
-                  Embark on a literary journey with Kitabay, the online book
+                  Embark on a literary journey with Kitabay, the online category
                   wonderland nestled in Noida since 2023. We take glory in being
                   sustainable and eco friendly - from new releases to treasured
-                  pre-loved books and merchs. And wait, there is more! Dive into
-                  the sea of bookish merchandise that will make any heart
-                  flutter. Join Kitabay and let sustainable reading ignite your
-                  imagination!
+                  pre-loved categorys and merchs. And wait, there is more! Dive
+                  into the sea of categoryish merchandise that will make any
+                  heart flutter. Join Kitabay and let sustainable reading ignite
+                  your imagination!
                 </p>
                 <div className="socialIcons mt-5 ml-3 flex space-x-5">
                   <FontAwesomeIcon icon={faInstagram} />
                   <FontAwesomeIcon icon={faTwitter} />
-                  <FontAwesomeIcon icon={faFacebook} />
+                  <FontAwesomeIcon icon={faFacecategory} />
                 </div>
                 <div className="subsPanel flex">
                   <input
@@ -318,7 +318,7 @@ const Foot1 = () => {
                   <div className="box">
                     <h5 className="text-2xl font-roboto font-bold">Shop Now</h5>
                     <ul className="text-lg font-poppins mt-2">
-                      <li className="mt-1">Books</li>
+                      <li className="mt-1">categorys</li>
                       <li className="mt-1">Merchendises</li>
                       <li className="mt-1">Worship Materials</li>
                       <li className="mt-1">Corporate Gifts</li>
@@ -352,18 +352,18 @@ const Foot1 = () => {
                 </div>
 
                 <p className="ml-5 font-oxygen font-medium">
-                  Embark on a literary journey with Kitabay, the online book
+                  Embark on a literary journey with Kitabay, the online category
                   wonderland nestled in Noida since 2023. We take glory in being
                   sustainable and eco friendly - from new releases to treasured
-                  pre-loved books and merchs. And wait, there is more! Dive into
-                  the sea of bookish merchandise that will make any heart
-                  flutter. Join Kitabay and let sustainable reading ignite your
-                  imagination!
+                  pre-loved categorys and merchs. And wait, there is more! Dive
+                  into the sea of categoryish merchandise that will make any
+                  heart flutter. Join Kitabay and let sustainable reading ignite
+                  your imagination!
                 </p>
                 <div className="socialIcons mt-5 ml-3 flex space-x-5">
                   <FontAwesomeIcon icon={faInstagram} />
                   <FontAwesomeIcon icon={faTwitter} />
-                  <FontAwesomeIcon icon={faFacebook} />
+                  <FontAwesomeIcon icon={faFacecategory} />
                 </div>
                 <div className="subsPanel flex">
                   <input
@@ -398,7 +398,7 @@ const Foot1 = () => {
                   <div className="box">
                     <h5 className="text-2xl font-roboto font-bold">Shop Now</h5>
                     <ul className="text-lg font-poppins mt-2">
-                      <li className="mt-1">Books</li>
+                      <li className="mt-1">categorys</li>
                       <li className="mt-1">Merchendises</li>
                       <li className="mt-1">Worship Materials</li>
                       <li className="mt-1">Corporate Gifts</li>
@@ -432,18 +432,18 @@ const Foot1 = () => {
                 </div>
 
                 <p className="ml-5 font-oxygen font-medium">
-                  Embark on a literary journey with Kitabay, the online book
+                  Embark on a literary journey with Kitabay, the online category
                   wonderland nestled in Noida since 2023. We take glory in being
                   sustainable and eco friendly - from new releases to treasured
-                  pre-loved books and merchs. And wait, there is more! Dive into
-                  the sea of bookish merchandise that will make any heart
-                  flutter. Join Kitabay and let sustainable reading ignite your
-                  imagination!
+                  pre-loved categorys and merchs. And wait, there is more! Dive
+                  into the sea of categoryish merchandise that will make any
+                  heart flutter. Join Kitabay and let sustainable reading ignite
+                  your imagination!
                 </p>
                 <div className="socialIcons mt-5 ml-3 flex space-x-5">
                   <FontAwesomeIcon icon={faInstagram} />
                   <FontAwesomeIcon icon={faTwitter} />
-                  <FontAwesomeIcon icon={faFacebook} />
+                  <FontAwesomeIcon icon={faFacecategory} />
                 </div>
                 <div className="subsPanel flex">
                   <input
@@ -478,7 +478,7 @@ const Foot1 = () => {
                   <div className="box">
                     <h5 className="text-2xl font-roboto font-bold">Shop Now</h5>
                     <ul className="text-lg font-poppins mt-2">
-                      <li className="mt-1">Books</li>
+                      <li className="mt-1">categorys</li>
                       <li className="mt-1">Merchendises</li>
                       <li className="mt-1">Worship Materials</li>
                       <li className="mt-1">Corporate Gifts</li>
@@ -512,18 +512,18 @@ const Foot1 = () => {
                 </div>
 
                 <p className="ml-5 font-oxygen font-medium">
-                  Embark on a literary journey with Kitabay, the online book
+                  Embark on a literary journey with Kitabay, the online category
                   wonderland nestled in Noida since 2023. We take glory in being
                   sustainable and eco friendly - from new releases to treasured
-                  pre-loved books and merchs. And wait, there is more! Dive into
-                  the sea of bookish merchandise that will make any heart
-                  flutter. Join Kitabay and let sustainable reading ignite your
-                  imagination!
+                  pre-loved categorys and merchs. And wait, there is more! Dive
+                  into the sea of categoryish merchandise that will make any
+                  heart flutter. Join Kitabay and let sustainable reading ignite
+                  your imagination!
                 </p>
                 <div className="socialIcons mt-5 ml-3 flex space-x-5">
                   <FontAwesomeIcon icon={faInstagram} />
                   <FontAwesomeIcon icon={faTwitter} />
-                  <FontAwesomeIcon icon={faFacebook} />
+                  <FontAwesomeIcon icon={faFacecategory} />
                 </div>
                 <div className="subsPanel flex">
                   <input
@@ -558,7 +558,7 @@ const Foot1 = () => {
                   <div className="box">
                     <h5 className="text-xl font-roboto font-bold">Shop Now</h5>
                     <ul className="text-lg font-poppins mt-2">
-                      <li className="mt-1">Books</li>
+                      <li className="mt-1">categorys</li>
                       <li className="mt-1">Merchendises</li>
                       <li className="mt-1">Worship Materials</li>
                       <li className="mt-1">Corporate Gifts</li>

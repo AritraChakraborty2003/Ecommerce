@@ -1,2 +1,2 @@
-const FilterNonBook = () => {};
-export default FilterNonBook;
+const FilterNoncategory = () => {};
+export default FilterNoncategory;

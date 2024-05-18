@@ -19,7 +19,7 @@ const Header1 = () => {
               <ul className="flex justify-evenly font-medium font-serif">
                 <Marquee speed={80} gradient={false} pauseOnHover>
                   <li className="ml-10">
-                    Great <span className="font-bold">Books!!!!</span>
+                    Great <span className="font-bold">categorys!!!!</span>
                   </li>
 
                   <li className="ml-20">
@@ -60,7 +60,7 @@ const Header1 = () => {
                   <ul className="flex ml-1 space-x-3 xl:space-x-5 p-4 pl-2 pr-4   lg:font-normal  xl:text-md  xl:font-normal lg:text-md text-lg">
                     <li>
                       <a href="#" className="text-black">
-                        <Link to="/Filter">Books</Link>
+                        <Link to="/Filter">categorys</Link>
                       </a>
                     </li>
                     <li>
@@ -220,7 +220,7 @@ const Header1 = () => {
         <div className="className pb-10 bg-darkwhite">
           <div className="iconHolder">
             <ul className="pl-5 pt-2">
-              <li className="text-15">Books</li>
+              <li className="text-15">categorys</li>
               <li className="text-15 mt-5">Merchendise</li>
               <li className="text-15 mt-5">Traditionals</li>
               <li className="text-15 mt-5">Clothes</li>

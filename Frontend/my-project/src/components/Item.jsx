@@ -47,15 +47,27 @@ const Item = () => {
                 </p>
                 <ul className="ml-10 mt-4">
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />
                     Fictional
                   </li>
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     Non Fictional
                   </li>
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />
                     Competetive
                   </li>
                 </ul>
@@ -66,15 +78,27 @@ const Item = () => {
                 </p>
                 <ul className="ml-10 mt-4">
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     upto 500
                   </li>
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     Non Rs 500-750
                   </li>
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     Rs 1000 -above
                   </li>
                 </ul>
@@ -85,20 +109,36 @@ const Item = () => {
                 </p>
                 <ul className="ml-10 mt-4">
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     Chetan Bhagat
                   </li>
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     RK Saini
                   </li>
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     Robin Sharma
                   </li>
 
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     RS Aggarwal
                   </li>
 
@@ -125,15 +165,27 @@ const Item = () => {
                 </p>
                 <ul className="ml-10 mt-4">
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />
                     Fictional
                   </li>
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     Non Fictional
                   </li>
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />
                     Competetive
                   </li>
                 </ul>
@@ -144,15 +196,27 @@ const Item = () => {
                 </p>
                 <ul className="ml-10 mt-4">
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />
                     upto 500
                   </li>
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     Non Rs 500-750
                   </li>
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     Rs 1000 -above
                   </li>
                 </ul>
@@ -163,7 +227,11 @@ const Item = () => {
                 </p>
                 <ul className="ml-10 mt-4">
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     English
                   </li>
                   <li>
@@ -171,12 +239,16 @@ const Item = () => {
                     <input
                       type="radio"
                       value="Fictional"
-                      name="bookChoice"
+                      name="categoryChoice"
                     />{" "}
                     Non Bengali
                   </li>
                   <li>
-                    <input type="radio" value="Fictional" name="bookChoice" />{" "}
+                    <input
+                      type="radio"
+                      value="Fictional"
+                      name="categoryChoice"
+                    />{" "}
                     Hindi
                   </li>
 
@@ -220,7 +292,7 @@ const Item = () => {
                     {val.name}
                   </p>
                 </a>
-                {(location.state.api === "booksAPI" && (
+                {(location.state.api === "categorysAPI" && (
                   <p className="mb-3 font-semibold text-sm text-brown dark:text-gray-400">
                     by {val.author}
                   </p>

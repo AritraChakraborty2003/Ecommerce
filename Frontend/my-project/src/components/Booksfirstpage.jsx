@@ -6,12 +6,12 @@ import Slider from "react-slick";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-const Booksfirstpage = () => {
+const categorysfirstpage = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/booksAPI")
+      .get("http://127.0.0.1:8000/categorysAPI")
       .then((res) => {
         setData(res.data.reverse());
       })
@@ -94,10 +94,10 @@ const Booksfirstpage = () => {
   }
   return (
     <>
-      <div className="booksBox md:mt-10 pt-10">
-        <div className="classNameBooks lg:h-20  flex w-12/12 justify-center font-bold">
+      <div className="categorysBox md:mt-10 pt-10">
+        <div className="classNamecategorys lg:h-20  flex w-12/12 justify-center font-bold">
           <p className="text-4xl lg:text-6xl  font-bold text-orange overflow-hidden">
-            Books
+            categorys
           </p>
         </div>
         <div className="flex w-12/12  justify-center mt-4">
@@ -130,7 +130,7 @@ const Booksfirstpage = () => {
                     height={60}
                     onClick={() => {
                       navigate("/details", {
-                        state: { val: val, api: "booksAPI" },
+                        state: { val: val, api: "categorysAPI" },
                       });
                     }}
                   />
@@ -161,13 +161,13 @@ const Booksfirstpage = () => {
         <div className="btnContainer hidden lg:block">
           <div className="flex justify-center items-center">
             <button type="button" className=" bg-orange text-white p-3">
-              More Books
+              More categorys
             </button>
           </div>
         </div>
       </div>
 
-      <div className="w-12/12 bookHolder lg:hidden space-x-1 flex flex-wrap  justify-center items-center mt-10 ">
+      <div className="w-12/12 categoryHolder lg:hidden space-x-1 flex flex-wrap  justify-center items-center mt-10 ">
         {(screen.width >= 410 &&
           data.map((val) => (
             <div
@@ -258,4 +258,4 @@ const Booksfirstpage = () => {
   );
 };
 
-export default Booksfirstpage;
+export default categorysfirstpage;

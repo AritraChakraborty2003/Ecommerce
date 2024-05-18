@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 const RequestPage = () => {
   const [data, setData] = useState([]);
   const ObjMap = {
-    Fictional: "book",
-    fictional: "book",
-    "non fictional": "book",
-    competetive: "book",
-    business: "book",
-    "self help": "book",
+    Fictional: "category",
+    fictional: "category",
+    "non fictional": "category",
+    competetive: "category",
+    business: "category",
+    "self help": "category",
   };
   useEffect(() => {
     axios

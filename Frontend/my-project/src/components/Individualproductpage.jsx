@@ -21,7 +21,7 @@ export const Individualproductpage = (props) => {
                   height={60}
                   onClick={() => {
                     navigate("/details", {
-                      state: { val: val, api: "booksAPI" },
+                      state: { val: val, api: "categorysAPI" },
                     });
                   }}
                 />

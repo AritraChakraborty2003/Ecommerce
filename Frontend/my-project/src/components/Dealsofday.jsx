@@ -1,4 +1,3 @@
-import Dealbooks from "./Dealbooks";
 import Timer from "./Timer";
 const Dealsofday = () => {
   return (
@@ -9,7 +8,7 @@ const Dealsofday = () => {
         </p>
 
         <Timer />
-        <Dealbooks />
+        <Dealcategorys />
       </div>
     </>
   );

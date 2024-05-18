@@ -2,10 +2,10 @@
 import viteLogo from "/vite.svg";*/
 import Foot1 from "./components/Foot1";
 import Header from "./components/Header";
+import FilterMerchs from "./components/FilterMerchs";
 import First from "./components/First";
 import SearchPage from "./components/SearchPage";
 import AddAdmin from "./components/AddAdmin";
-import Dealbooks from "./components/Dealbooks";
 import RequestPage from "./components/RequestPage";
 import Timer from "./components/Timer";
 //import Fetchdata from "./components/Fetchdata";
@@ -24,11 +24,11 @@ import GoogleAuth from "./components/GoogleAuth";
 import Dealsofday from "./components/Dealsofday";
 import Reviews from "./components/Reviews";
 import Cart from "./components/Cart";
-import Booksfirstpage from "./components/Booksfirstpage";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import Login from "./components/Login";
+import Dealbooks from "./components/Dealbooks";
 
 function App() {
   return (
@@ -41,7 +41,10 @@ function App() {
           <Route path="/Items" element={<Item />}></Route>
           <Route path="/cms" element={<Cms />}></Route>
           <Route path="/details" element={<Detailspage />}></Route>
-          <Route path="/booksFirst" element={<Booksfirstpage />}></Route>
+          <Route
+            path="/categorysFirst"
+            element={<categorysfirstpage />}
+          ></Route>
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/Filter" element={<FilterLogic />}></Route>
           <Route path="/mysteryBox" element={<MysteryBox />}></Route>
@@ -60,6 +63,7 @@ function App() {
           <Route path="/AddAdmin" element={<AddAdmin />}></Route>
           <Route path="/Header1" element={<Header1 />}></Route>
           <Route path="/search" element={<SearchPage />}></Route>
+          <Route path="/FilterMerchs" element={<FilterMerchs />}></Route>
         </Routes>
       </BrowserRouter>
     </>

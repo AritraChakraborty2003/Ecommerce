@@ -111,7 +111,7 @@ const adminDbSchema = new mongoose.Schema(
   },
   { collection: "admindb" }
 );
-const ecomBookSchema = new mongoose.Schema(
+const ecomcategorySchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -147,7 +147,7 @@ const ecomBookSchema = new mongoose.Schema(
       required: true,
     },
   },
-  { collection: "Books" }
+  { collection: "categorys" }
 );
 
 const ecomMerchSchema = new mongoose.Schema(
@@ -305,7 +305,7 @@ const ecomReligiousSchema = new mongoose.Schema(
   { collection: "Religious" }
 );
 mongoose.connect("mongodb://localhost:27017/ecom");
-const books = mongoose.model("Books", ecomBookSchema);
+const categorys = mongoose.model("categorys", ecomcategorySchema);
 const generalOrder = mongoose.model("OrderGeneral", ecomOrderSchema);
 const merchs = mongoose.model("Merch", ecomMerchSchema);
 const religious = mongoose.model("Religious", ecomReligiousSchema);
@@ -339,11 +339,11 @@ app.get("/searchAPI", (req, res) => {
       console.log(err);
     });
 });
-app.get("/booksAPI", (req, res) => {
-  books
+app.get("/categorysAPI", (req, res) => {
+  categorys
     .find()
-    .then((book) => {
-      res.json(book);
+    .then((category) => {
+      res.json(category);
     })
     .catch((err) => console.log(err));
 });
@@ -351,8 +351,8 @@ app.get("/booksAPI", (req, res) => {
 app.get("/merchsAPI", (req, res) => {
   merchs
     .find()
-    .then((book) => {
-      res.json(book);
+    .then((category) => {
+      res.json(category);
     })
     .catch((err) => console.log(err));
 });
@@ -360,8 +360,8 @@ app.get("/merchsAPI", (req, res) => {
 app.get("/giftsAPI", (req, res) => {
   gifts
     .find()
-    .then((book) => {
-      res.json(book);
+    .then((category) => {
+      res.json(category);
     })
     .catch((err) => console.log(err));
 });
@@ -369,8 +369,8 @@ app.get("/giftsAPI", (req, res) => {
 app.get("/religiousAPI", (req, res) => {
   religious
     .find()
-    .then((book) => {
-      res.json(book);
+    .then((category) => {
+      res.json(category);
     })
     .catch((err) => console.log(err));
 });
@@ -378,8 +378,8 @@ app.get("/religiousAPI", (req, res) => {
 app.get("/reviewsAPI", (req, res) => {
   review
     .find()
-    .then((book) => {
-      res.json(book);
+    .then((category) => {
+      res.json(category);
     })
     .catch((err) => console.log(err));
 });
@@ -397,7 +397,7 @@ app.get("/ordersAPI", (req, res) => {
 /*---- GET Request end ----*/
 
 /* ---- POST Req Start ---- */
-app.post("/booksAPI", upload.single("file"), (req, res) => {
+app.post("/categorysAPI", upload.single("file"), (req, res) => {
   let name = req.body.name;
   let author = req.body.author;
   let price = req.body.price;
@@ -421,7 +421,7 @@ app.post("/booksAPI", upload.single("file"), (req, res) => {
   console.log(image);
   console.log(url);*/
 
-  let NewBook = new books({
+  let Newcategory = new categorys({
     name: name,
     author: author,
     price: price,
@@ -439,8 +439,8 @@ app.post("/booksAPI", upload.single("file"), (req, res) => {
     image: url,
     brand: "NA",
     stock: stock,
-    category: "books",
-    categorySupport: "book",
+    category: "categorys",
+    categorySupport: "category",
     genre: category,
     discount: discount,
     descr: descr,
@@ -450,7 +450,7 @@ app.post("/booksAPI", upload.single("file"), (req, res) => {
     brandLname: "NA",
   });
 
-  NewBook.save();
+  Newcategory.save();
   searchObj.save();
 });
 

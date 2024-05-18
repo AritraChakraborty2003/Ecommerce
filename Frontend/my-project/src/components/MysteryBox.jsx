@@ -25,7 +25,7 @@ const MysteryBox = () => {
                       &nbsp;&nbsp;&nbsp;Upto 80% discount
                     </li>
                     <li className="mt-10 font-roboto font-extrabold text-2xl ">
-                      Starting at Rs 1000 for 10 books
+                      Starting at Rs 1000 for 10 categorys
                     </li>
                     <li className="mt-5">
                       <button className="bg-red text-white p-3 rounded-2xl">
@@ -38,11 +38,11 @@ const MysteryBox = () => {
                   <ul className="mt-5">
                     <li className="font-poppins font-medium text-2xl flex">
                       <div className="h-[2vmin] w-[2vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-1"></div>
-                      &nbsp;&nbsp;&nbsp;100% original books
+                      &nbsp;&nbsp;&nbsp;100% original categorys
                     </li>
                     <li className="font-poppins font-medium text-2xl mt-4 flex">
                       <div className="h-[2vmin] w-[2vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-1"></div>
-                      &nbsp;&nbsp;&nbsp;Free bookmarks provided
+                      &nbsp;&nbsp;&nbsp;Free categorymarks provided
                     </li>
                     <li className="font-poppins font-medium text-2xl mt-4 flex">
                       <div className="h-[2vmin] w-[2vmin] lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-1"></div>
@@ -79,7 +79,7 @@ const MysteryBox = () => {
                       &nbsp;&nbsp;&nbsp;Upto 80% discount
                     </li>
                     <li className="mt-10 font-roboto font-extrabold text-xl lg:text-2xl ">
-                      Starting at Rs 1000 for 10 books
+                      Starting at Rs 1000 for 10 categorys
                     </li>
                     <li className="mt-5">
                       <button className="bg-red text-white p-3 rounded-2xl">
@@ -92,11 +92,11 @@ const MysteryBox = () => {
                   <ul className="mt-5">
                     <li className="font-poppins font-medium text-lg lg:text-xl flex">
                       <div className="h-[2vmin] w-[2vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
-                      &nbsp;&nbsp;&nbsp;100% original books
+                      &nbsp;&nbsp;&nbsp;100% original categorys
                     </li>
                     <li className="font-poppins font-medium text-lg lg:text-xl mt-4 flex">
                       <div className="h-[2vmin] w-[2vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
-                      &nbsp;&nbsp;&nbsp;Free bookmarks provided
+                      &nbsp;&nbsp;&nbsp;Free categorymarks provided
                     </li>
                     <li className="font-poppins font-medium text-lg lg:text-xl mt-4 flex">
                       <div className="h-[2vmin] w-[2vmin] lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
@@ -133,7 +133,7 @@ const MysteryBox = () => {
                         &nbsp;&nbsp;&nbsp;Upto 80% discount
                       </li>
                       <li className="mt-10 font-roboto font-extrabold text-xl lg:text-2xl ">
-                        Starting at Rs 1000 for 10 books
+                        Starting at Rs 1000 for 10 categorys
                       </li>
                       <li className="mt-5">
                         <button className="bg-red text-white p-3 rounded-2xl">
@@ -146,11 +146,11 @@ const MysteryBox = () => {
                     <ul className="mt-5">
                       <li className="font-poppins font-medium text-lg lg:text-xl flex">
                         <div className="h-[2vmin] w-[2vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
-                        &nbsp;&nbsp;&nbsp;100% original books
+                        &nbsp;&nbsp;&nbsp;100% original categorys
                       </li>
                       <li className="font-poppins font-medium text-lg lg:text-xl mt-4 flex">
                         <div className="h-[2vmin] w-[2vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
-                        &nbsp;&nbsp;&nbsp;Free bookmarks provided
+                        &nbsp;&nbsp;&nbsp;Free categorymarks provided
                       </li>
                       <li className="font-poppins font-medium text-lg lg:text-xl mt-4 flex">
                         <div className="h-[2vmin] w-[2vmin] lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
@@ -187,7 +187,7 @@ const MysteryBox = () => {
                         &nbsp;&nbsp;&nbsp;Upto 80% discount
                       </li>
                       <li className="mt-10 font-roboto font-extrabold text-xl lg:text-2xl ">
-                        Starting at Rs 1000 for 10 books
+                        Starting at Rs 1000 for 10 categorys
                       </li>
                       <li className="mt-5">
                         <button className="bg-red text-white p-3 rounded-2xl">
@@ -200,11 +200,11 @@ const MysteryBox = () => {
                     <ul className="mt-5">
                       <li className="font-poppins font-medium text-lg lg:text-xl flex">
                         <div className="h-[2vmin] w-[2vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
-                        &nbsp;&nbsp;&nbsp;100% original books
+                        &nbsp;&nbsp;&nbsp;100% original categorys
                       </li>
                       <li className="font-poppins font-medium text-lg lg:text-xl mt-4 flex">
                         <div className="h-[2vmin] w-[2vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
-                        &nbsp;&nbsp;&nbsp;Free bookmarks provided
+                        &nbsp;&nbsp;&nbsp;Free categorymarks provided
                       </li>
                       <li className="font-poppins font-medium text-lg lg:text-xl mt-4 flex">
                         <div className="h-[2vmin] w-[2vmin] lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
@@ -241,7 +241,7 @@ const MysteryBox = () => {
                         &nbsp;&nbsp;&nbsp;Upto 80% discount
                       </li>
                       <li className="mt-10 font-roboto font-extrabold text-xl lg:text-2xl ">
-                        Starting at Rs 1000 for 10 books
+                        Starting at Rs 1000 for 10 categorys
                       </li>
                       <li className="mt-5">
                         <button className="bg-red text-white p-3 rounded-2xl">
@@ -254,11 +254,11 @@ const MysteryBox = () => {
                     <ul className="mt-5">
                       <li className="font-poppins font-medium text-lg lg:text-xl flex">
                         <div className="h-[1vmin] w-[1vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
-                        &nbsp;&nbsp;&nbsp;100% original books
+                        &nbsp;&nbsp;&nbsp;100% original categorys
                       </li>
                       <li className="font-poppins font-medium text-lg lg:text-xl mt-4 flex">
                         <div className="h-[1vmin] w-[1vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
-                        &nbsp;&nbsp;&nbsp;Free bookmarks provided
+                        &nbsp;&nbsp;&nbsp;Free categorymarks provided
                       </li>
                       <li className="font-poppins font-medium text-lg lg:text-xl mt-4 flex">
                         <div className="h-[1vmin] w-[1vmin] lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-3"></div>
@@ -295,7 +295,7 @@ const MysteryBox = () => {
                         &nbsp;&nbsp;&nbsp;Upto 80% discount
                       </li>
                       <li className="mt-10 font-roboto font-extrabold text-md lg:text-2xl ">
-                        Starting at Rs 1000 for 10 books
+                        Starting at Rs 1000 for 10 categorys
                       </li>
                       <li className="mt-5">
                         <button className="bg-red text-white p-3 rounded-2xl">
@@ -308,11 +308,11 @@ const MysteryBox = () => {
                     <ul className="mt-5">
                       <li className="font-poppins font-medium text-md lg:text-xl flex mt-1">
                         <div className="h-[1vmin] w-[1vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-2 "></div>
-                        &nbsp;&nbsp;&nbsp;100% original books
+                        &nbsp;&nbsp;&nbsp;100% original categorys
                       </li>
                       <li className="font-poppins font-medium text-md lg:text-xl  flex">
                         <div className="h-[1vmin] w-[1vmin]  lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-1"></div>
-                        &nbsp;&nbsp;&nbsp;Free bookmarks provided
+                        &nbsp;&nbsp;&nbsp;Free categorymarks provided
                       </li>
                       <li className="font-poppins font-medium text-md lg:text-xl  flex">
                         <div className="h-[1vmin] w-[1vmin] lg:h-[1vmin] lg:w-[1vmin] bg-black rounded-xl border-solid border-2 mt-1"></div>

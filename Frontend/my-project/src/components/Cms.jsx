@@ -39,7 +39,7 @@ const Cms = () => {
 
   const fileUploadHandler = (event) => {
     event.preventDefault();
-    if (choice == "booksAPI") {
+    if (choice == "categorysAPI") {
       let name1 = document.getElementById("name").value;
       let price1 = document.getElementById("price").value;
       let author1 = document.getElementById("author").value;
@@ -160,7 +160,7 @@ const Cms = () => {
         <div className="w-screen flex justify-center mt-5 ">
           <div className="box border-solid border-b-2 ">
             <select className="w-52 lg:w-96" id="product">
-              <option value="booksAPI">books</option>
+              <option value="categorysAPI">categorys</option>
               <option value="merchsAPI">merchs</option>
               <option value="religiousAPI">religious</option>
               <option value="giftsAPI">gifts</option>
@@ -178,7 +178,7 @@ const Cms = () => {
           </button>
         </div>
 
-        {(choice === "booksAPI" && (
+        {(choice === "categorysAPI" && (
           <div className="formHolder mt-3" id="formHolder">
             <form
               id="form1"

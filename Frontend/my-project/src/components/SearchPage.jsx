@@ -37,7 +37,7 @@ const SearchPage = () => {
                     onClick={() => {
                       if (val.author != "NA")
                         navigate("/details", {
-                          state: { val: val, api: "booksAPI" },
+                          state: { val: val, api: "categorysAPI" },
                         });
                       else {
                         console.log("Hello");

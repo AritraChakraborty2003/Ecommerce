@@ -1,15 +1,4 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
-
-/* Documentation: For Debugging The file
-  #Important: Don't remove the comments
-    1. The author,setAuthor Hook <=> brand,setBrand for non Book
-    2. The category,setCategory Hook <=> book,setBook for non Book
-    3. The price,setPrice <=> price,setPrice for non Book
-    4. The priceVal,setPriceVal <=> priceVal,setPriceVal
-    5. The priceValue,setPriceValue <=> priceValue,setPriceValue
-*/
-
 import Header from "./Header";
 import Foot1 from "./Foot1";
 import { Individualproductpage } from "./Individualproductpage";
@@ -17,24 +6,8 @@ import { Individualproductpage } from "./Individualproductpage";
 import axios from "axios";
 import "./Filter.css";
 import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-/*useCode={ (book != "" &&
-                author != "" &&
-                price === " " &&
-                book + " " + author + " ") ||
-              (book === "" &&
-                author != "" &&
-                price != " " &&
-                author + " " + price + " ") ||
-              (book != "" &&
-                author === "" &&
-                price != " " &&
-                book + " " + price + " ") ||
-              (book == "" && author == "" && price == "" && "All Products") ||
-              (book == "" && price == "" && author != "" && author) ||
-              (author == "" && price == "" && book != "" && book) ||
-              (author == "" && book == "" && price != "" && price)}}*/
-const FilterLogic = () => {
+import { /*useLocation*/ useNavigate } from "react-router-dom";
+const FilterMerchs = () => {
   const [filter, setFilter] = useState(true);
   const [mobfilter, setMobFilter] = useState(false);
   const [data, setData] = useState([]);
@@ -49,14 +22,15 @@ const FilterLogic = () => {
   const [authorDiv, setauthorDiv] = useState(false);
   const [priceDiv, setpriceDiv] = useState(false);
   const [isFind, setisFind] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [priceValue, setPriceValue] = useState(0);
   const [price, setPrice] = useState("");
   const [priceVal, setPriceVal] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
+  //const location = useLocation();
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/" + location.state.val)
+      .get("http://127.0.0.1:8000/merchsAPI")
       .then((res) => {
         setData(res.data.reverse());
       })
@@ -64,54 +38,61 @@ const FilterLogic = () => {
         console.log(err);
       });
   }, []);
+
   const [spans] = useState([
     {
-      id: "Fictional",
-      text: "Fictional",
+      id: "Cups",
+      text: "Cups",
       type: "book",
     },
     {
-      id: "Non fictional",
-      text: "Non fictional",
+      id: "Shirts",
+      text: "Shirts",
       type: "book",
     },
     {
-      id: "Competetive",
-      text: "Competetive",
+      id: "Pens",
+      text: "Pens",
       type: "book",
     },
     {
-      id: "Self Help",
-      text: "Self Help",
-      type: "book",
-    },
-    {
-      id: "Business",
-      text: "Business",
+      id: "Tshirts",
+      text: "Tshirts",
       type: "book",
     },
   ]);
 
   const [spansAuthor] = useState([
     {
-      id: "Robin Sharma",
-      text: "Robin Sharma",
+      id: "Louis Vuitton",
+      text: "Louis Vuitton",
       type: "author",
     },
     {
-      id: "ML Khanna",
-      text: "ML Khanna",
+      id: "Peter England",
+      text: "Peter England",
       type: "author",
     },
     {
-      id: "Paulo Coelho",
-      text: "Paulo Coelho",
+      id: "Borosil",
+      text: "Borosil",
       type: "author",
     },
     {
-      id: "Ashneer Grover",
-      text: "Ashneer Grover",
+      id: "Liscon",
+      text: "Liscon",
       type: "author",
+    },
+
+    {
+      id: "Cello",
+      text: "Cello",
+      type: "author",
+    },
+    {
+      id: "Flair",
+      text: "Flair",
+      type: "Flair",
     },
   ]);
 
@@ -748,7 +729,7 @@ const FilterLogic = () => {
       <Header />
       {/* Code for show and remove filters Large*/}
       <div className="flex justify-center h-40 w-screen text-5xl items-center bg-mustardyellow text-black font-extrabold">
-        {location.state.title}
+        Merchs
       </div>
       <div className="hidden lg:block">
         <div className="pb-2 pt-2 w-screen flex justify-center filterDisplayArea   h-27 bg-darkwhite">
@@ -839,7 +820,7 @@ const FilterLogic = () => {
                 <div className="flex ml-2 mt-3 border-solid border-b-2 w-[85vmin] ">
                   <div className="textHolder w-[75vmin] ">
                     <p className="text-lg overflow-hidden font-medium  font-poppins">
-                      Genre
+                      Category
                     </p>
                   </div>
 
@@ -887,7 +868,7 @@ const FilterLogic = () => {
               <div className="flex ml-2 mt-5  border-solid border-b-2 w-[85vw]">
                 <div className="textHolder w-[75vw] ">
                   <p className="text-lg overflow-hidden font-medium font-poppins">
-                    Author
+                    Brand
                   </p>
                 </div>
                 <img
@@ -1017,7 +998,7 @@ const FilterLogic = () => {
                 <div className="flex ml-2 mt-10 border-solid border-b-2 w-[45vmin] ">
                   <div className="textHolder w-[40vmin] ">
                     <p className="text-xl overflow-hidden font-medium  font-poppins">
-                      Genre
+                      Category
                     </p>
                   </div>
 
@@ -1065,7 +1046,7 @@ const FilterLogic = () => {
               <div className="flex ml-2 mt-5  border-solid border-b-2 w-[45vmin]">
                 <div className="textHolder w-[40vmin] ">
                   <p className="text-xl overflow-hidden font-medium font-poppins">
-                    Author
+                    Brand
                   </p>
                 </div>
                 <img
@@ -1408,7 +1389,7 @@ const FilterLogic = () => {
                       height={60}
                       onClick={() => {
                         navigate("/details", {
-                          state: { val: val, api: "booksAPI" },
+                          state: { val: val, api: "merchsAPI" },
                         });
                       }}
                     />
@@ -1455,7 +1436,9 @@ const FilterLogic = () => {
                         width={75}
                         height={60}
                         onClick={() => {
-                          navigate("/details", { state: { val: val } });
+                          navigate("/details", {
+                            state: { val: val, api: "merchsAPI" },
+                          });
                         }}
                       />
                     </div>
@@ -1507,4 +1490,4 @@ const FilterLogic = () => {
     </>
   );
 };
-export default FilterLogic;
+export default FilterMerchs;

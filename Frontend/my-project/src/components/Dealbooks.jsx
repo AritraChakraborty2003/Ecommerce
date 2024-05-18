@@ -10,7 +10,7 @@ const Dealbooks = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/booksAPI")
+      .get("http://127.0.0.1:8000/categorysAPI")
       .then((res) => {
         setData(res.data.reverse());
       })
@@ -111,7 +111,7 @@ const Dealbooks = () => {
                   height={60}
                   onClick={() => {
                     navigate("/details", {
-                      state: { val: val, api: "booksAPI" },
+                      state: { val: val, api: "categorysAPI" },
                     });
                   }}
                 />
@@ -148,7 +148,7 @@ const Dealbooks = () => {
         </Slider>
       </div>
 
-      <div className="bookHolder lg:hidden flex flex-wrap space-x-1 justify-center items-center mt-4 ">
+      <div className="categoryHolder lg:hidden flex flex-wrap space-x-1 justify-center items-center mt-4 ">
         {" "}
         {(screen.width >= 410 &&
           data.map((val) => (
@@ -165,7 +165,7 @@ const Dealbooks = () => {
                   height={60}
                   onClick={() => {
                     navigate("/details", {
-                      state: { val: val, api: "booksAPI" },
+                      state: { val: val, api: "categorysAPI" },
                     });
                   }}
                 />
@@ -210,7 +210,7 @@ const Dealbooks = () => {
                     height={60}
                     onClick={() => {
                       navigate("/details", {
-                        state: { val: val, api: "booksAPI" },
+                        state: { val: val, api: "categorysAPI" },
                       });
                     }}
                   />
@@ -240,7 +240,7 @@ const Dealbooks = () => {
                     height={60}
                     onClick={() => {
                       navigate("/details", {
-                        state: { val: val, api: "booksAPI" },
+                        state: { val: val, api: "categorysAPI" },
                       });
                     }}
                   />

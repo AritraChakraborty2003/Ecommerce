@@ -3,7 +3,7 @@
 /*import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";*/
 import Foot1 from "./Foot1";
-import Booksfirstpage from "./Booksfirstpage";
+import categorysfirstpage from "./categorysfirstpage";
 import "slick-carousel/slick/slick.css";
 import MysteryBox from "./MysteryBox";
 import "slick-carousel/slick/slick-theme.css";
@@ -98,12 +98,12 @@ function First() {
         <div className="mt-10">
           <ComboBox />
         </div>
-        <Booksfirstpage />
+        <categorysfirstpage />
 
         <Dealsofday />
 
         <div className="merchBox hidden lg:block md:mt-10 pb-10 ">
-          <div className="classNameBooks lg:h-35 flex w-12/12 justify-center font-bold ">
+          <div className="classNamecategorys lg:h-35 flex w-12/12 justify-center font-bold ">
             <p className="text-4xl lg:text-6xl  font-bold text-orange mt-10 overflow-hidden">
               Merchs
             </p>
@@ -347,7 +347,7 @@ function First() {
           <div className="btnContainer hidden lg:block">
             <div className="flex justify-center items-center">
               <button type="button" className=" bg-orange text-white p-3">
-                More Books
+                More categorys
               </button>
             </div>
           </div>

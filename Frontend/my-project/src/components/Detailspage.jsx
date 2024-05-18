@@ -47,7 +47,7 @@ const Detailspage = (props) => {
           <h1 id="success" className="mt-2 ml-3 font-bold text-2xl"></h1>
         )}
         <div className="mainArea bg-darkwhite flex justify-center  flex-wrap mb-5 mt-5">
-          <div className="bookHolder w-[600px] flex justify-center mt-3 lg:mt-10 p-5">
+          <div className="categoryHolder w-[600px] flex justify-center mt-3 lg:mt-10 p-5">
             <div className="imgHolder h-52 lg:h-96 w-[400px] flex justify-center ">
               <a href="/details">
                 {" "}
@@ -58,13 +58,13 @@ const Detailspage = (props) => {
               </a>
             </div>
           </div>
-          <div className="bookHolder w-[650px]  p-5">
+          <div className="categoryHolder w-[650px]  p-5">
             <p className="text-4xl font-extrabold overflow-hidden h-11">
               {location.state.val.name}
             </p>
             <br />
 
-            {(location.state.api === "booksAPI" && (
+            {(location.state.api === "categorysAPI" && (
               <>
                 <p className="font-grey">
                   (By{" "}
@@ -75,7 +75,7 @@ const Detailspage = (props) => {
                 <br />
               </>
             )) ||
-              (location.state.api != "booksAPI" && (
+              (location.state.api != "categorysAPI" && (
                 <>
                   <p className="font-grey text-lg mt-[-2.15vmin]">
                     (Brand: &nbsp;
@@ -98,7 +98,7 @@ const Detailspage = (props) => {
               </p>
             </div>
 
-            <div className="bookInfo">
+            <div className="categoryInfo">
               <ul className="mt-5">
                 <li className="mt-3 font-medium font-roboto text-md">
                   {(location.state.val.stock === 0 && (
